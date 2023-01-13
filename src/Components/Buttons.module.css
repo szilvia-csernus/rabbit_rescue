@@ -1,0 +1,58 @@
+.buttonGeneral {
+    padding: .3rem 1.2rem;
+    color: var(--accent-color);
+    border: 1.5px solid var(--accent-color);
+    border-radius: .7rem;
+}
+
+.buttonGeneral:hover {
+    background-color: var(--accent-color);
+    color: var(--accent-text-color);
+    cursor: pointer;
+}
+
+.buttonSecondary {
+    padding: .3rem 1.2rem;
+    color: var(--primary-color);
+    border: 1.5px solid var(--primary-color);
+    border-radius: .7rem;
+}
+
+.buttonSecondary:hover {
+    border-color: var(--primary-hover-color);
+    color: var(--primary-hover-color);
+}
+
+.buttonFeature1 {
+    background-color: var(--feature-btn-color);
+    color: var(--accent-text-color);
+    font-weight: var(--bold-font-weight);
+    border-radius: .7rem;
+    text-align: center;
+    padding: .3rem 1.2rem;
+    margin: 1rem 0 0 0;
+}
+
+.buttonFeature1:hover {
+    background-color: var(--feature-btn-hover-color);
+}
+
+.buttonFeature2 {
+    background-color: var(--extra-bg-color);
+    color: var(--donate-text-color);
+    font-weight: var(--bold-font-weight);
+    padding: .3rem 1rem;
+    margin: .2rem 0;
+    border: 1px solid var(--extra-bg-color);
+    border-radius: 10px;
+}
+
+.buttonFeature2:focus {
+    color: var(--donate-text-hover-color);
+}
+
+.buttonFeature2:hover {
+    background-color: var(--extra-bg-hover-color);
+    color: var(--donate-text-hover-color);
+    cursor: pointer;
+}

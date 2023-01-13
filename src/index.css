@@ -1,13 +1,137 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+/* used my-* classes to distinguish from bootstrap classes */
+
+
+/* Google Fonts  */
+@import url('https://fonts.googleapis.com/css2?family=Bubblegum+Sans&family=Nunito+Sans:wght@300;400;700&family=Nunito:wght@300;400;700&display=swap');
+
+
+/* --------------- RESET ------------- */
+
+html, 
+body, 
+header, 
+footer, 
+section, 
+article, 
+h1, 
+h2, 
+h3, 
+p, 
+a, 
+button, 
+ul, 
+address, 
+svg {
+    margin: 0;
+    border: 0;
+    padding: 0;
+    font: inherit;
+    color: inherit;
+    background: transparent;
+    text-decoration: none;
+    box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+img {
+    display: block;
+    width: 100%;
+    height: auto;
 }
+
+li {
+    list-style: none;
+}
+
+.container-xxl {
+    padding: 0;
+}
+
+.row, .row * {
+    margin: 0;
+    padding: 0;
+    width: auto;
+}
+
+/* --------------- DEFAULTS ------------- */
+
+:root {
+
+    --primary-color: #11644d;
+    --primary-hover-color: #0a4031;
+    --primary-text-hover-color: #002211;
+    --static-bg-color: #11644d;
+    --extra-bg-color: #11644d;
+    --extra-bg-hover-color: #0a4031;
+    --contact-title-color: white;
+    --donate-text-color: white;
+    --donate-text-hover-color: white;
+
+    --primary-text-color: white;
+
+    --accent-color: #cc4b00;
+    --accent-hover-color: #a53e02;
+    --accent-text-color: white;
+    --feature-btn-color: #cc4b00;
+    --feature-btn-hover-color: #a53e02;
+
+    --body-bg-color: white;
+    --grey-bg-color: #EDEDED;
+    --grey-font-color: #616161;
+    --backdrop-color: #000000;
+    --modal-bg-color: rgba(0, 0, 0, 0.6);
+    
+
+    --main-font-family: "Nunito";
+    --body-font-family: "Nunito Sans";
+    --body-font-weight: 300;
+    --body-strong-font-weight: 400;
+    --bold-font-weight: 700;
+
+    --body-font-size: 1.1rem;
+    --header-font-size: 1.3rem;
+}
+
+body {
+    color: var(--primary-color);
+    font-family: var(--body-font-family);
+    font-size: var(--body-font-size);
+    background-color: var(--body-bg-color);
+    font-weight: var(--body-font-weight);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+svg {
+    fill: var(--primary-color);
+    stroke: var(--primary-color);
+}
+
+button {
+  display: inline;
+}
+
+@media screen and (min-width: 640px) {
+
+    .button {
+        font-size: 1.25rem;
+    }
+
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --primary-color: #00bd87;
+        --primary-hover-color: #6cf7cf;
+        --grey-font-color: #dfdfdf;
+        --body-bg-color: #292b2d;
+        --grey-bg-color: #535353;
+        --accent-color: #f87021;
+        --accent-hover-color: #cd4b00;
+        --extra-bg-color: #555555;
+        --extra-bg-hover-color: #6c6c6c;
+        --contact-title-color: #00bd87;
+        --donate-text-color: #00bd87;
+        --donate-text-hover-color: #6cf7cf;
+    }
+}
+

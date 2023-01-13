@@ -1,25 +1,15 @@
-import logo from './logo.svg';
+import { ButtonFeature1, ButtonFeature2, ButtonGeneral, ButtonSecondary } from './Components/Buttons';
 import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+		<>
+      <ButtonGeneral>Visit Us</ButtonGeneral>
+      <ButtonSecondary>Cancel</ButtonSecondary>
+      <ButtonFeature1>Adopt</ButtonFeature1>
+      <ButtonFeature2>Donate</ButtonFeature2>
+    </>
+	);
 }
 
 export default App;
