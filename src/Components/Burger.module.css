@@ -1,0 +1,28 @@
+.burger {
+    border: none;
+}
+
+.burgerIcon {
+	width: 3rem;
+	height: 3rem;
+}
+
+.burgerIcon:hover {
+	stroke: var(--primary-hover-color);
+}
+
+/* this media query caters for the fairly small screen sizes 
+- esp. the one on amiresponsive.com's phone size  */
+@media screen and (max-width: 342px) {
+	.burgerIcon {
+		width: 2.5rem;
+		height: 2.5rem;
+	}
+}
+
+/* set to 992px later */
+@media screen and (min-width: 700px) {
+	.burger {
+		display: none;
+	}
+}

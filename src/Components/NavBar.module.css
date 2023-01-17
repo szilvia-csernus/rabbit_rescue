@@ -1,0 +1,55 @@
+.sideBarOpen {
+    
+    display: flex;
+    flex-direction: column;
+    padding: .7rem .7rem .4rem;
+    background-color: var(--body-bg-color);
+    font-family: var(--main-font-family);
+    font-size: var(--header-font-size);
+    font-weight: var(--body-font-weight);
+}
+
+.sideBarOpen > .navItem {
+    padding: .3rem 0;
+}
+
+.sideBarClosed {
+    display: none;
+}
+
+.navItem {
+    display: inline;
+    align-self: left;
+    line-height: 1.5rem;
+    margin: .6rem;
+}
+.navItem a {
+    display: inline-block;
+    font-weight: var(--body-strong-font-weight);
+    color: var(--primary-color);
+    margin-right: 1rem;
+}
+ 
+.navItem a.active {
+    color: var(--primary-hover-color);
+    border-bottom: 2px solid var(--primary-hover-color);
+}
+
+.navItem a:hover {
+    color: var(--primary-hover-color);
+}
+
+/* set to 992px later */
+@media screen and (min-width: 700px) {
+	.expandedMenuBar {
+		display: flex;
+        padding: .7rem .7rem 0;
+        align-items: flex-end;
+	}
+}
+
+/* medium and large screen navigation adjustments  */
+
+@media screen and (min-width: 992px) {
+    
+}

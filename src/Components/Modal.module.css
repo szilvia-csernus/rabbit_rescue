@@ -1,0 +1,41 @@
+.backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 10;
+    background: var(--backdrop-color);
+    opacity: .7;
+}
+
+.overlay {
+    position: relative;
+    z-index: 11;
+}
+
+.side {
+    position: absolute;
+    top: 1.1rem;
+    right: 0;
+    animation: slide-left 400ms;
+    width: 10rem;
+    height: 16rem;
+}
+
+.center {
+
+}
+
+
+@keyframes slide-left {
+    from {
+        opacity: 0;
+        transform: translateX(10rem);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}

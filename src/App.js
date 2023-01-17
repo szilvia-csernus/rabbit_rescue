@@ -1,14 +1,27 @@
-import { ButtonFeature1, ButtonFeature2, ButtonGeneral, ButtonSecondary } from './Components/Buttons';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import './App.css';
+import About from './Pages/About';
+import Adopt from './Pages/Adopt';
+import ContactUs from './Pages/ContactUs';
+import RootLayout from './Pages/RootLayout';
+import ErrorPage from './Pages/ErrorPage';
+
+const router = createBrowserRouter([
+	{
+		path: '/',
+		element: <RootLayout />,
+    errorElement: <ErrorPage />,
+		children: [
+			{ path: '/', element: <About /> },
+			{ path: '/adopt', element: <Adopt /> },
+			{ path: '/contact-us', element: <ContactUs /> },
+		],
+	},
+]);
 
 function App() {
   return (
-		<>
-      <ButtonGeneral>Visit Us</ButtonGeneral>
-      <ButtonSecondary>Cancel</ButtonSecondary>
-      <ButtonFeature1>Adopt</ButtonFeature1>
-      <ButtonFeature2>Donate</ButtonFeature2>
-    </>
+		<RouterProvider router={router} />
 	);
 }
 

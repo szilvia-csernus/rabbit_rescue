@@ -42,10 +42,6 @@ li {
     list-style: none;
 }
 
-.container-xxl {
-    padding: 0;
-}
-
 .row, .row * {
     margin: 0;
     padding: 0;
@@ -101,21 +97,33 @@ body {
     -moz-osx-font-smoothing: grayscale;
 }
 
+header {
+    padding: 1rem;
+    font-family: var(--main-font-family);
+    font-size: var(--header-font-size);
+}
+
 svg {
     fill: var(--primary-color);
     stroke: var(--primary-color);
 }
 
-button {
-  display: inline;
+h1 {
+    font-family: var(--main-font-family);
+    font-size: 1.4rem;
+    font-weight: var(--header-font-weight);
+    color: var(--primary-color);
+    text-align: center;
+    padding: 2rem 0;
 }
 
-@media screen and (min-width: 640px) {
-
-    .button {
-        font-size: 1.25rem;
-    }
-
+h2 {
+    font-family: var(--main-font-family);
+    font-size: 1.5rem;
+    font-weight: var(--body-strong-font-weight);
+    color: var(--primary-color);
+    text-align: center;
+    padding: 2rem 0;
 }
 
 @media (prefers-color-scheme: dark) {
