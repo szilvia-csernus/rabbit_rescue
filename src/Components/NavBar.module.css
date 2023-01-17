@@ -1,5 +1,4 @@
 .sideBarOpen {
-    
     display: flex;
     flex-direction: column;
     padding: .7rem .7rem .4rem;
@@ -19,7 +18,6 @@
 
 .navItem {
     display: inline;
-    align-self: left;
     line-height: 1.5rem;
     margin: .6rem;
 }
@@ -43,9 +41,13 @@
 @media screen and (min-width: 700px) {
 	.expandedMenuBar {
 		display: flex;
-        padding: .7rem .7rem 0;
-        align-items: flex-end;
+        align-items: center;
+        justify-content: flex-end;
 	}
+
+    .expandedMenuBar > .navItem:last-of-type {
+        margin-right: 0;
+    }
 }
 
 /* medium and large screen navigation adjustments  */

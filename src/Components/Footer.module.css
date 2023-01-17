@@ -1,0 +1,181 @@
+.footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: .7rem;
+    background-color: var(--static-bg-color);
+    color: var(--primary-text-color);
+    font-family: var(--body-font-family);
+    font-size: .9rem;
+    letter-spacing: .05rem;
+}
+
+.footer svg {
+    fill: transparent;
+    stroke: var(--primary-text-color);
+}
+
+.footerMain {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+}
+
+.footerContacts {
+    align-items: flex-start;
+}
+
+.footerContacts a:hover {
+    color: inherit;
+}
+
+.footerItem {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.footerItem:first-of-type {
+    align-items: flex-start;
+}
+
+.footerItemSocial {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-self: center;
+    margin-top: 2rem;
+}
+
+.followUs {
+    display: none;
+}
+
+.footerSocialBox {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footerSocialBox {
+    width: auto;
+    height: auto;
+}
+
+.footerSmallPrint {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+    font-size: .8rem;
+}
+
+.footerSmallPrint p {
+    text-align: center;
+}
+
+.footerSmallPrint > p > span {
+    font-size: 1rem;
+}
+
+.footerAlignBox {
+    display: flex;
+    flex-direction: column;
+}
+
+.locationIcon {
+    stroke-width: 1.5;
+    width: 40px;
+    height: 40px;
+    margin-right: 7px;
+}
+
+.phoneIcon {
+    stroke-width: 2;
+    width: 35px;
+    height: 35px;
+    margin-right: 16px;  
+}
+
+.letterIcon {
+    stroke-width: 1.5;
+    width: 40px;
+    height: 30px;
+    margin-right: 9px;
+}
+
+.footerItem svg {
+    display: none;
+}
+
+.footerAddress address {
+        text-align: center;
+    }
+
+.footerSocialIcon {
+    stroke-width: 1.5;
+    width: 40px;
+    height: 40px;
+    margin: 0 8px;
+}
+
+@media screen and (min-width: 992px) {
+    .footer {
+        font-size: 1rem;
+        letter-spacing: .05rem;
+    }
+    
+    .footerMain {
+        display: block;
+
+    }
+
+    .footerAlignBox {
+        display: grid;
+        grid-template-columns: 1fr 15rem 1fr;
+        align-items: flex-start;
+    }
+
+    .footerItem svg {
+        display: inline-block;
+}
+
+    .footerAddress {
+        justify-content: flex-start;
+    }
+
+    .footerAddress address {
+        text-align: start;
+    }
+
+    .footerContacts {
+        display: flex;
+        flex-direction: column;
+        order: 3;
+        justify-content: center;
+        align-items: flex-end;
+    }
+
+    .footerItemSocial {
+        align-self: center;
+        padding: 0 2rem;
+        margin: 0;
+    }
+
+    .followUs {
+        display: block;
+        align-self: center;
+        margin-bottom: 8px;
+    }
+}
+
+@media screen and (min-width: 1400px) {
+    .footer {
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+}
