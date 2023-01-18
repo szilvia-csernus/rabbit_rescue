@@ -1,8 +1,3 @@
-import { ReactComponent as RabbitRightIcon } from '../assets/icons/rabbit-right.svg';
-import { ReactComponent as RabbitLeftIcon } from '../assets/icons/rabbit-left.svg';
-import { ReactComponent as VisitUsIcon } from '../assets/icons/visit-us.svg'; 
-import { ReactComponent as GiftIcon } from '../assets/icons/gift.svg'; 
-import { ReactComponent as VolunteerIcon } from '../assets/icons/volunteer.svg'; 
 import { ReactComponent as FacebookIcon } from '../assets/icons/facebook.svg'; 
 import { ReactComponent as InstagramIcon } from '../assets/icons/instagram.svg'; 
 import { ReactComponent as TwitterIcon } from '../assets/icons/twitter.svg'; 

@@ -7,7 +7,7 @@ import Modal from './Modal';
 import { useEffect, useState } from 'react';
 
 const NavBar = () => {
-	const initialMenu = window.innerWidth > 700 ? true : false
+	const initialMenu = window.innerWidth > 992 ? true : false
 	const [expandedMenu, setExpandedMenu] = useState(initialMenu);
 	
 	const burger = useSelector((state) => state.burger);
@@ -28,10 +28,10 @@ const NavBar = () => {
 	useEffect(() => {
 		function handleResize() {
 			
-			if (expandedMenu && window.innerWidth < 700) {
+			if (expandedMenu && window.innerWidth < 992) {
 				setExpandedMenu(false)
 			}
-			if (expandedMenu === false && window.innerWidth >= 700) {
+			if (expandedMenu === false && window.innerWidth >= 992) {
 				setExpandedMenu(true)
 				// close the sidebar in case it was open.
 				clickHandler();

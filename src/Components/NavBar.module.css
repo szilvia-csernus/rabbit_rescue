@@ -37,8 +37,7 @@
     color: var(--primary-hover-color);
 }
 
-/* set to 992px later */
-@media screen and (min-width: 700px) {
+@media screen and (min-width: 992px) {
 	.expandedMenuBar {
 		display: flex;
         align-items: center;
@@ -48,10 +47,4 @@
     .expandedMenuBar > .navItem:last-of-type {
         margin-right: 0;
     }
-}
-
-/* medium and large screen navigation adjustments  */
-
-@media screen and (min-width: 992px) {
-    
 }

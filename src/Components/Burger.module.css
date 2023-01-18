@@ -21,7 +21,7 @@
 }
 
 /* set to 992px later */
-@media screen and (min-width: 700px) {
+@media screen and (min-width: 992px) {
 	.burger {
 		display: none;
 	}

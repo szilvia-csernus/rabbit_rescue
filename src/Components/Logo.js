@@ -1,11 +1,11 @@
 import classes from './Logo.module.css';
 import { ReactComponent as RabbitLogo } from '../assets/icons/rabbit-logo.svg'
+import { Link } from 'react-router-dom';
 
 export const Logo = () => {
 	return (
-		<a
-			id="my-logo-link"
-			href="./index.html"
+		<Link
+			to='/'
 			aria-label="Hopper rabbit rescue logo"
 		>
 			<div className={classes.logoGrid}>
@@ -13,6 +13,6 @@ export const Logo = () => {
 				<div className={classes.logoHopper}>hopper farm</div>
 				<div className={classes.logoRabbitRescue}>rabbit rescue</div>
 			</div>
-		</a>
+		</Link>
 	);
 };
