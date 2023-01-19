@@ -9,14 +9,14 @@ import { Link } from 'react-router-dom';
 
 import classes from './About.module.css';
 import { HeroImage } from '../Components/MainImages';
-import { Article, ArticleLeft, ArticleRight } from '../Components/Article';
+import { ArticleLeft, ArticleMission, ArticleRight } from '../Components/Article';
 
 const About = () => {
 	return (
 		<main>
 			<HeroImage />
 
-			<Article>
+			<ArticleMission>
 				<h1>Who we are and what we do?</h1>
 				<div className={classes.missionText}>
 					<p>
@@ -25,7 +25,7 @@ const About = () => {
 						abandoned rabbit that arrives in our centre.
 					</p>
 				</div>
-			</Article>
+			</ArticleMission>
 			<ArticleLeft>
 				<div>
 					<RabbitLeftIcon
@@ -39,9 +39,9 @@ const About = () => {
 				</div>
 				<div>
 					<p>
-						Whether it&apos;s <span>rescuing rabbits</span> from mistreatment or
-						<span>taking in abandoned ones</span>, we always give them the
-						specialist attention they need. We look after them until we find the
+						Whether it&apos;s <span>rescuing rabbits</span> from mistreatment or 
+						<span> taking in abandoned ones</span>, we always give them the 
+						specialist attention they need. We look after them until we find the 
 						right owners to adopt them into loving, happy homes.
 					</p>
 					<h2>Interested in adopting?</h2>
@@ -62,11 +62,11 @@ const About = () => {
 				<div>
 					<p>
 						<span>
-							We are open to prospective bunny parents on Saturdays from 10am to
+							We are open to prospective bunny parents on Saturdays from 10am to 
 							5pm.
 						</span>
-						Here, you have the chance to meet and play with our rabbit residents
-						and also learn about how to care for them. Our friendly volunteers
+						Here, you have the chance to meet and play with our rabbit residents 
+						and also learn about how to care for them. Our friendly volunteers 
 						will tell you everything you need to know about adoption.
 					</p>
 					<h2>Would you like to meet our bunnies?</h2>
@@ -83,11 +83,11 @@ const About = () => {
 				</div>
 				<div>
 					<p>
-						All the work we do would not be possible without our
-						<span>wonderful volunteers</span> and the
-						<span>generous support</span> we get through public donations. All
-						donations we receive help fund the welfare of our furry friends,
-						from vet bills and treatments to food, hay and bedding.
+						All the work we do would not be possible without our 
+						<span>wonderful volunteers</span> and the 
+						<span>generous support</span> we get through public donations. All 
+						donations we receive help fund the welfare of our furry friends, 
+						from vet bills and treatments to food, hay and bedding. 
 					</p>
 					<h2>Please consider supporting us.</h2>
 				</div>
@@ -101,7 +101,7 @@ const About = () => {
 				</div>
 				<div>
 					<p>
-						<span>Interested in volunteering with us?</span>
+						<span>Interested in volunteering with us? </span>
 						We are always in need of a helping hand (or two).
 					</p>
 					<h2>Please get in touch.</h2>

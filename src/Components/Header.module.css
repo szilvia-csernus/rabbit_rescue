@@ -3,7 +3,7 @@
 	justify-content: space-between;
 	align-items: flex-end;
 	font-size: var(--header-font-size);
-	padding: .7rem;
+	padding: 1.5rem .7rem 1rem;
 }
 
 @media screen and (min-width: 1400px) {

@@ -18,3 +18,17 @@ export const ArticleRight = (props) => {
         <Article className={classes.articleRight}>{props.children}</Article>
     )
 }
+
+export const ArticleMission = (props) => {
+    return (
+        <Article className={classes.articleMission}>{props.children}</Article>
+    )
+}
+
+export const ArticleAdopt = (props) => {
+	return <Article className={classes.articleAdopt}>{props.children}</Article>;
+};
+
+export const ArticleGallery = (props) => {
+	return <Article className={classes.articleGallery}>{props.children}</Article>;
+};

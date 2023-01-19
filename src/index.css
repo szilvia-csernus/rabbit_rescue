@@ -80,7 +80,7 @@ li {
     --main-font-family: "Nunito";
     --body-font-family: "Nunito Sans";
     --body-font-weight: 300;
-    --body-strong-font-weight: 400;
+    --strong-font-weight: 400;
     --bold-font-weight: 700;
 
     --body-font-size: 1.1rem;
@@ -108,6 +108,7 @@ main {
 }
 
 svg {
+    display: inline-block;
     fill: var(--primary-color);
     stroke: var(--primary-color);
 }
@@ -115,7 +116,7 @@ svg {
 h1 {
     font-family: var(--main-font-family);
     font-size: 1.4rem;
-    font-weight: var(--header-font-weight);
+    font-weight: var(--bold-font-weight);
     color: var(--primary-color);
     text-align: center;
     padding: 2rem 0;

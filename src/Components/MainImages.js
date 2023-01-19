@@ -19,11 +19,13 @@ import { ButtonFeature1 } from './Buttons';
 import { Link } from 'react-router-dom';
 
 export const HeroImage = () => {
+	const webp = "image/webp";
+	const png = "image/png";
 	return (
 		<section className={classes.heroImgBox}>
 			<picture>
 				<source
-					type="image/webp"
+					type={webp}
 					media="(max-width: 414px)"
 					srcSet={`${heroImageSmWebp} 414w, ${heroImageSmHigherResWebp} 720w`}
 					sizes="(max-width: 414px) 414px, 720px"
@@ -31,7 +33,7 @@ export const HeroImage = () => {
 					height="497"
 				/>
 				<source
-					type="image/webp"
+					type={webp}
 					media="(max-width: 991px)"
 					srcSet={heroImageMdWebp}
 					sizes="992px"
@@ -39,14 +41,14 @@ export const HeroImage = () => {
 					height="405"
 				/>
 				<source
-					type="image/webp"
+					type={webp}
 					media="(min-width: 992px)"
 					srcSet={heroImageLgWebp}
 					width="1400"
 					height="571"
 				/>
 				<source
-					type="image/png"
+					type={png}
 					srcSet={`${heroImageSmPng} 500w,
                     			${heroImageMdPng} 992w, 
                     			${heroImageLgPng} 1400w"`}
@@ -76,10 +78,12 @@ export const HeroImage = () => {
 };
 
 export const AdoptImage = () => {
+	const webp = 'image/webp';
+	const png = 'image/png';
 	return (
 		<picture className={classes.adoptImgBox}>
 			<source
-				type="image/webp"
+				type={webp}
 				media="(max-width: 414px)"
 				srcSet={`${adoptingImageSmWebp} 414w, ${adoptingImageSmHigherResWebp} 720w`}
 				sizes="(max-width: 414px) 414px, 720px"
@@ -87,7 +91,7 @@ export const AdoptImage = () => {
 				height="183"
 			/>
 			<source
-				type="image/webp"
+				type={webp}
 				media="(max-width: 991px)"
 				srcSet={adoptingImageMdWebp}
 				sizes="992px"
@@ -95,7 +99,7 @@ export const AdoptImage = () => {
 				height="271"
 			/>
 			<source
-				type="image/webp"
+				type={webp}
 				media="(min-width: 992px)"
 				srcSet={adoptingImageLgWebp}
 				sizes="1400px"
@@ -103,7 +107,7 @@ export const AdoptImage = () => {
 				height="393"
 			/>
 			<source
-				type="image/png"
+				type={png}
 				srcSet={`${adoptingImageSmPng} 414w,
                     			${adoptingImageMdPng} 992w, 
                     			${adoptingImageLgPng} 1400w"`}

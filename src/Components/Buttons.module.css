@@ -39,6 +39,7 @@
 
 .feature1:hover {
     background-color: var(--feature-btn-hover-color);
+    border-color: var(--feature-btn-hover-color);
 }
 
 .feature2 {
