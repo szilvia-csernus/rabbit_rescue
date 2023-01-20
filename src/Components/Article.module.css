@@ -8,72 +8,37 @@
 	align-items: center;
 }
 
-.article > div > svg {
+.articleLeft svg,
+.articleRight svg {
 	width: 4rem;
 	height: auto;
 	margin: 0 0 1.5rem 0;
 }
 
-.article h2 {
-    font-size: inherit;
-    color: inherit;
+.articleLeft h2,
+.articleRight h2 {
+	font-size: inherit;
+	color: inherit;
 }
 
-.article h2,
+.articleLeft h2,
+.articleRight h2,
 .article p {
 	text-align: left;
 }
 
-.article h2,
+.articleLeft h2,
+.articleRight h2,
 .article p > span {
 	font-weight: var(--strong-font-weight);
 }
 
-.articleMission {
-	margin: 0;
-	padding: 0;
-	border: none;
-    
-}
-
-.articleAdopt {
-	margin: 0;
-	padding: 0;
-	border: none;
-}
-
-.articleAdopt div {
-    border-top: 1px solid var(--grey-font-color);
-    padding: 2rem 1.5rem;
-}
-
-.articleAdopt button {
-    display: block;
-    margin: 2rem auto;
-}
-
-.articleGallery h2 {
-    font-size: 1.5rem;
-    color: var(--primary-color);
-    font-size: 1.5rem;
-    text-align: center;
-}
-
-.articleGallery button {
-    display: block;
-    margin: 4rem auto;
-}
-
-
 @media screen and (min-width: 640px) {
-	.article p,
-	.article h2 {
+	.articleLeft h2,
+	.articleRight h2,
+	.article p {
 		font-size: 1.25rem;
 	}
-
-    .articleGallery h2 {
-    font-size: 1.5rem;
-}
 }
 
 @media screen and (min-width: 860px) {
@@ -81,11 +46,6 @@
 		margin: 0 1rem;
 		padding-left: 3rem;
 		padding-right: 3rem;
-	}
-
-	.articleMission {
-		margin: 0;
-		padding: 0;
 	}
 
 	.articleLeft {

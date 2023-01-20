@@ -9,14 +9,14 @@ import { Link } from 'react-router-dom';
 
 import classes from './About.module.css';
 import { HeroImage } from '../Components/MainImages';
-import { ArticleLeft, ArticleMission, ArticleRight } from '../Components/Article';
+import { ArticleLeft, Article, ArticleRight } from '../Components/Article';
 
 const About = () => {
 	return (
 		<main>
 			<HeroImage />
 
-			<ArticleMission>
+			<Article className={classes.mission}>
 				<h1>Who we are and what we do?</h1>
 				<div className={classes.missionText}>
 					<p>
@@ -25,7 +25,7 @@ const About = () => {
 						abandoned rabbit that arrives in our centre.
 					</p>
 				</div>
-			</ArticleMission>
+			</Article>
 			<ArticleLeft>
 				<div>
 					<RabbitLeftIcon
@@ -97,7 +97,7 @@ const About = () => {
 			</ArticleLeft>
 			<ArticleRight>
 				<div>
-					<VolunteerIcon aria-label="helping hands icon" />
+					<VolunteerIcon className={classes.volunteerIcon} aria-label="helping hands icon" />
 				</div>
 				<div>
 					<p>

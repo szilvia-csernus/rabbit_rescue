@@ -1,55 +1,40 @@
-/* Gallery  */
-
-.galleryTitle {
-    font-size: 1.5rem;
-    color: var(--primary-color);
-    font-size: 1.5rem;
-    text-align: center;
+.adopt {
+	margin: 0;
+	padding: 0;
+	border: none;
 }
 
-#my-gallery > .my-gallery-img-box {
-    display: inline-block;
-    width: 100%;
-    position: relative;
-    margin-bottom: .3rem;
+.adopt div {
+	border-top: 1px solid var(--grey-font-color);
+	padding: 2rem 1.5rem;
 }
 
-#my-gallery {
-    clear: both;
-    column-count: 2;
-    column-gap: .3rem;
+.icon {
+	width: 4rem;
+	height: auto;
+	margin: 0 0 1.5rem 0;
 }
 
-#my-gallery img {
-    display: inline;
+.adopt button {
+	display: block;
+	margin: 2rem auto;
 }
 
-#my-gallery picture::before {
-    content: attr(dataname);
-    position: absolute;
-    border: 1px solid var(--my-static-bg-color);
-    border-radius: 0 .7rem .7rem 0;
-    background-color: var(--my-static-bg-color);
-    color: var(--my-accent-text-color);
-    padding: 0.2rem 0.5rem;
-    margin: .5rem .5rem .5rem 0;
-    font-size: 1rem;
+.gallery h2 {
+	margin-bottom: 2rem;
+	font-size: 1.5rem;
+	color: var(--primary-color);
+	font-size: 1.5rem;
+	text-align: center;
+}
+
+.gallery button {
+	display: block;
+	margin: 4rem auto;
 }
 
 @media screen and (min-width: 640px) {
-
-    #my-gallery {
-        column-count: 3;
-    }
-
-    #my-gallery picture::before {
-        font-size: var(--my-body-font-size);
-    }
-}
-
-@media screen and (min-width: 1200px) {
-
-    #my-gallery {
-        column-count: 4;
-    }
+	.gallery h2 {
+		font-size: 1.5rem;
+	}
 }

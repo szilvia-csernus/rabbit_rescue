@@ -9,6 +9,7 @@
 }
 
 .logoRabbit {
+    fill: var(--primary-color);
     grid-area: 1 / 1 / 4 / 2;
     display: block;
     width: 3.8rem;

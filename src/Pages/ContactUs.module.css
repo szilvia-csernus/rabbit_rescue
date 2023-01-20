@@ -1,0 +1,161 @@
+.contactItem {
+	display: flex;
+	justify-content: flex-start;
+	align-items: flex-start;
+	margin-bottom: 1rem;
+}
+
+.locationIcon {
+	stroke-width: 1.5;
+	fill: none;
+	width: 40px;
+	height: 40px;
+	margin-right: 1rem;
+    margin-top: .3rem;
+}
+
+.titleBox {
+	background-color: var(--extra-bg-color);
+	margin-bottom: 1.5rem;
+}
+
+.title {
+	color: var(--contact-title-color);
+}
+
+.articleTitle {
+	font-size: 1.5rem;
+	font-weight: var(--bold-font-weight);
+	color: var(--primary-color);
+	text-align: center;
+	margin: 1rem 0;
+}
+
+.location {
+	padding-top: 0;
+}
+
+.googleMap {
+	width: 100%;
+	height: auto;
+}
+
+.googleMap > iframe {
+	width: 100%;
+	height: 450px;
+}
+
+@media (prefers-color-scheme: dark) {
+	.googleMap > iframe {
+		filter: hue-rotate(180deg) invert(100%) contrast(80%);
+	}
+}
+
+.buttonBox {
+	display: block;
+	margin: 2rem auto;
+}
+
+.volunteerIconBox {
+	order: 4;
+	margin: 2rem;
+}
+
+.volunteerIcon {
+	fill: var(--primary-color);
+	stroke-width: 0.5;
+	width: 4rem;
+	height: auto;
+}
+
+.volunteer > p {
+	text-align: center;
+	padding: 1rem 0;
+}
+
+.phoneIcon,
+.letterIcon {
+	display: none;
+}
+
+.questions a:hover {
+	color: var(--primary-hover-color);
+}
+
+.questions p {
+	margin-bottom: 2rem;
+}
+
+.rabbitLeftIcon {
+	width: 4rem;
+	height: auto;
+	margin: 4rem;
+}
+
+.emailIcon:hover,
+.phoneIcon:hover {
+	stroke: var(--primary-hover-color);
+}
+
+.volunteerIcon,
+.rabbitLeftIcon {
+	fill: var(--primary-color);
+}
+
+@media screen and (min-width: 640px) {
+	.titleBox {
+		padding-left: 2rem;
+		padding-right: 2rem;
+	}
+
+    .phoneIcon,
+	.letterIcon {
+        display: inline-block;
+		stroke-width: 1.5;
+		width: 2.5rem;
+		height: auto;
+		margin-right: 1rem;
+		vertical-align: bottom;
+	}
+}
+
+@media screen and (min-width: 860px) {
+	.titleBox {
+		padding-left: 3rem;
+		padding-right: 3rem;
+	}
+
+	.location {
+		display: grid;
+		grid-template-rows: 7rem 1fr 9rem;
+		grid-template-columns: 30% 70%;
+		padding-top: 1rem;
+	}
+
+	.location > h2 {
+		grid-area: 1 / 1 / 2 / 3;
+	}
+
+	.contactItem {
+		grid-area: 2 / 1 / 3 / 2;
+		align-self: flex-start;
+		margin-right: 0.5rem;
+	}
+
+	.location > .googleMap {
+		grid-area: 2 / 2 / 3 / 3;
+	}
+
+	.location > p {
+		grid-area: 3 / 1 / 4 / 3;
+	}
+}
+
+@media screen and (min-width: 992px) {
+	.titleBox {
+		padding-left: 4rem;
+		padding-right: 4rem;
+	}
+
+	
+}

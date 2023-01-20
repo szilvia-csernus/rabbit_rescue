@@ -109,7 +109,6 @@ main {
 
 svg {
     display: inline-block;
-    fill: var(--primary-color);
     stroke: var(--primary-color);
 }
 
