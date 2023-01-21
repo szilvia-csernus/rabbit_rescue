@@ -3,16 +3,18 @@ import classes from './NavBar.module.css';
 import { NavLink } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { burgerActions } from '../store/burger-slice';
+import { donateFormActions } from '../store/donate-form-slice';
 import Modal from './Modal';
 import { useEffect, useState } from 'react';
 
 const NavBar = () => {
-	const initialMenu = window.innerWidth > 992 ? true : false
-	const [expandedMenu, setExpandedMenu] = useState(initialMenu);
+	const initialExpandedMenu = window.innerWidth > 992 ? true : false
+	const [expandedMenu, setExpandedMenu] = useState(initialExpandedMenu);
 	
 	const burger = useSelector((state) => state.burger);
 	const classProp = burger ? classes.sideBarOpen : classes.sideBarClosed;
 
+	const donateForm = useSelector((state) => state.donateForm);
 	
 	const dispatch = useDispatch();
 
@@ -20,11 +22,16 @@ const NavBar = () => {
 		dispatch(burgerActions.initialize(burger));
 	};
 
+	const donateClickHandler = () => {
+		dispatch(burgerActions.initialize(burger));
+		dispatch(donateFormActions.open(donateForm))
+	};
+
 	// This hook makes sure that the side menu changes to expanded menu after
 	// window resize and vica versa. Without 'handleresize', react would not
 	// re-render the page whenever the user resized the window, meaning the side
 	// menu (designed for mobile use) would stay open even after the window 
-	// expands. (i.e. turning the tablet from portrait to landscape.)
+	// expands. (e.g. turning the tablet from portrait to landscape.)
 	useEffect(() => {
 		function handleResize() {
 			
@@ -75,7 +82,7 @@ const NavBar = () => {
 				</NavLink>
 			</li>
 			<li className={classes.navItem}>
-				<ButtonFeature2 onClick={clickHandler}>Donate</ButtonFeature2>
+				<ButtonFeature2 onClick={donateClickHandler}>Donate</ButtonFeature2>
 			</li>
 		</>
 	);
@@ -88,7 +95,7 @@ const NavBar = () => {
 					<ul className={classProp}>{nav}</ul>
 				</Modal>
 			)}
-			{!burger && <ul className={classProp}>{nav}</ul>}
+			{!burger && <ul className={classProp}></ul>}
 		</nav>
 	);
 };

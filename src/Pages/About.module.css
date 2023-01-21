@@ -5,14 +5,17 @@
     
 }
 
-.missionText {
+.missionTextBox {
     background-color: var(--grey-bg-color);
     margin-bottom: 1.5rem;
 }
 
-.missionText > p {
+.missionText {
+
     padding: 1.5rem;
     font-family: var(--main-font-family);
+    font-weight: var(--strong-font-weight);
+    text-align: center;
 }
 
 .rabbitLeftIcon,
@@ -47,7 +50,7 @@
 
 @media screen and (min-width: 415px) {
 
-    .missionText > p {
+    .missionText {
         font-size: 1.1rem;
     }
 }
@@ -60,7 +63,7 @@
 		padding: 0;
 	}
 
-    .missionText > p {
+    .missionText {
         font-size: 1.3rem;
         padding-left: 4rem;
         padding-right: 4rem;
@@ -86,7 +89,7 @@
 
 @media screen and (min-width: 992px) {
     
-    .missionText > p {
+    .missionText {
         font-size: 1.4rem;
         padding-left: 4rem;
         padding-right: 4rem;

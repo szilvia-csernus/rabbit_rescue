@@ -3,13 +3,13 @@ import './App.css';
 import About from './Pages/About';
 import Adopt from './Pages/Adopt';
 import ContactUs from './Pages/ContactUs';
-import RootLayout from './Pages/RootLayout';
+import Root from './Pages/Root';
 import ErrorPage from './Pages/ErrorPage';
 
 const router = createBrowserRouter([
 	{
 		path: '/',
-		element: <RootLayout />,
+		element: <Root />,
     	errorElement: <ErrorPage />,
 		children: [
 			{ path: '/', element: <About /> },

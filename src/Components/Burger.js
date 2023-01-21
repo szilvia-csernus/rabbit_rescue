@@ -17,7 +17,7 @@ export const Burger = (props) => {
 			className={classes.burger}
 			onClick={clickHandler}
 		>
-			<BurgerIcon className={classes.burgerIcon} />
+			<BurgerIcon className={classes.burgerIcon} aria-label="burger menu icon"/>
 		</Button>
 	);
 };

@@ -10,9 +10,7 @@ const Header = (props) => {
 	return (
 		<header className={classes.header}>
 			<Logo />
-			<NavBar
-				id="navbar"
-			/>
+			<NavBar/>
 			<Burger />
 		</header>
 	);

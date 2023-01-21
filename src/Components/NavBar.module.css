@@ -23,7 +23,7 @@
 }
 .navItem a {
     display: inline-block;
-    font-weight: var(--body-strong-font-weight);
+    font-weight: var(--strong-font-weight);
     color: var(--primary-color);
     margin-right: 1rem;
 }

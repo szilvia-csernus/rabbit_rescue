@@ -1,4 +1,5 @@
 .gallery {
+	margin: 0 3rem;
 	clear: both;
 	column-count: 2;
 	column-gap: 0.3rem;

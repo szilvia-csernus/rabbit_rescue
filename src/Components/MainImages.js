@@ -59,7 +59,6 @@ export const HeroImage = () => {
 					src={heroImageLgPng}
 					width="1400"
 					height="571"
-					loading="lazy"
 					alt="cute bunny"
 				/>
 			</picture>
@@ -118,7 +117,6 @@ export const AdoptImage = () => {
 				src={adoptingImageLgPng}
 				width="1400"
 				height="393"
-				loading="lazy"
 				alt="two cute bunnies"
 			/>
 		</picture>

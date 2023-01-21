@@ -1,3 +1,10 @@
+.location,
+.volunteer,
+.questions {
+	border-top: 1px solid var(--grey-font-color);
+	padding: 3rem 4rem;
+}
+
 .contactItem {
 	display: flex;
 	justify-content: flex-start;

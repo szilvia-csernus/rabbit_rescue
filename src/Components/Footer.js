@@ -78,7 +78,7 @@ const Footer = () => {
 				<div className={classes.footerSmallPrint}>
 					<p>This website was created for educational purposes.</p>
 					<p>
-						Hopper Farm Rabbit Rescue is a fictional organization. No user input
+						Hopper Farm Rabbit Rescue is a fictional organisation. No user input
 						is stored on our servers.
 					</p>
 

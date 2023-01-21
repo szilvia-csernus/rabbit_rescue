@@ -1,0 +1,74 @@
+.donate {
+    display: block;
+    margin: auto;
+    color: var(--grey-font-color);
+    font-weight: var(--strong-font-weight);
+    background-color: var(--body-bg-color);
+    border: 1px solid var(--grey-bg-color);
+    border-radius: .5rem;
+    padding: 1rem;
+    animation: ease-in 400ms;
+    max-width: 30rem;
+    height: auto;
+}
+
+.header {
+   text-align: left;
+   font-size: 1.3rem;
+   padding: 1rem;
+}
+
+.body {
+    border-top: 1px solid var(--grey-font-color);
+    padding: 1rem;
+    font-size: 1.1rem;
+}
+
+.body p {
+    padding-bottom: 1rem;
+}
+
+.form {
+    padding: 1rem 0;
+}
+
+.formLabel {
+    display: block;
+}
+
+.formInput {
+     display: block;
+     border: 1px solid var(--grey-font-color);
+     border-radius: .5rem;
+     line-height: 2rem;
+     margin: .5rem 0 .2rem;
+     width: 100%;
+}
+
+.formInputInvalid {
+    border-color: rgb(248, 60, 60);
+}
+
+.formInputValid {
+    border-color: var(--primary-color);
+}
+
+.feedbackInvalid {
+    color: rgb(248, 60, 60);
+    font-size: 1rem;
+    margin-bottom: 1rem;
+}
+
+.feedbackValid {
+    visibility: hidden;
+}
+
+.footer {
+    display: flex;
+    justify-content: flex-end;
+    padding-top: 2rem;
+}
+
+.footer button {
+    margin-left: 1rem;
+}

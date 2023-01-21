@@ -18,10 +18,10 @@ const About = () => {
 
 			<Article className={classes.mission}>
 				<h1>Who we are and what we do?</h1>
-				<div className={classes.missionText}>
-					<p>
+				<div className={classes.missionTextBox}>
+					<p className={classes.missionText}>
 						We are a small non-profit organisation located in East Berkshire,
-						UK. Our mission is to find a loving home for every neglected or
+						UK. <br/> ur mission is to find a loving home for every neglected or
 						abandoned rabbit that arrives in our centre.
 					</p>
 				</div>
@@ -48,7 +48,7 @@ const About = () => {
 				</div>
 				<div className={classes.generalButtonBoxLeft}>
 					<ButtonGeneral>
-						<Link to="/adopt">Adopt</Link>
+						<Link to="/adopt">Find Out More</Link>
 					</ButtonGeneral>
 				</div>
 			</ArticleLeft>

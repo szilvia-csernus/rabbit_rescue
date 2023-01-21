@@ -24,6 +24,7 @@
     justify-content: space-around;
     font-family: var(--my-main-font-family);
     font-size: 1.2rem;
+    font-weight: var(--strong-font-weight);
     color: var(--my-primary-text-color);
     align-items: center;
 }

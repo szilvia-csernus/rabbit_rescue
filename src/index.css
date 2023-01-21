@@ -21,7 +21,9 @@ a,
 button, 
 ul, 
 address, 
-svg {
+svg,
+input,
+textarea {
     margin: 0;
     border: 0;
     padding: 0;
@@ -73,7 +75,6 @@ li {
     --body-bg-color: white;
     --grey-bg-color: #EDEDED;
     --grey-font-color: #616161;
-    --backdrop-color: #000000;
     --modal-bg-color: rgba(0, 0, 0, 0.6);
     
 

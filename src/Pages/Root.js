@@ -1,9 +1,12 @@
+import { useSelector } from 'react-redux';
 import { Outlet } from 'react-router-dom';
 import { Container } from '../Components/Container';
+import DonateForm from '../Components/DonateForm';
 import Footer from '../Components/Footer';
 import Header from '../Components/Header';
 
-const RootLayout = () => {
+const Root = () => {
+	const donateForm = useSelector((state) => state.donateForm);
 	return (
 		<>
 			<Container>
@@ -15,8 +18,9 @@ const RootLayout = () => {
 			<Container>
 				<Footer />
 			</Container>
+			{donateForm && <DonateForm/>}
 		</>
 	);
 };
 
-export default RootLayout;
+export default Root;

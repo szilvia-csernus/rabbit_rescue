@@ -1,11 +1,17 @@
 .article {
-	margin: 0 1.5rem;
-	padding: 2rem 0;
-	border-top: 1px solid var(--grey-font-color);
+	
 	display: flex;
 	flex-direction: column;
 	justify-content: space-around;
 	align-items: center;
+}
+
+.articleLeft,
+.articleRight {
+	margin: 0 1.5rem;
+	padding: 2rem 0;
+	border-top: 1px solid var(--grey-font-color);
+	font-size: 1.1rem;
 }
 
 .articleLeft svg,
@@ -22,8 +28,7 @@
 }
 
 .articleLeft h2,
-.articleRight h2,
-.article p {
+.articleRight h2 {
 	text-align: left;
 }
 
@@ -34,24 +39,27 @@
 }
 
 @media screen and (min-width: 640px) {
-	.articleLeft h2,
-	.articleRight h2,
-	.article p {
+	.articleLeft,
+	.articleRight {
 		font-size: 1.25rem;
 	}
 }
 
 @media screen and (min-width: 860px) {
-	.article {
+	/* .article {
 		margin: 0 1rem;
 		padding-left: 3rem;
 		padding-right: 3rem;
-	}
+	} */
 
 	.articleLeft {
 		display: grid;
 		grid-template-columns: 7rem 1fr;
 		grid-template-rows: 1fr 6rem;
+		margin: 0 1rem;
+		padding-left: 3rem;
+		padding-right: 3rem;
+		text-align: left;
 	}
 
 	.articleLeft > div:first-of-type {
@@ -66,6 +74,10 @@
 		display: grid;
 		grid-template-columns: 1fr 6rem;
 		grid-template-rows: 1fr 6rem;
+		margin: 0 1rem;
+		padding-left: 3rem;
+		padding-right: 3rem;
+		text-align: left;
 	}
 
 	.articleRight > div:first-of-type {
