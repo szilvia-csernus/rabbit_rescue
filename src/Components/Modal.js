@@ -27,6 +27,7 @@ const Canvas = (props) => {
 	return <div className={position}>{props.children}</div>;
 }
 
+
 const Modal = (props) => {
 	const portalElement = document.getElementById('overlay');
 	return (

@@ -1,15 +1,19 @@
 .donate {
     display: block;
     margin: auto;
-    color: var(--grey-font-color);
-    font-weight: var(--strong-font-weight);
-    background-color: var(--body-bg-color);
+    max-width: 30rem;
+    min-width: 22rem;
+    height: auto;
+
     border: 1px solid var(--grey-bg-color);
     border-radius: .5rem;
     padding: 1rem;
+
+    color: var(--grey-font-color);
+    font-weight: var(--strong-font-weight);
+    background-color: var(--body-bg-color);
+    
     animation: ease-in 400ms;
-    max-width: 30rem;
-    height: auto;
 }
 
 .header {
