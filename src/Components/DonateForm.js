@@ -6,6 +6,7 @@ import { ButtonGeneral, ButtonSecondary } from './Buttons';
 import Modal from './Modal';
 import { useDispatch } from 'react-redux';
 import { donateFormActions } from '../store/donate-form-slice';
+import { thankYouMessageActions } from '../store/thank-you-message-slice';
 
 const isNotEmpty = (value) => value.trim() !== '';
 const isEmail = (value) =>
@@ -43,13 +44,18 @@ const DonateForm = () => {
 			emailBlurHandler()
 			return;
 		}
-		
+
 		nameReset();
 		emailReset();
 		setPhoneNr('');
 		dispatch(donateFormActions.reset());
+		dispatch(thankYouMessageActions.open());
 	};
 	
+	const cancelClickHandler = (event) => {
+		event.preventDefault();
+		dispatch(donateFormActions.reset());
+	}
 	useEffect(() => {
 		if (nameIsValid && emailIsValid) {
 			setFormValid(true);
@@ -132,7 +138,7 @@ const DonateForm = () => {
 						/>
 
 						<div className={classes.footer}>
-							<ButtonSecondary>Cancel</ButtonSecondary>
+							<ButtonSecondary onClick={cancelClickHandler}>Cancel</ButtonSecondary>
 							<ButtonGeneral type="submit">Send</ButtonGeneral>
 						</div>
 					</form>

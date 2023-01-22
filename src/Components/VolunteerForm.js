@@ -6,6 +6,7 @@ import { ButtonGeneral, ButtonSecondary } from './Buttons';
 import Modal from './Modal';
 import { useDispatch } from 'react-redux';
 import { volunteerFormActions } from '../store/volunteer-form-slice';
+import { thankYouMessageActions } from '../store/thank-you-message-slice';
 
 const isNotEmpty = (value) => value.trim() !== '';
 const isEmail = (value) =>
@@ -51,11 +52,12 @@ const VolunteerForm = () => {
 			return;
 		}
 
-        dispatch(volunteerFormActions.reset());
 		nameReset();
 		emailReset();
         setPhoneNr('');
         setMessage('');
+        dispatch(volunteerFormActions.reset());
+        dispatch(thankYouMessageActions.open());
 	};
 
 	const nameClassNames = `${classes.formInput} ${
