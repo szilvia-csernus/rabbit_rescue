@@ -7,9 +7,16 @@ import { Article } from '../Components/Article';
 import { ButtonGeneral } from '../Components/Buttons';
 
 import classes from './ContactUs.module.css';
+import { useDispatch } from 'react-redux';
+import { volunteerFormActions } from '../store/volunteer-form-slice';
 
 
 const ContactUs = () => {
+	const dispatch = useDispatch();
+
+	const volunteerClickHandler = () => {
+		dispatch(volunteerFormActions.open());
+	};
 	
 	return (
 		<main>
@@ -71,7 +78,7 @@ const ContactUs = () => {
 					Please get in touch.
 				</p>
 				<div className={classes.buttonBox}>
-					<ButtonGeneral>Volunteer</ButtonGeneral>
+					<ButtonGeneral onClick={volunteerClickHandler}>Volunteer</ButtonGeneral>
 				</div>
 			</Article>
 			<Article className={classes.questions}>

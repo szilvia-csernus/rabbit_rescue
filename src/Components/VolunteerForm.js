@@ -5,18 +5,18 @@ import useInput from '../Hooks/use-input';
 import { ButtonGeneral, ButtonSecondary } from './Buttons';
 import Modal from './Modal';
 import { useDispatch } from 'react-redux';
-import { donateFormActions } from '../store/donate-form-slice';
+import { volunteerFormActions } from '../store/volunteer-form-slice';
 
 const isNotEmpty = (value) => value.trim() !== '';
 const isEmail = (value) =>
 	/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/.test(value);
 
-const DonateForm = () => {
-
+const VolunteerForm = () => {
 	const [formValid, setFormValid] = useState(false);
-	const [phoneNr, setPhoneNr] = useState('');
-	const dispatch = useDispatch();
-	
+    const [phoneNr, setPhoneNr] = useState('');
+    const [message, setMessage] = useState('');
+    const dispatch = useDispatch();
+
 	const {
 		value: nameValue,
 		isValid: nameIsValid,
@@ -35,29 +35,28 @@ const DonateForm = () => {
 		reset: emailReset,
 	} = useInput(isEmail);
 
+	useEffect(() => {
+		if (nameIsValid && emailIsValid) {
+			setFormValid(true);
+		}
+		return () => setFormValid(false);
+	}, [nameIsValid, emailIsValid]);
+
 	const submitHandler = (event) => {
 		event.preventDefault();
 
 		if (!formValid) {
 			nameBlurHandler();
-			emailBlurHandler()
+			emailBlurHandler();
 			return;
 		}
-		
+
+        dispatch(volunteerFormActions.reset());
 		nameReset();
 		emailReset();
-		setPhoneNr('');
-		dispatch(donateFormActions.reset());
+        setPhoneNr('');
+        setMessage('');
 	};
-	
-	useEffect(() => {
-		if (nameIsValid && emailIsValid) {
-			setFormValid(true);
-		} 
-		return () => setFormValid(false)
-	}, [nameIsValid, emailIsValid]);
-
-	
 
 	const nameClassNames = `${classes.formInput} ${
 		nameHasError && classes.formInputInvalid
@@ -69,13 +68,10 @@ const DonateForm = () => {
 	return (
 		<Modal pos={'centre'}>
 			<section className={classes.content}>
-				<h2 className={classes.header}>DONATE</h2>
+				<h2 className={classes.header}>VOLUNTEER</h2>
 				<div className={classes.body}>
-					<p>
-						We are in the process of setting up automatic payment methods but
-						for now, let us contact you the traditional ways.
-					</p>
-					<p>Thank you for considering donating to us!</p>
+					<p>Please fill in the form so we can contact you.</p>
+
 					<form className={classes.form} onSubmit={submitHandler}>
 						<label htmlFor="name" className={classes.formLabel}>
 							Name*
@@ -88,7 +84,6 @@ const DonateForm = () => {
 							onChange={nameChangeHandler}
 							onBlur={nameBlurHandler}
 							value={nameValue}
-							formNoValidate
 						/>
 						<div
 							className={
@@ -109,7 +104,6 @@ const DonateForm = () => {
 							onChange={emailChangeHandler}
 							onBlur={emailBlurHandler}
 							value={emailValue}
-							formNoValidate
 						/>
 						<div
 							className={
@@ -131,6 +125,19 @@ const DonateForm = () => {
 							onChange={(event) => setPhoneNr(event.target.value)}
 						/>
 
+						<label htmlFor="message" className={classes.formLabel}>
+							In 1-2 sentences, please tell us about how you would like to
+							support our work. (optional)
+						</label>
+						<textarea
+							id="message"
+							className={classes.formInput}
+							rows="6"
+							placeholder="Your message"
+							value={message}
+							onChange={(event) => setMessage(event.target.value)}
+						></textarea>
+
 						<div className={classes.footer}>
 							<ButtonSecondary>Cancel</ButtonSecondary>
 							<ButtonGeneral type="submit">Send</ButtonGeneral>
@@ -142,4 +149,4 @@ const DonateForm = () => {
 	);
 };
 
-export default DonateForm;
+export default VolunteerForm;

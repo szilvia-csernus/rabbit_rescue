@@ -10,8 +10,21 @@ import { Link } from 'react-router-dom';
 import classes from './About.module.css';
 import { HeroImage } from '../Components/MainImages';
 import { ArticleLeft, Article, ArticleRight } from '../Components/Article';
+import { useDispatch } from 'react-redux';
+import { donateFormActions } from '../store/donate-form-slice';
+import { volunteerFormActions } from '../store/volunteer-form-slice';
 
 const About = () => {
+	const dispatch = useDispatch();
+
+	const donateClickHandler = () => {
+		dispatch(donateFormActions.open());
+	}
+
+	const volunteerClickHandler = () => {
+		dispatch(volunteerFormActions.open());
+	}
+
 	return (
 		<main>
 			<HeroImage />
@@ -92,7 +105,7 @@ const About = () => {
 					<h2>Please consider supporting us.</h2>
 				</div>
 				<div className={classes.generalButtonBoxLeft}>
-					<ButtonGeneral>Donate</ButtonGeneral>
+					<ButtonGeneral onClick={donateClickHandler}>Donate</ButtonGeneral>
 				</div>
 			</ArticleLeft>
 			<ArticleRight>
@@ -107,7 +120,7 @@ const About = () => {
 					<h2>Please get in touch.</h2>
 				</div>
 				<div className={classes.generalButtonBoxRight}>
-					<ButtonGeneral>Volunteer</ButtonGeneral>
+					<ButtonGeneral onClick={volunteerClickHandler}>Volunteer</ButtonGeneral>
 				</div>
 			</ArticleRight>
 		</main>

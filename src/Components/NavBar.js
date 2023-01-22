@@ -13,18 +13,16 @@ const NavBar = () => {
 	
 	const burger = useSelector((state) => state.burger);
 	const classProp = burger ? classes.sideBarOpen : classes.sideBarClosed;
-
-	const donateForm = useSelector((state) => state.donateForm);
 	
 	const dispatch = useDispatch();
 
 	const clickHandler = () => {
-		dispatch(burgerActions.initialize(burger));
+		dispatch(burgerActions.initialize());
 	};
 
 	const donateClickHandler = () => {
-		dispatch(burgerActions.initialize(burger));
-		dispatch(donateFormActions.open(donateForm))
+		dispatch(burgerActions.initialize());
+		dispatch(donateFormActions.open())
 	};
 
 	// This hook makes sure that the side menu changes to expanded menu after

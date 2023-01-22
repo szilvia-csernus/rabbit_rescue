@@ -8,7 +8,7 @@ const donateFormSlice = createSlice({
 		open() {
 			return true;
 		},
-		initialize() {
+		reset() {
 			return false;
 		},
 	},

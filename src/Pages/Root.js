@@ -4,9 +4,11 @@ import { Container } from '../Components/Container';
 import DonateForm from '../Components/DonateForm';
 import Footer from '../Components/Footer';
 import Header from '../Components/Header';
+import VolunteerForm from '../Components/VolunteerForm';
 
 const Root = () => {
 	const donateForm = useSelector((state) => state.donateForm);
+	const volunteerForm = useSelector((state) => state.volunteerForm);
 	return (
 		<>
 			<Container>
@@ -19,6 +21,7 @@ const Root = () => {
 				<Footer />
 			</Container>
 			{donateForm && <DonateForm/>}
+			{volunteerForm && <VolunteerForm/>}
 		</>
 	);
 };

@@ -2,17 +2,21 @@ import ReactDOM from 'react-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { burgerActions } from '../store/burger-slice';
 import { donateFormActions } from '../store/donate-form-slice';
+import { volunteerFormActions } from '../store/volunteer-form-slice';
 
 import classes from './Modal.module.css';
 
 const Backdrop = () => {
 	const burger = useSelector((state) => state.burger);
 	const donateForm = useSelector((state) => state.donateForm);
+	const volunteerForm = useSelector((state) => state.volunteerForm);
+
 	const dispatch = useDispatch();
 	
 	const clickHandler = () => {
 		burger && dispatch(burgerActions.initialize(burger))
-		donateForm && dispatch(donateFormActions.initialize(donateForm))
+		donateForm && dispatch(donateFormActions.reset());
+		volunteerForm && dispatch(volunteerFormActions.reset());
 	}
 
 	return <div className={classes.backdrop} onClick={clickHandler}/>;
