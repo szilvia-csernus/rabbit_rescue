@@ -2,8 +2,9 @@
     display: block;
     margin: auto;
     max-width: 30rem;
-    min-width: 22rem;
-    height: auto;
+    min-width: 20rem;
+    max-height: 95vh;
+    overflow-y: scroll;
 
     border: 1px solid var(--grey-bg-color);
     border-radius: .5rem;

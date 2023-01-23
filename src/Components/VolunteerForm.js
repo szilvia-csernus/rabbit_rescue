@@ -139,7 +139,7 @@ const VolunteerForm = () => {
 						<textarea
 							id="message"
 							className={classes.formInput}
-							rows="6"
+							rows="3"
 							placeholder="Your message"
 							value={message}
 							onChange={(event) => setMessage(event.target.value)}

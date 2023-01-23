@@ -1,15 +1,15 @@
 .backdrop {
 	position: fixed;
-	top: 0;
-	left: 0;
 	width: 100%;
 	height: 100vh;
 	z-index: 10;
 	background: var(--modal-bg-color);
+	opacity: 200ms linear;
 }
 
 .overlay {
 	position: relative;
+	width: auto;
 	z-index: 11;
 }
 
