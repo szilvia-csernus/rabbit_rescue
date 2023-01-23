@@ -3,7 +3,7 @@
     margin: auto;
     max-width: 30rem;
     min-width: 20rem;
-    max-height: 95vh;
+    max-height: 100vh;
     overflow-y: scroll;
 
     border: 1px solid var(--grey-bg-color);
