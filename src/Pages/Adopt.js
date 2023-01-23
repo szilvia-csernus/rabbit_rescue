@@ -5,6 +5,7 @@ import { ButtonGeneral } from '../Components/Buttons';
 import { AdoptImage } from '../Components/MainImages';
 import { ReactComponent as VisitUsIcon } from '../assets/icons/visit-us.svg';
 import { lazy, Suspense } from 'react';
+import { Link } from 'react-router-dom';
 
 const Gallery = lazy(() => import('../Components/Gallery'));
 
@@ -54,7 +55,9 @@ const Adopt = () => {
 						adoption.
 					</p>
 					<br />
-					<ButtonGeneral>Visit Us</ButtonGeneral>
+					<ButtonGeneral>
+						<Link to="/contact-us">Visit Us</Link>
+					</ButtonGeneral>
 				</div>
 			</Article>
 
@@ -65,7 +68,9 @@ const Adopt = () => {
 					<Gallery />
 				</Suspense>
 
-				<ButtonGeneral>Visit Us</ButtonGeneral>
+				<ButtonGeneral>
+					<Link to="/contact-us">Visit Us</Link>
+				</ButtonGeneral>
 
 				<div>
 					<VisitUsIcon className={classes.icon} />

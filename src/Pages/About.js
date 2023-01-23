@@ -86,7 +86,7 @@ const About = () => {
 				</div>
 				<div className={classes.generalButtonBoxRight}>
 					<ButtonGeneral>
-						<Link to="/contact-us">Contact Us</Link>
+						<Link to="/contact-us">Visit Us</Link>
 					</ButtonGeneral>
 				</div>
 			</ArticleRight>
