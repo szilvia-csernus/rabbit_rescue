@@ -56,6 +56,7 @@ const DonateForm = () => {
 		event.preventDefault();
 		dispatch(donateFormActions.reset());
 	}
+	
 	useEffect(() => {
 		if (nameIsValid && emailIsValid) {
 			setFormValid(true);
