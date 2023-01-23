@@ -60,6 +60,11 @@ const VolunteerForm = () => {
         dispatch(thankYouMessageActions.open());
 	};
 
+	const cancelClickHandler = (event) => {
+		event.preventDefault();
+		dispatch(volunteerFormActions.reset());
+	};
+
 	const nameClassNames = `${classes.formInput} ${
 		nameHasError && classes.formInputInvalid
 	}`;
@@ -126,7 +131,7 @@ const VolunteerForm = () => {
 							value={phoneNr}
 							onChange={(event) => setPhoneNr(event.target.value)}
 						/>
-
+						<br/>
 						<label htmlFor="message" className={classes.formLabel}>
 							In 1-2 sentences, please tell us about how you would like to
 							support our work. (optional)
@@ -141,7 +146,7 @@ const VolunteerForm = () => {
 						></textarea>
 
 						<div className={classes.footer}>
-							<ButtonSecondary>Cancel</ButtonSecondary>
+							<ButtonSecondary onClick={cancelClickHandler}>Cancel</ButtonSecondary>
 							<ButtonGeneral type="submit">Send</ButtonGeneral>
 						</div>
 					</form>
