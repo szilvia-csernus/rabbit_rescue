@@ -136,6 +136,12 @@ h3 {
     margin-bottom: 1rem;
 }
 
+input:-internal-autofill-selected {
+    background-color: var(--body-bg-color) !important;
+    color: var(--primary-color) !important;
+}
+
+
 @media (prefers-color-scheme: dark) {
     :root {
         --primary-color: #00bd87;

@@ -1,16 +1,18 @@
+import { lazy, Suspense } from 'react';
 import { useSelector } from 'react-redux';
 import { Outlet } from 'react-router-dom';
 import { Container } from '../Components/Container';
-import DonateForm from '../Components/DonateForm';
 import Footer from '../Components/Footer';
 import Header from '../Components/Header';
-import ThankYouMessage from '../Components/ThankYouMessage';
-import VolunteerForm from '../Components/VolunteerForm';
+
+const DonateForm = lazy(() => import('../Components/DonateForm'));
+const VolunteerForm = lazy(() => import('../Components/VolunteerForm'));
+const ThankYouMessage = lazy(() => import('../Components/ThankYouMessage'));
 
 const Root = () => {
-	const donateForm = useSelector((state) => state.donateForm);
-	const volunteerForm = useSelector((state) => state.volunteerForm);
-	const thankYouMessage = useSelector((state) => state.thankYouMessage);
+	const donateFormState = useSelector((state) => state.donateForm);
+	const volunteerFormState = useSelector((state) => state.volunteerForm);
+	const thankYouMessageState = useSelector((state) => state.thankYouMessage);
 	
 	return (
 		<>
@@ -23,9 +25,21 @@ const Root = () => {
 			<Container>
 				<Footer />
 			</Container>
-			{donateForm && <DonateForm/>}
-			{volunteerForm && <VolunteerForm/>}
-			{thankYouMessage && <ThankYouMessage />}
+			{donateFormState && (
+				<Suspense fallback="Loading...">
+					<DonateForm />
+				</Suspense>
+			)}
+			{volunteerFormState && (
+				<Suspense fallback="Loading...">
+					<VolunteerForm />
+				</Suspense>
+			)}
+			{thankYouMessageState && (
+				<Suspense fallback="Loading...">
+					<ThankYouMessage />
+				</Suspense>
+			)}
 		</>
 	);
 };

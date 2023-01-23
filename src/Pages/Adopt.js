@@ -1,10 +1,12 @@
+import classes from './Adopt.module.css';
+
 import { Article } from '../Components/Article';
 import { ButtonGeneral } from '../Components/Buttons';
-import Gallery from '../Components/Gallery';
 import { AdoptImage } from '../Components/MainImages';
 import { ReactComponent as VisitUsIcon } from '../assets/icons/visit-us.svg';
+import { lazy, Suspense } from 'react';
 
-import classes from './Adopt.module.css';
+const Gallery = lazy(() => import('../Components/Gallery'));
 
 const Adopt = () => {
 	return (
@@ -59,7 +61,9 @@ const Adopt = () => {
 			<Article className={classes.gallery}>
 				<h2 className={classes.galleryTitle}>Some of our latest arrivals</h2>
 
-				<Gallery />
+				<Suspense fallback="Loading...">
+					<Gallery />
+				</Suspense>
 
 				<ButtonGeneral>Visit Us</ButtonGeneral>
 

@@ -60,6 +60,7 @@ export const HeroImage = () => {
 					width="1400"
 					height="571"
 					alt="cute bunny"
+					priority="true"
 				/>
 			</picture>
 			<div className={classes.heroCalloutBox}>
@@ -118,6 +119,7 @@ export const AdoptImage = () => {
 				width="1400"
 				height="393"
 				alt="two cute bunnies"
+				priority="true"
 			/>
 		</picture>
 	);
