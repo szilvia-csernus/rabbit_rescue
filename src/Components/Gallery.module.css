@@ -1,5 +1,5 @@
 .gallery {
-	margin: 0 3rem;
+	margin: 0 1.5rem;
 	clear: both;
 	column-count: 2;
 	column-gap: 0.3rem;
@@ -40,5 +40,11 @@
 @media screen and (min-width: 1200px) {
 	.gallery {
 		column-count: 4;
+	}
+}
+
+@media screen and (min-width: 1400px) {
+	.gallery {
+		margin: 0;
 	}
 }
