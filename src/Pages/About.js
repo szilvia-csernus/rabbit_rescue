@@ -34,8 +34,8 @@ const About = () => {
 				<div className={classes.missionTextBox}>
 					<p className={classes.missionText}>
 						We are a small non-profit organisation located in East Berkshire,
-						UK. <br/> ur mission is to find a loving home for every neglected or
-						abandoned rabbit that arrives in our centre.
+						UK. <br /> ur mission is to find a loving home for every neglected
+						or abandoned rabbit that arrives in our centre.
 					</p>
 				</div>
 			</Article>
@@ -52,9 +52,9 @@ const About = () => {
 				</div>
 				<div>
 					<p>
-						Whether it&apos;s <span>rescuing rabbits</span> from mistreatment or 
-						<span> taking in abandoned ones</span>, we always give them the 
-						specialist attention they need. We look after them until we find the 
+						Whether it&apos;s <span>rescuing rabbits</span> from mistreatment or
+						<span> taking in abandoned ones</span>, we always give them the
+						specialist attention they need. We look after them until we find the
 						right owners to adopt them into loving, happy homes.
 					</p>
 					<h2>Interested in adopting?</h2>
@@ -75,11 +75,11 @@ const About = () => {
 				<div>
 					<p>
 						<span>
-							We are open to prospective bunny parents on Saturdays from 10am to 
-							5pm.
+							We are open to prospective bunny parents on Saturdays from 10am
+							to5pm.{' '}
 						</span>
-						Here, you have the chance to meet and play with our rabbit residents 
-						and also learn about how to care for them. Our friendly volunteers 
+						Here, you have the chance to meet and play with our rabbit residents
+						and also learn about how to care for them. Our friendly volunteers
 						will tell you everything you need to know about adoption.
 					</p>
 					<h2>Would you like to meet our bunnies?</h2>
@@ -96,11 +96,11 @@ const About = () => {
 				</div>
 				<div>
 					<p>
-						All the work we do would not be possible without our 
-						<span>wonderful volunteers</span> and the 
-						<span>generous support</span> we get through public donations. All 
-						donations we receive help fund the welfare of our furry friends, 
-						from vet bills and treatments to food, hay and bedding. 
+						All the work we do would not be possible without our{' '}
+						<span>wonderful volunteers</span> and the{' '}
+						<span>generous support</span> we get through public donations. All
+						donations we receive help fund the welfare of our furry friends,
+						from vet bills and treatments to food, hay and bedding.
 					</p>
 					<h2>Please consider supporting us.</h2>
 				</div>
@@ -110,7 +110,10 @@ const About = () => {
 			</ArticleLeft>
 			<ArticleRight>
 				<div>
-					<VolunteerIcon className={classes.volunteerIcon} aria-label="helping hands icon" />
+					<VolunteerIcon
+						className={classes.volunteerIcon}
+						aria-label="helping hands icon"
+					/>
 				</div>
 				<div>
 					<p>
@@ -120,7 +123,9 @@ const About = () => {
 					<h2>Please get in touch.</h2>
 				</div>
 				<div className={classes.generalButtonBoxRight}>
-					<ButtonGeneral onClick={volunteerClickHandler}>Volunteer</ButtonGeneral>
+					<ButtonGeneral onClick={volunteerClickHandler}>
+						Volunteer
+					</ButtonGeneral>
 				</div>
 			</ArticleRight>
 		</main>

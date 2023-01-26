@@ -19,8 +19,8 @@ import { ButtonFeature1 } from './Buttons';
 import { Link } from 'react-router-dom';
 
 export const HeroImage = () => {
-	const webp = "image/webp";
-	const png = "image/png";
+	const webp = 'image/webp';
+	const png = 'image/png';
 	return (
 		<section className={classes.heroImgBox}>
 			<picture>
@@ -60,7 +60,8 @@ export const HeroImage = () => {
 					width="1400"
 					height="571"
 					alt="cute bunny"
-					priority="true"
+					decoding="async"
+					fetchpriority="high"
 				/>
 			</picture>
 			<div className={classes.heroCalloutBox}>
@@ -119,7 +120,8 @@ export const AdoptImage = () => {
 				width="1400"
 				height="393"
 				alt="two cute bunnies"
-				priority="true"
+				decoding="async"
+				fetchpriority="high"
 			/>
 		</picture>
 	);
