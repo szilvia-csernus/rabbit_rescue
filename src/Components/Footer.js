@@ -8,6 +8,9 @@ import { ReactComponent as PhoneIcon } from '../assets/icons/phone.svg';
 import classes from './Footer.module.css';
 
 const Footer = () => {
+	const date = new Date();
+	const yearNow = date.getFullYear();
+
 	return (
 		<>
 			<footer className={classes.footer}>
@@ -77,14 +80,12 @@ const Footer = () => {
 
 				<div className={classes.footerSmallPrint}>
 					<p>This website was created for educational purposes.</p>
-					<p>
-						Hopper Farm Rabbit Rescue is a fictional organisation. No user input
-						is stored on our servers.
-					</p>
+					<p>Hopper Farm Rabbit Rescue is a fictional organisation.</p>
 
 					<p>
-						<span>&copy;</span> 2023. All Rights Reserved.
+						<span>&copy;</span>{yearNow} Szilvia Csernusne Berczes
 					</p>
+					<p>All Rights Reserved.</p>
 				</div>
 			</footer>
 		</>
