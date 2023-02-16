@@ -8,11 +8,13 @@ import Header from '../Components/Header';
 const DonateForm = lazy(() => import('../Components/DonateForm'));
 const VolunteerForm = lazy(() => import('../Components/VolunteerForm'));
 const ThankYouMessage = lazy(() => import('../Components/ThankYouMessage'));
+const ErrorMessage = lazy(() => import('../Components/ErrorMessage'));
 
 const Root = () => {
 	const donateFormState = useSelector((state) => state.donateForm);
 	const volunteerFormState = useSelector((state) => state.volunteerForm);
 	const thankYouMessageState = useSelector((state) => state.thankYouMessage);
+	const errorMessageState = useSelector((state) => state.errorMessage);
 	
 	return (
 		<>
@@ -38,6 +40,11 @@ const Root = () => {
 			{thankYouMessageState && (
 				<Suspense fallback="Loading...">
 					<ThankYouMessage />
+				</Suspense>
+			)}
+			{errorMessageState && (
+				<Suspense fallback="Loading...">
+					<ErrorMessage />
 				</Suspense>
 			)}
 		</>

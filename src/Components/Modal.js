@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { burgerActions } from '../store/burger-slice';
 import { donateFormActions } from '../store/donate-form-slice';
 import { thankYouMessageActions } from '../store/thank-you-message-slice';
+import { errorMessageActions } from '../store/error-message-slice';
 import { volunteerFormActions } from '../store/volunteer-form-slice';
 
 import classes from './Modal.module.css';
@@ -12,6 +13,7 @@ const Backdrop = () => {
 	const donateForm = useSelector((state) => state.donateForm);
 	const volunteerForm = useSelector((state) => state.volunteerForm);
 	const thankYouMessage = useSelector((state) => state.thankYouMessage);
+	const errorMessage = useSelector((state) => state.errorMessage);
 
 	const dispatch = useDispatch();
 	
@@ -20,6 +22,7 @@ const Backdrop = () => {
 		donateForm && dispatch(donateFormActions.reset());
 		volunteerForm && dispatch(volunteerFormActions.reset());
 		thankYouMessage && dispatch(thankYouMessageActions.reset());
+		errorMessage && dispatch(errorMessageActions.reset());
 	}
 
 	return <div className={classes.backdrop} onClick={clickHandler}/>;

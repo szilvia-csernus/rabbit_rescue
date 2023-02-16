@@ -6,17 +6,18 @@ import { ButtonGeneral, ButtonSecondary } from './Buttons';
 import Modal from './Modal';
 import { useDispatch } from 'react-redux';
 import { volunteerFormActions } from '../store/volunteer-form-slice';
-import { thankYouMessageActions } from '../store/thank-you-message-slice';
+import { send } from '../store/form-action-creator';
 
 const isNotEmpty = (value) => value.trim() !== '';
 const isEmail = (value) =>
 	/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/.test(value);
 
+
 const VolunteerForm = () => {
 	const [formValid, setFormValid] = useState(false);
-    const [phoneNr, setPhoneNr] = useState('');
-    const [message, setMessage] = useState('');
-    const dispatch = useDispatch();
+	const [phoneNr, setPhoneNr] = useState('');
+	const [message, setMessage] = useState('');
+	const dispatch = useDispatch();
 
 	const {
 		value: nameValue,
@@ -54,10 +55,14 @@ const VolunteerForm = () => {
 
 		nameReset();
 		emailReset();
-        setPhoneNr('');
-        setMessage('');
-        dispatch(volunteerFormActions.reset());
-        dispatch(thankYouMessageActions.open());
+		setPhoneNr('');
+		setMessage('');
+		dispatch(volunteerFormActions.reset());
+		send(dispatch, {name: nameValue,
+			email: emailValue,
+			phone: phoneNr,
+			message})
+		;
 	};
 
 	const cancelClickHandler = (event) => {
@@ -131,7 +136,7 @@ const VolunteerForm = () => {
 							value={phoneNr}
 							onChange={(event) => setPhoneNr(event.target.value)}
 						/>
-						<br/>
+						<br />
 						<label htmlFor="message" className={classes.formLabel}>
 							In 1-2 sentences, please tell us about how you would like to
 							support our work. (optional)
@@ -146,7 +151,9 @@ const VolunteerForm = () => {
 						></textarea>
 
 						<div className={classes.footer}>
-							<ButtonSecondary onClick={cancelClickHandler}>Cancel</ButtonSecondary>
+							<ButtonSecondary onClick={cancelClickHandler}>
+								Cancel
+							</ButtonSecondary>
 							<ButtonGeneral type="submit">Send</ButtonGeneral>
 						</div>
 					</form>
