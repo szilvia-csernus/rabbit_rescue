@@ -9,7 +9,8 @@ import { errorMessageActions } from './error-message-slice';
 export const send = async (dispatch, formParams) => {
 	emailjs.init('sZPW9YDqBsCM52fA-');
 	const result = await emailjs
-		.send('my-emailjs-service', 'rabbit-rescue-template', {
+		.send('my-emailjs-service', 'contact-template', {
+			project_name: 'Rabbit rescue project',
 			from_name: formParams.name,
 			from_email: formParams.email,
 			phone: formParams.phone,
