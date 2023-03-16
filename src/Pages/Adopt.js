@@ -10,6 +10,8 @@ import { Link } from 'react-router-dom';
 const Gallery = lazy(() => import('../Components/Gallery'));
 
 const Adopt = () => {
+	window.scroll(0, 0);
+	
 	return (
 		<main>
 			<AdoptImage />

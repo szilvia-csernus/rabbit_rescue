@@ -12,6 +12,8 @@ import { volunteerFormActions } from '../store/volunteer-form-slice';
 
 
 const ContactUs = () => {
+	window.scroll(0, 0);
+	
 	const dispatch = useDispatch();
 
 	const volunteerClickHandler = () => {
