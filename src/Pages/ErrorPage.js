@@ -4,7 +4,7 @@ const ErrorPage = () => {
     return (
         <>
         <Header />
-        <main>An error occured!</main>
+        <main>An error occured... apologies for the inconvenience! Please try again later.</main>
         </>
     )
 }
