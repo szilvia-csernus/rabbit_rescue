@@ -15,6 +15,8 @@ import { donateFormActions } from '../store/donate-form-slice';
 import { volunteerFormActions } from '../store/volunteer-form-slice';
 
 const About = () => {
+	window.scroll(0, 0);
+	
 	const dispatch = useDispatch();
 
 	const donateClickHandler = () => {
