@@ -36,7 +36,7 @@ const About = () => {
 				<div className={classes.missionTextBox}>
 					<p className={classes.missionText}>
 						We are a small non-profit organisation located in East Berkshire,
-						UK. <br /> ur mission is to find a loving home for every neglected
+						UK. <br /> Our mission is to find a loving home for every neglected
 						or abandoned rabbit that arrives in our centre.
 					</p>
 				</div>
