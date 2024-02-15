@@ -381,9 +381,18 @@ You don't have to ever use `eject`. The curated feature set is suitable for smal
 
 ### Deployment
 
-[https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+This Project is deployed on Firebase.
 
-### `npm run build` to build app for production
+Steps to deploy a Static project, refer to the Firebase documentation.
+
+Steps to re-deploy an updated project:
+
+1. `npm run build` to build app for production
+2. Login to Firebase with: `firebase login`.
+3. `firebase hosting:disable` to stop the current version runnning.
+4. `firebase deploy` to deploy the project.
+
+These steps can also be automated with `Github Actions` when configuring the deployment for the first time. 
 
 <br><br>
 If `npm run build` fails to minify: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
