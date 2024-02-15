@@ -1,6 +1,6 @@
 # Website for Hopper Farm Rabbit Rescue - ReactJS project
 
-This project was created by transfoming an HTML5-CSS3-BOOTSTRAP5 website into a React JS project. The original website (live: https://szilvia-csernus.github.io/rabbit_sanctuary repo: https://github.com/szilvia-csernus/rabbit_sanctuary) was built as the 1st Milestone Project (User Centric Frontend Development Project) for Code Institute's web application development course.
+This project was created by transfoming my `HTML5-CSS3-BOOTSTRAP5` project into a `React JS / Redux` project. The original website was built for Code Institute's web application development course as the 1st Milestone Project (User Centric Frontend Development Project). Design is created with `Figma`.
 <br><br>
 
 ---
@@ -111,7 +111,7 @@ All **icons** are in .svg format that is lightweight in size, scales perfectly a
 All references to the images and icons that have been sourced from other sites can be found in the [credits](#credits) section.
 <br><br>
 
-## Wireframes
+## Wireframes - Figma
 
 Wireframes were created in [Figma](https://www.figma.com/).
 
@@ -127,9 +127,9 @@ Wireframes were created in [Figma](https://www.figma.com/).
 ![desktop-low-fidelity-design](readme-images/desktop-low-fidelity-design.jpeg)
 <br><br>
 
-## High Fidelity Prototype
+## High Fidelity Prototype - Figma
 
-I created high fidelity prototypes for both mobile and desktop screens. 
+I created high fidelity prototypes with Figma, for both mobile and desktop screens. 
 
 [Live link to HiFi Prototype for mobile](https://www.figma.com/proto/wQoFSgRQCECwxqL7hL9q3C/Rabbit_rescue_design?page-id=329%3A63&node-id=352%3A881&viewport=534%2C46%2C0.28&scaling=min-zoom&starting-point-node-id=352%3A881)
 <br>
