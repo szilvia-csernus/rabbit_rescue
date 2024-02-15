@@ -26,6 +26,7 @@
     font-weight: var(--strong-font-weight);
     color: var(--primary-color);
     margin-right: 1rem;
+    transition: color 0.6s;
 }
  
 .navItem a.active {
