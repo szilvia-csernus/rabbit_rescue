@@ -1,5 +1,7 @@
 # Website for Hopper Farm Rabbit Rescue - ReactJS project
 
+[![DeepScan grade](https://deepscan.io/api/teams/23376/projects/26637/branches/850426/badge/grade.svg)](https://deepscan.io/dashboard#view=project&tid=23376&pid=26637&bid=850426)
+
 This project was created by transfoming my `HTML5-CSS3-BOOTSTRAP5` project into a `React JS / Redux` project. The original website was built for Code Institute's web application development course as the 1st Milestone Project (User Centric Frontend Development Project). Design is created with `Figma`.
 <br><br>
 
