@@ -1,8 +1,15 @@
-# Website for Hopper Farm Rabbit Rescue - ReactJS project
+# Website for Hopper Farm Rabbit Rescue
 
 [![DeepScan grade](https://deepscan.io/api/teams/23376/projects/26637/branches/850426/badge/grade.svg)](https://deepscan.io/dashboard#view=project&tid=23376&pid=26637&bid=850426)
 
-This project was created by transfoming my `HTML5-CSS3-BOOTSTRAP5` project into a `React JS / Redux` project. The original website was built for Code Institute's web application development course as the 1st Milestone Project (User Centric Frontend Development Project). Design is created with `Figma`.
+**Hopper Farm Rabbit Rescue** is a fictional non-profit organisation. The website is designed to support the charity's primary mission which is to help find new homes for rescued pet rabbits.
+
+
+
+
+I created this project with `React JS / Redux / CSS Modules` and `Figma` for design. Payment is implemented with `STRIPE Link`. It is a fully frontend app, no backend is implemented yet, which I'm planning to do in the future.
+
+I originally created this project for Code Institute's Web Application Development Course as the 1st Milestone Project (User Centric Frontend Development Project) in `HTML5-CSS3-BOOTSTRAP5`, which can be found [here](https://github.com/szilvia-csernus/rabbit-sanctuary).
 <br><br>
 
 ---
@@ -12,140 +19,9 @@ This project was created by transfoming my `HTML5-CSS3-BOOTSTRAP5` project into 
 ---
 <br>
 
-**Hopper Farm Rabbit Rescue** is a fictional non-profit organisation. The website is designed to support the charity's primary mission which is to help find new homes for rescued pet rabbits.
-<br><br>
-
 ![Light mode](readme-images/amiresponsive-light-mode.jpeg)
 
 ---
-<br>
-
-## CONTENTS
-
-* [User Experience](#user-experience-ux)
-  * [Webite Owner's Goals](#website-owners-goals)
-  * [Website Visitors' Goals](#website-visitors-goals)
-
-* [Design](#design)
-  * [Colour Scheme](#colour-scheme)
-  * [Typography](#typography)
-  * [Imagery](#imagery)
-  * [Wireframes](#wireframes)
-  * [High Fidelity Prototype](#high-fidelity-prototype)
-
-* [Features](#features)
-  * [General Features](#general-features)
-  * [About Page](#about-page)
-  * [Adopt Page](#adopt-page)
-  * [Contact Us Page](#contact-us-page)
-  * [Future Implementations](#future-implementations)
-  * [Accessibility](#accessibility)
-
-* [Technologies Used](#technologies-used)
-  * [Languages and Libraries Used](#languages-and-libraries-used)
-  * [Other Tools & Programs Used](#other-tools-and-programs-used)
-
-* [Deployment & Local Development](#deployment-&-local-development)
-  * [Deployment](#deployment)
-  * [Forking the GitHub Repository](#forking-the-github-repository)
-  * [Making a Local Clone](#making-a-local-clone)
-
-* [Testing](#testing)
-
-* [Credits](#credits)
-  * [Main Images](#main-images)
-  * [Gallery Images](#gallery-images)
-  * [Icons](#icons)
-  * [Other Credits](#other-credits---incorporated-ideas-and-solutions)
-  * [Acknowledgments](#acknowledgments)
-<br><br>
----
-<br>
-
-# User Experience (UX)
-
-## Website Owner's Goals
-
-* To help people find the organisation for the primary purpose of rehoming a rescued rabbit.
-* To help find potential donors and volunteers willing to contribute to the charity's work.
-* To help visitors to make contact with the organisation through various channels.
-* The website to have simple structure and clear 'call to action' messages.
-* The website to be responsive to all screen sizes as well as light/dark mode preferences.
-
-## Website Visitors' Goals
-
-* To find the relevant piece of information quickly, be it about rabbit adoption, volunteering or donation.
-* To be able to make contact with the charity for relevant requests effectively.
-* To be able to find the location quickly.
-* To be able to access the website in any screen sizes.
-* To read the site comfortably when dark mode is preferrable.
----
-<br>
-
-# Design
-
-All wireframes and design were created in [Figma](https://www.figma.com/).
-<br><br>
-
-## Colour Scheme
-
-Animal charities most frequently use green as their primary colour and I kept the site in line with this customer expectation. I chose orange as an accent colour to emphasize the 'call to action' messages. In addition, I used various shades of greys to complement the two main colours.
-
-I sampled the primary and the accent colours from the hero image of the landing page, then I slightly modified them to satisfy accessibility requirements. 
-
-![Light mode palette:](readme-images/colour-palette-light.svg)
-
-![Dark mode palette:](readme-images/colour-palette-dark.svg)
-<br><br>
-
-## Typography
-
-A font pairing website [Typ.io](https://typ.io/lists) helped me make typograpy choice.
-I selected [Nunito](https://fonts.google.com/specimen/Nunito) and [Nunito Sans](https://fonts.google.com/specimen/Nunito+Sans) from the [Google Fonts](https://fonts.google.com/) library for their simplicity and legibility yet fairly informal feel. To complement these simple styled main fonts, for the feature logo I chose a more decorative typeface, [Bubblegum Sans](https://fonts.google.com/specimen/Bubblegum+Sans).
-<br><br>
-
-## Imagery
-
-All the **images** appearing on the site are unlicenced, sourced from [Pexels](https://pexels.com/) and [Unsplash](https://unsplash.com/). All pictures have been converted to `.webp` format to reduce file size and as such, reduce loading time. To further increase performance, more image sizes are available for the browser to load the most appropriate one for any screen resolutions. For older browsers that don't recognise `.webp` format, `.png` images were added as backups. This method makes sure that for every device, the best size and resolution will be chosen to achieve the best possible performance.
-
-All **icons** are in .svg format that is lightweight in size, scales perfectly and certain properties can be set programatically. I needed these properties to make them capable to respond to dark-mode preferences. Some of the icons I drew myself in Figma, the others I downloaded from [svgrepo](https://svgrepo.com/). These latter icons are either unlicenced or open-source. All icons were drawn or edited to be uniform in design as well as responsive to dark mode or - as in the case of the rabbit icon - to screen size changes. All icons' colour is set programatically width css.
-
-All references to the images and icons that have been sourced from other sites can be found in the [credits](#credits) section.
-<br><br>
-
-## Wireframes - Figma
-
-Wireframes were created in [Figma](https://www.figma.com/).
-
-[Live link to wireframe for mobile](https://www.figma.com/proto/wQoFSgRQCECwxqL7hL9q3C/Rabbit_rescue_design?page-id=329%3A62&node-id=329%3A680&viewport=914%2C3013%2C1.76&scaling=min-zoom&starting-point-node-id=329%3A619)
-<br>
-
-![mobile-low-fidelity-design](readme-images/mobile-low-fidelity-design.jpeg)
-<br>
-
-[Live link to wireframe for desktop](https://www.figma.com/proto/wQoFSgRQCECwxqL7hL9q3C/Rabbit_rescue_design?page-id=329%3A64&node-id=329%3A66&viewport=230%2C162%2C0.3&scaling=min-zoom&starting-point-node-id=329%3A66)
-<br>
-
-![desktop-low-fidelity-design](readme-images/desktop-low-fidelity-design.jpeg)
-<br><br>
-
-## High Fidelity Prototype - Figma
-
-I created high fidelity prototypes with Figma, for both mobile and desktop screens. 
-
-[Live link to HiFi Prototype for mobile](https://www.figma.com/proto/wQoFSgRQCECwxqL7hL9q3C/Rabbit_rescue_design?page-id=329%3A63&node-id=352%3A881&viewport=534%2C46%2C0.28&scaling=min-zoom&starting-point-node-id=352%3A881)
-<br>
-
-![mobile-high-fidelity-design](readme-images/mobile-high-fidelity-design.jpeg)
-<br>
-
-[Live link to HiFi Prototype for desktop](https://www.figma.com/proto/wQoFSgRQCECwxqL7hL9q3C/Rabbit_rescue_design?page-id=329%3A65&node-id=329%3A214&viewport=223%2C207%2C0.3&scaling=min-zoom&starting-point-node-id=329%3A214)
-<br>
-
-![desktop-high-fidelity-design](readme-images/desktop-high-fidelity-design.jpeg)
-
----
-<br>
 
 # Features
 
@@ -263,6 +139,92 @@ Lastly, active links are provided for both calling and emailing the organisation
 ![contact-dark-mode](readme-images/contact-dark-mode.jpeg)
 <br><br>
 ---
+
+# User Experience (UX)
+
+## Website Owner's Goals
+
+* To help people find the organisation for the primary purpose of rehoming a rescued rabbit.
+* To help find potential donors and volunteers willing to contribute to the charity's work.
+* To help visitors to make contact with the organisation through various channels.
+* The website to have simple structure and clear 'call to action' messages.
+* The website to be responsive to all screen sizes as well as light/dark mode preferences.
+
+## Website Visitors' Goals
+
+* To find the relevant piece of information quickly, be it about rabbit adoption, volunteering or donation.
+* To be able to make contact with the charity for relevant requests effectively.
+* To be able to find the location quickly.
+* To be able to access the website in any screen sizes.
+* To read the site comfortably when dark mode is preferrable.
+---
+<br>
+
+# Design
+
+All wireframes and design were created in [Figma](https://www.figma.com/).
+<br><br>
+
+## Colour Scheme
+
+Animal charities most frequently use green as their primary colour and I kept the site in line with this customer expectation. I chose orange as an accent colour to emphasize the 'call to action' messages. In addition, I used various shades of greys to complement the two main colours.
+
+I sampled the primary and the accent colours from the hero image of the landing page, then I slightly modified them to satisfy accessibility requirements. 
+
+![Light mode palette:](readme-images/colour-palette-light.svg)
+
+![Dark mode palette:](readme-images/colour-palette-dark.svg)
+<br><br>
+
+## Typography
+
+A font pairing website [Typ.io](https://typ.io/lists) helped me make typograpy choice.
+I selected [Nunito](https://fonts.google.com/specimen/Nunito) and [Nunito Sans](https://fonts.google.com/specimen/Nunito+Sans) from the [Google Fonts](https://fonts.google.com/) library for their simplicity and legibility yet fairly informal feel. To complement these simple styled main fonts, for the feature logo I chose a more decorative typeface, [Bubblegum Sans](https://fonts.google.com/specimen/Bubblegum+Sans).
+<br><br>
+
+## Imagery
+
+All the **images** appearing on the site are unlicenced, sourced from [Pexels](https://pexels.com/) and [Unsplash](https://unsplash.com/). All pictures have been converted to `.webp` format to reduce file size and as such, reduce loading time. To further increase performance, more image sizes are available for the browser to load the most appropriate one for any screen resolutions. For older browsers that don't recognise `.webp` format, `.png` images were added as backups. This method makes sure that for every device, the best size and resolution will be chosen to achieve the best possible performance.
+
+All **icons** are in .svg format that is lightweight in size, scales perfectly and certain properties can be set programatically. I needed these properties to make them capable to respond to dark-mode preferences. Some of the icons I drew myself in Figma, the others I downloaded from [svgrepo](https://svgrepo.com/). These latter icons are either unlicenced or open-source. All icons were drawn or edited to be uniform in design as well as responsive to dark mode or - as in the case of the rabbit icon - to screen size changes. All icons' colour is set programatically width css.
+
+All references to the images and icons that have been sourced from other sites can be found in the [credits](#credits) section.
+<br><br>
+
+## Wireframes - Figma
+
+Wireframes were created in [Figma](https://www.figma.com/).
+
+[Live link to wireframe for mobile](https://www.figma.com/proto/wQoFSgRQCECwxqL7hL9q3C/Rabbit_rescue_design?page-id=329%3A62&node-id=329%3A680&viewport=914%2C3013%2C1.76&scaling=min-zoom&starting-point-node-id=329%3A619)
+<br>
+
+![mobile-low-fidelity-design](readme-images/mobile-low-fidelity-design.jpeg)
+<br>
+
+[Live link to wireframe for desktop](https://www.figma.com/proto/wQoFSgRQCECwxqL7hL9q3C/Rabbit_rescue_design?page-id=329%3A64&node-id=329%3A66&viewport=230%2C162%2C0.3&scaling=min-zoom&starting-point-node-id=329%3A66)
+<br>
+
+![desktop-low-fidelity-design](readme-images/desktop-low-fidelity-design.jpeg)
+<br><br>
+
+## High Fidelity Prototype - Figma
+
+I created high fidelity prototypes with Figma, for both mobile and desktop screens. 
+
+[Live link to HiFi Prototype for mobile](https://www.figma.com/proto/wQoFSgRQCECwxqL7hL9q3C/Rabbit_rescue_design?page-id=329%3A63&node-id=352%3A881&viewport=534%2C46%2C0.28&scaling=min-zoom&starting-point-node-id=352%3A881)
+<br>
+
+![mobile-high-fidelity-design](readme-images/mobile-high-fidelity-design.jpeg)
+<br>
+
+[Live link to HiFi Prototype for desktop](https://www.figma.com/proto/wQoFSgRQCECwxqL7hL9q3C/Rabbit_rescue_design?page-id=329%3A65&node-id=329%3A214&viewport=223%2C207%2C0.3&scaling=min-zoom&starting-point-node-id=329%3A214)
+<br>
+
+![desktop-high-fidelity-design](readme-images/desktop-high-fidelity-design.jpeg)
+
+---
+<br>
+
 
 ## Future Implementations
 <br>
