@@ -80,7 +80,7 @@ const Footer = () => {
 
 				<div className={classes.footerSmallPrint}>
 					<p>This website was created for educational purposes.</p>
-					<p>Hopper Farm Rabbit Rescue is a fictional organisation.</p>
+					<p>Hopper Farm Rabbit Rescue is a fictional organisation. No payment will be processed.</p>
 
 					<p>
 						<span>&copy;</span>{yearNow} Szilvia Csernusne Berczes
