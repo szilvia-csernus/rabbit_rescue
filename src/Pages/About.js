@@ -3,7 +3,7 @@ import { ReactComponent as RabbitLeftIcon } from '../assets/icons/rabbit-left.sv
 import { ReactComponent as VisitUsIcon } from '../assets/icons/visit-us.svg';
 import { ReactComponent as GiftIcon } from '../assets/icons/gift.svg';
 import { ReactComponent as VolunteerIcon } from '../assets/icons/volunteer.svg';
-import { ButtonDonate, ButtonGeneral } from '../Components/Buttons';
+import { ButtonGeneral } from '../Components/Buttons';
 
 import { Link } from 'react-router-dom';
 
@@ -103,9 +103,9 @@ const About = () => {
 				</div>
 				<a
 					href={'https://donate.stripe.com/test_6oE9BSeSH4iPfiE9AA'}
-					className={classes.navItem}
+					className={classes.generalButtonBoxLeft}
 				>
-					<ButtonDonate>Donate</ButtonDonate>
+					<ButtonGeneral>Donate</ButtonGeneral>
 				</a>
 			</ArticleLeft>
 			<ArticleRight>
