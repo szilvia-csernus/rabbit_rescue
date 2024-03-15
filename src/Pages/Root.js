@@ -25,7 +25,7 @@ useEffect(() => {
 	if (queryParams.get('successful-payment')) {
 		dispatch(thanksDonationActions.open());
 	};
-}, [dispatch, location.search]);
+});
 
 	return (
 		<>
