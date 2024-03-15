@@ -3,7 +3,7 @@ import { ReactComponent as RabbitLeftIcon } from '../assets/icons/rabbit-left.sv
 import { ReactComponent as VisitUsIcon } from '../assets/icons/visit-us.svg';
 import { ReactComponent as GiftIcon } from '../assets/icons/gift.svg';
 import { ReactComponent as VolunteerIcon } from '../assets/icons/volunteer.svg';
-import { ButtonGeneral } from '../Components/Buttons';
+import { ButtonDonate, ButtonGeneral } from '../Components/Buttons';
 
 import { Link } from 'react-router-dom';
 
@@ -11,17 +11,12 @@ import classes from './About.module.css';
 import { HeroImage } from '../Components/MainImages';
 import { ArticleLeft, Article, ArticleRight } from '../Components/Article';
 import { useDispatch } from 'react-redux';
-import { thanksDonationActions } from '../store/thanks-donation-slice';
 import { volunteerFormActions } from '../store/volunteer-form-slice';
 
 const About = () => {
 	window.scroll(0, 0);
 	
 	const dispatch = useDispatch();
-
-	const donateClickHandler = () => {
-		dispatch(thanksDonationActions.open());
-	}
 
 	const volunteerClickHandler = () => {
 		dispatch(volunteerFormActions.open());
@@ -106,9 +101,12 @@ const About = () => {
 					</p>
 					<h2>Please consider supporting us.</h2>
 				</div>
-				<div className={classes.generalButtonBoxLeft}>
-					<ButtonGeneral onClick={donateClickHandler}>Donate</ButtonGeneral>
-				</div>
+				<a
+					href={'https://donate.stripe.com/test_6oE9BSeSH4iPfiE9AA'}
+					className={classes.navItem}
+				>
+					<ButtonDonate>Donate</ButtonDonate>
+				</a>
 			</ArticleLeft>
 			<ArticleRight>
 				<div>
