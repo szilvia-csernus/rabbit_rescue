@@ -1,8 +1,8 @@
 import ReactDOM from 'react-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { burgerActions } from '../store/burger-slice';
-import { donateFormActions } from '../store/donate-form-slice';
-import { thankYouMessageActions } from '../store/thank-you-message-slice';
+import { thanksDonationActions } from '../store/thanks-donation-slice';
+import { thanksVolunteerActions } from '../store/thanks-volunteer-slice';
 import { errorMessageActions } from '../store/error-message-slice';
 import { volunteerFormActions } from '../store/volunteer-form-slice';
 
@@ -10,18 +10,18 @@ import classes from './Modal.module.css';
 
 const Backdrop = () => {
 	const burger = useSelector((state) => state.burger);
-	const donateForm = useSelector((state) => state.donateForm);
+	const thanksDonation = useSelector((state) => state.thanksDonation);
 	const volunteerForm = useSelector((state) => state.volunteerForm);
-	const thankYouMessage = useSelector((state) => state.thankYouMessage);
+	const thanksVolunteer = useSelector((state) => state.ThanksVolunteer);
 	const errorMessage = useSelector((state) => state.errorMessage);
 
 	const dispatch = useDispatch();
 	
 	const clickHandler = () => {
 		burger && dispatch(burgerActions.initialize(burger))
-		donateForm && dispatch(donateFormActions.reset());
+		thanksDonation && dispatch(thanksDonationActions.reset());
 		volunteerForm && dispatch(volunteerFormActions.reset());
-		thankYouMessage && dispatch(thankYouMessageActions.reset());
+		thanksVolunteer && dispatch(thanksVolunteerActions.reset());
 		errorMessage && dispatch(errorMessageActions.reset());
 	}
 

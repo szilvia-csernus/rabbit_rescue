@@ -1,7 +1,7 @@
 // email service provided by https://www.emailjs.com/
 import emailjs from '@emailjs/browser';
 
-import { thankYouMessageActions } from './thank-you-message-slice';
+import { thanksVolunteerActions } from './thanks-volunteer-slice';
 import { errorMessageActions } from './error-message-slice';
 
 // this action creator sends the form data with emailJS and initiates
@@ -20,7 +20,7 @@ export const send = async (dispatch, formParams) => {
 			(response) => {
 				console.log(response);
 				if (response.status === 200) {
-					dispatch(thankYouMessageActions.open())
+					dispatch(thanksVolunteerActions.open())
 				} else {
 					dispatch(errorMessageActions.open())
 				}
@@ -33,3 +33,5 @@ export const send = async (dispatch, formParams) => {
 	console.log(result);
 	return result;
 };
+
+

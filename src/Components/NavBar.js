@@ -1,9 +1,9 @@
-import { ButtonFeature2 } from './Buttons';
+import { ButtonDonate } from './Buttons';
 import classes from './NavBar.module.css';
 import { NavLink } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { burgerActions } from '../store/burger-slice';
-import { donateFormActions } from '../store/donate-form-slice';
+// import { donateFormActions } from '../store/donate-form-slice';
 import Modal from './Modal';
 import { useEffect, useState } from 'react';
 
@@ -20,10 +20,10 @@ const NavBar = () => {
 		dispatch(burgerActions.initialize());
 	};
 
-	const donateClickHandler = () => {
-		dispatch(burgerActions.initialize());
-		dispatch(donateFormActions.open())
-	};
+	// const donateClickHandler = () => {
+	// 	dispatch(burgerActions.initialize());
+	// 	dispatch(donateFormActions.open())
+	// };
 
 	// This hook makes sure that the side menu changes to expanded menu after
 	// window resize and vica versa. Without 'handleresize', react would not
@@ -79,9 +79,12 @@ const NavBar = () => {
 					Contact Us
 				</NavLink>
 			</li>
-			<li className={classes.navItem}>
-				<ButtonFeature2 onClick={donateClickHandler}>Donate</ButtonFeature2>
-			</li>
+			{/* <li className={classes.navItem}>
+				<ButtonDonate onClick={donateClickHandler}>Donate</ButtonDonate>
+			</li> */}
+			<a href={'https://donate.stripe.com/test_6oE9BSeSH4iPfiE9AA'} className={classes.navItem}>
+				<ButtonDonate>Donate</ButtonDonate>
+			</a>
 		</>
 	);
 

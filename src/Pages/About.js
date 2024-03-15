@@ -11,7 +11,7 @@ import classes from './About.module.css';
 import { HeroImage } from '../Components/MainImages';
 import { ArticleLeft, Article, ArticleRight } from '../Components/Article';
 import { useDispatch } from 'react-redux';
-import { donateFormActions } from '../store/donate-form-slice';
+import { thanksDonationActions } from '../store/thanks-donation-slice';
 import { volunteerFormActions } from '../store/volunteer-form-slice';
 
 const About = () => {
@@ -20,7 +20,7 @@ const About = () => {
 	const dispatch = useDispatch();
 
 	const donateClickHandler = () => {
-		dispatch(donateFormActions.open());
+		dispatch(thanksDonationActions.open());
 	}
 
 	const volunteerClickHandler = () => {

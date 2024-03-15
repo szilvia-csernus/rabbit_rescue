@@ -1,21 +1,32 @@
-import { lazy, Suspense } from 'react';
-import { useSelector } from 'react-redux';
-import { Outlet } from 'react-router-dom';
+import { lazy, Suspense, useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { Outlet, useLocation } from 'react-router-dom';
 import { Container } from '../Components/Container';
 import Footer from '../Components/Footer';
 import Header from '../Components/Header';
+import { thanksDonationActions } from '../store/thanks-donation-slice';
+import ThanksDonation from '../Components/ThanksDonation';
 
-const DonateForm = lazy(() => import('../Components/DonateForm'));
 const VolunteerForm = lazy(() => import('../Components/VolunteerForm'));
-const ThankYouMessage = lazy(() => import('../Components/ThankYouMessage'));
+const ThanksVolunteer = lazy(() => import('../Components/ThanksVolunteer'));
 const ErrorMessage = lazy(() => import('../Components/ErrorMessage'));
 
 const Root = () => {
-	const donateFormState = useSelector((state) => state.donateForm);
+	const thanksDonationState = useSelector((state) => state.thanksDonation);
 	const volunteerFormState = useSelector((state) => state.volunteerForm);
-	const thankYouMessageState = useSelector((state) => state.thankYouMessage);
+	const thanksVolunteerState = useSelector((state) => state.thanksVolunteer);
 	const errorMessageState = useSelector((state) => state.errorMessage);
+	const location = useLocation();
 	
+	const dispatch = useDispatch();
+	
+useEffect(() => {
+	const queryParams = new URLSearchParams(location.search);
+	if (queryParams.get('successful-payment')) {
+		dispatch(thanksDonationActions.open());
+	};
+}, [dispatch, location.search]);
+
 	return (
 		<>
 			<Container>
@@ -27,9 +38,9 @@ const Root = () => {
 			<Container>
 				<Footer />
 			</Container>
-			{donateFormState && (
+			{thanksDonationState && (
 				<Suspense fallback="Loading...">
-					<DonateForm />
+					<ThanksDonation />
 				</Suspense>
 			)}
 			{volunteerFormState && (
@@ -37,9 +48,9 @@ const Root = () => {
 					<VolunteerForm />
 				</Suspense>
 			)}
-			{thankYouMessageState && (
+			{thanksVolunteerState && (
 				<Suspense fallback="Loading...">
-					<ThankYouMessage />
+					<ThanksVolunteer />
 				</Suspense>
 			)}
 			{errorMessageState && (

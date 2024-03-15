@@ -5,7 +5,7 @@ import useInput from '../Hooks/use-input';
 import { ButtonGeneral, ButtonSecondary } from './Buttons';
 import Modal from './Modal';
 import { useDispatch } from 'react-redux';
-import { donateFormActions } from '../store/donate-form-slice';
+import { thanksDonationActions } from '../store/thanks-donation-slice';
 import { send } from '../store/form-action-creator';
 
 const isNotEmpty = (value) => value.trim() !== '';
@@ -48,7 +48,7 @@ const DonateForm = () => {
 		nameReset();
 		emailReset();
 		setPhoneNr('');
-		dispatch(donateFormActions.reset());
+		dispatch(thanksDonationActions.reset());
 		send(dispatch, {
 			name: nameValue,
 			email: emailValue,
@@ -58,7 +58,7 @@ const DonateForm = () => {
 	
 	const cancelClickHandler = (event) => {
 		event.preventDefault();
-		dispatch(donateFormActions.reset());
+		dispatch(thanksDonationActions.reset());
 	}
 	
 	useEffect(() => {

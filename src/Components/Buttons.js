@@ -36,7 +36,7 @@ export const ButtonFeature1 = (props) => {
 	);
 };
 
-export const ButtonFeature2 = (props) => {
+export const ButtonDonate = (props) => {
 	const classNames = `${classes.button}  ${classes.feature2} ${props.className}`;
 	return (
 		<button className={classNames} onClick={props.onClick}>
