@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { burgerActions } from '../store/burger-slice';
 import Modal from './Modal';
 import { useEffect, useState } from 'react';
+import DonateLink from './DonateLink';
 
 const NavBar = () => {
 	const initialExpandedMenu = window.innerWidth > 992 ? true : false
@@ -73,9 +74,11 @@ const NavBar = () => {
 					Contact Us
 				</NavLink>
 			</li>
-			<a href={'https://donate.stripe.com/test_6oE9BSeSH4iPfiE9AA'} className={classes.navItem}>
+			<DonateLink
+				className={classes.navItem}
+			>
 				<ButtonDonate>Donate</ButtonDonate>
-			</a>
+			</DonateLink>
 		</>
 	);
 

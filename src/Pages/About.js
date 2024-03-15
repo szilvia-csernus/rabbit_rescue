@@ -12,6 +12,7 @@ import { HeroImage } from '../Components/MainImages';
 import { ArticleLeft, Article, ArticleRight } from '../Components/Article';
 import { useDispatch } from 'react-redux';
 import { volunteerFormActions } from '../store/volunteer-form-slice';
+import DonateLink from '../Components/DonateLink';
 
 const About = () => {
 	window.scroll(0, 0);
@@ -101,12 +102,11 @@ const About = () => {
 					</p>
 					<h2>Please consider supporting us.</h2>
 				</div>
-				<a
-					href={'https://donate.stripe.com/test_6oE9BSeSH4iPfiE9AA'}
+				<DonateLink
 					className={classes.generalButtonBoxLeft}
 				>
 					<ButtonGeneral>Donate</ButtonGeneral>
-				</a>
+				</DonateLink>
 			</ArticleLeft>
 			<ArticleRight>
 				<div>
