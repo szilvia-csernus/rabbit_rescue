@@ -2,6 +2,11 @@
 
 .env
 MY-NOTES.md
+**/venv
+
+# backend
+**/__pycache__
+**/*.sqlite3
 
 # dependencies
 */node_modules
@@ -15,6 +20,7 @@ MY-NOTES.md
 */build
 
 # misc
+.vscode
 .DS_Store
 .env.local
 .env.development.local
