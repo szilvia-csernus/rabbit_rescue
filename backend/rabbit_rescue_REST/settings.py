@@ -31,6 +31,15 @@ DEBUG = "DEVELOPMENT" in os.environ
 
 ALLOWED_HOSTS = [os.getenv("BACKEND_HOST"), "localhost", "127.0.0.1"]
 
+# This is a list of origins that are authorized to make cross-origin requests.
+# Cross-Origin Resource Sharing (CORS) is a mechanism that allows many
+# resources (e.g., fonts, JavaScript, etc.) on a web page to be requested from
+# another domain outside the domain from which the resource originated. To allow our backend to communicate with our Frontend,
+# CORS_ALLOWED_ORIGINS = [
+#     os.getenv("FRONTEND_URL")
+# ]
+
+
 
 # Application definition
 
@@ -41,10 +50,13 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    
     'cloudinary_storage',  # for cloudinary
     'cloudinary',  # for cloudinary
     'rest_framework',  # for djangorestframework
     'corsheaders',  # new
+    
+    'rabbits',
 ]
 
 MIDDLEWARE = [
@@ -57,8 +69,6 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-
-
 ]
 
 ROOT_URLCONF = 'rabbit_rescue_REST.urls'
