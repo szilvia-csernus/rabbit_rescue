@@ -15,11 +15,10 @@ from dotenv import load_dotenv
 import os
 import dj_database_url
 
-
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-load_dotenv(os.path.join(BASE_DIR, '.env'))
+load_dotenv(os.path.join(BASE_DIR, '.test.env'))
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
@@ -63,7 +62,6 @@ INSTALLED_APPS = [
 MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',  # new
     'django.middleware.security.SecurityMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',  # new
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -149,20 +147,10 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-# for WhiteNoise to serve static files in production with 'collectstatic'
-STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'), )  # has to be a tuple
-STATIC_ROOT = BASE_DIR / 'staticfiles'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-# Cloudinary settings
-# https://cloudinary.com/documentation/django_image_and_video_upload#configuration
-
-CLOUDINARY_STORAGE = {
-    'CLOUDINARY_URL': os.getenv("CLOUDINARY_URL"),
-}
-MEDIA_URL = '/rabbits/'
-DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+TEST_RUNNER = "redgreenunittest.django.runner.RedGreenDiscoverRunner"
