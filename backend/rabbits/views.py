@@ -1,3 +1,7 @@
-from django.shortcuts import render
+from rest_framework.generics import ListAPIView
+from .models import RabbitGroup
+from .serializers import RabbitGroupSerializer
 
-# Create your views here.
+class RabbitGroupListView(ListAPIView):
+    queryset = RabbitGroup.objects.all()
+    serializer_class = RabbitGroupSerializer

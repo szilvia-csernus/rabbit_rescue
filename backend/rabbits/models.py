@@ -10,7 +10,8 @@ class Rabbit(models.Model):
     description = models.TextField(blank=True)
     neutered = models.BooleanField(default=False)
     vaccinated = models.BooleanField(default=False)
-    group = models.ForeignKey('RabbitGroup', on_delete=models.CASCADE, blank=True, null=True)
+    group = models.ForeignKey('RabbitGroup', on_delete=models.CASCADE,
+                              blank=True, null=True, related_name='rabbits')
     
     def age(self):
         import datetime
@@ -41,7 +42,8 @@ class RabbitImage(models.Model):
     """
     Represents an image of a group of rabbits.
     """
-    rabbit_group = models.ForeignKey(RabbitGroup, on_delete=models.CASCADE)
+    rabbit_group = models.ForeignKey(RabbitGroup, on_delete=models.CASCADE,
+                                     related_name='images')
 
     image = models.ImageField(
         upload_to='rabbits/', blank=True
