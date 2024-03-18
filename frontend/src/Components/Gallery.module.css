@@ -9,6 +9,14 @@
 	display: inline-block;
 	width: 100%;
 	position: relative;
+	transition: all 0.3s ease-out;
+	cursor: pointer;
+}
+
+.pictureBox:hover {
+	transform: scale(1.05) ;
+	z-index: 1;
+
 }
 
 .gallery img {
