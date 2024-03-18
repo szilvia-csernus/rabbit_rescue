@@ -4,9 +4,11 @@ import thanksDonationSlice from './thanks-donation-slice';
 import volunteerFormSlice from './volunteer-form-slice';
 import thanksVolunteerSlice from './thanks-volunteer-slice';
 import errorMessageSlice from './error-message-slice';
+import rabbitsSlice from './rabbits-slice';
 
 const store = configureStore({
 	reducer: {
+		rabbits: rabbitsSlice.reducer,
 		burger: burgerSlice.reducer,
 		thanksDonation: thanksDonationSlice.reducer,
 		volunteerForm: volunteerFormSlice.reducer,

@@ -6,12 +6,22 @@ import { AdoptImage } from '../Components/MainImages';
 import { ReactComponent as VisitUsIcon } from '../assets/icons/visit-us.svg';
 import { lazy, Suspense } from 'react';
 import { Link } from 'react-router-dom';
+import { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import { getAllRabbits } from '../store/rabbit-action-creator';
 
 const Gallery = lazy(() => import('../Components/Gallery'));
 
 const Adopt = () => {
 	window.scroll(0, 0);
-	
+	const dispatch = useDispatch();
+
+	console.log('Adopt component rendered');
+
+	useEffect(() => {
+		getAllRabbits(dispatch);
+	}, [dispatch]);
+
 	return (
 		<main>
 			<AdoptImage />
