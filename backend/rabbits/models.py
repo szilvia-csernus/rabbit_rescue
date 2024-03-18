@@ -5,13 +5,12 @@ class Rabbit(models.Model):
     """Model for a rabbit."""
     name = models.CharField(max_length=100)
     breed = models.CharField(max_length=100, blank=True)
+    sex = models.CharField(max_length=1, choices=(('F', 'Doe (Female)'), ('M', 'Buck (Male)'),), blank=True)
     date_of_birth = models.DateField(blank=True)
     description = models.TextField(blank=True)
     neutered = models.BooleanField(default=False)
     vaccinated = models.BooleanField(default=False)
     group = models.ForeignKey('RabbitGroup', on_delete=models.CASCADE, blank=True, null=True)
-    created_at = models.DateTimeField(auto_now_add=True)
-    updated_at = models.DateTimeField(auto_now=True)
     
     def age(self):
         import datetime
@@ -35,7 +34,7 @@ class RabbitGroup(models.Model):
         return self.get_rabbits().count()
 
     def __str__(self):
-        names_string = '& '.join([rabbit.name for rabbit in self.get_rabbits()])
+        names_string = ' & '.join([rabbit.name for rabbit in self.get_rabbits()])
         return names_string
 
 class RabbitImage(models.Model):
@@ -47,8 +46,6 @@ class RabbitImage(models.Model):
     image = models.ImageField(
         upload_to='rabbits/', blank=True
     )
-    created_at = models.DateTimeField(auto_now_add=True)
-    updated_at = models.DateTimeField(auto_now=True)
     
     def __str__(self):
         return str(self.rabbit_group) + ' Image'
