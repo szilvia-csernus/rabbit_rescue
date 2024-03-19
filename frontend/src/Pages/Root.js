@@ -6,6 +6,7 @@ import Footer from '../Components/Footer';
 import Header from '../Components/Header';
 import { thanksDonationActions } from '../store/thanks-donation-slice';
 import ThanksDonation from '../Components/ThanksDonation';
+import EnquiryForm from '../Components/EnquiryForm';
 
 const VolunteerForm = lazy(() => import('../Components/VolunteerForm'));
 const ThanksVolunteer = lazy(() => import('../Components/ThanksVolunteer'));
@@ -13,6 +14,7 @@ const ErrorMessage = lazy(() => import('../Components/ErrorMessage'));
 
 const Root = () => {
 	const thanksDonationState = useSelector((state) => state.thanksDonation);
+	const enquireFormState = useSelector((state) => state.enquiryForm.isOpen);
 	const volunteerFormState = useSelector((state) => state.volunteerForm);
 	const thanksVolunteerState = useSelector((state) => state.thanksVolunteer);
 	const errorMessageState = useSelector((state) => state.errorMessage);
@@ -20,12 +22,12 @@ const Root = () => {
 	
 	const dispatch = useDispatch();
 	
-useEffect(() => {
-	const queryParams = new URLSearchParams(location.search);
-	if (queryParams.get('successful-payment')) {
-		dispatch(thanksDonationActions.open());
-	};
-});
+	useEffect(() => {
+		const queryParams = new URLSearchParams(location.search);
+		if (queryParams.get('successful-payment')) {
+			dispatch(thanksDonationActions.open());
+		};
+	});
 
 	return (
 		<>
@@ -41,6 +43,11 @@ useEffect(() => {
 			{thanksDonationState && (
 				<Suspense fallback="Loading...">
 					<ThanksDonation />
+				</Suspense>
+			)}
+			{enquireFormState && (
+				<Suspense fallback="Loading...">
+					<EnquiryForm />
 				</Suspense>
 			)}
 			{volunteerFormState && (

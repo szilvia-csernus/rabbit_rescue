@@ -1,9 +1,10 @@
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 import classes from './Gallery.module.css';
 import { useState } from 'react';
 import Modal from './Modal';
 import { ButtonGeneral, ButtonSecondary } from './Buttons';
+import { enquiryFormActions } from '../store/enquiry-form-slice';
 
 function getAge(dateString) {
 	const today = new Date();
@@ -27,9 +28,17 @@ function getAge(dateString) {
 const Picture = (props) => {
 	const [isExpanded, setIsExpanded] = useState(false);
 
+	const dispatch = useDispatch();
+
 	const toggleExpand = () => {
 		setIsExpanded(!isExpanded);
 	};
+
+	const clickEnquireHandler = () => {
+		setIsExpanded(!isExpanded);
+		dispatch(enquiryFormActions.setActiveRabbitGroup({name: props.dataName, image: props.src}));
+		dispatch(enquiryFormActions.openForm())
+	}
 
 	return (
 		<>
@@ -104,7 +113,7 @@ const Picture = (props) => {
 									</div>
 								))}
 							</div>
-							<ButtonGeneral onClick={toggleExpand}>Send Enqiry</ButtonGeneral>
+							<ButtonGeneral onClick={clickEnquireHandler}>Enquire</ButtonGeneral>
 							<ButtonSecondary onClick={toggleExpand}>Close</ButtonSecondary>
 						</div>
 					</article>
