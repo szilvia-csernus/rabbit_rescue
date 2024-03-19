@@ -7,7 +7,8 @@
 
 
 
-I created this project with `React JS / Redux / CSS Modules` and `Figma` for design. Payment is implemented with `STRIPE Link`. It is a fully frontend app, no backend is implemented yet, which I'm planning to do in the future.
+I created this project with `React JS / Redux / CSS Modules` and `Figma` for design. Payment is implemented with `STRIPE Link`. The deployed project is a fully frontend app. Currently, I'm in the
+process of creating a backend for this project with the Django REST framework.
 
 I originally created this project for Code Institute's Web Application Development Course as the 1st Milestone Project (User Centric Frontend Development Project) in `HTML5-CSS3-BOOTSTRAP5`, which can be found [here](https://github.com/szilvia-csernus/rabbit-sanctuary).
 <br><br>
