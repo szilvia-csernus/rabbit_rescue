@@ -1,55 +1,133 @@
-import { pictures } from '../assets/data/pictures-data';
+import { useSelector } from 'react-redux';
 
 import classes from './Gallery.module.css';
+import { useState } from 'react';
+import Modal from './Modal';
+import { ButtonGeneral, ButtonSecondary } from './Buttons';
+
+function getAge(dateString) {
+	const today = new Date();
+	const birthDate = new Date(dateString);
+	let age = today.getFullYear() - birthDate.getFullYear();
+	const m = today.getMonth() - birthDate.getMonth();
+
+	if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
+		age--;
+	}
+
+	if (age > 2) {
+		return `${age} years`;
+	} else if (age === 0) {
+		return `${m} months`;
+	} else {
+		return `${age} years and ${m} months`;
+	}
+}
 
 const Picture = (props) => {
-	
-    const sources = props.sources.map((source, idx) => {
-			return <source key={idx} type={source.type} srcSet={source.srcSet} />;
-		});
+	const [isExpanded, setIsExpanded] = useState(false);
+
+	const toggleExpand = () => {
+		setIsExpanded(!isExpanded);
+	};
 
 	return (
-		<div className={classes.pictureBox}>
-			<picture dataname={props.dataName}>
-				{sources}
-				{
-					<img
-						src={props.img.src}
-						width={props.img.width}
-						height={props.img.height}
-						alt={props.img.alt}
-						loading="lazy"
-					/>
-				}
-			</picture>
-		</div>
+		<>
+			<div className={classes.card} dataname={props.dataName}>
+				<img
+					src={props.src}
+					width={props.width}
+					alt={props.dataName}
+					loading="lazy"
+					onClick={toggleExpand}
+				/>
+			</div>
+			{isExpanded && (
+				<Modal
+					pos={'centre'}
+					elementState={isExpanded}
+				>
+					<article className={classes.detailedCard}>
+						<img
+							className={classes.rabbitImg}
+							src={props.src}
+							alt={props.dataName}
+						/>
+						<div>
+							<div>
+								{props.rabbits.map((rabbit) => (
+									<div key={rabbit.name} className={classes.rabbitDetails}>
+										<h3>{rabbit.name}</h3>
+										<p>{rabbit.breed}</p>
+										<p>{getAge(rabbit.date_of_birth)} old</p>
+										<p>{rabbit.sex}</p>
+										<p>
+											{rabbit.vaccinated && (
+												<>
+													<span className="material-symbols-outlined">
+														done
+													</span>
+													Vaccinated
+												</>
+											)}
+										</p>
+										<p>
+											{!rabbit.vaccinated && (
+												<>
+													<span className="material-symbols-outlined">
+														close
+													</span>
+													Not Vaccinated
+												</>
+											)}
+										</p>
+										<p>
+											{rabbit.neutered && (
+												<>
+													<span className="material-symbols-outlined">
+														check
+													</span>
+													Neutered
+												</>
+											)}
+										</p>
+										<p>
+											{!rabbit.neutered && (
+												<>
+													<span className="material-symbols-outlined">
+														close
+													</span>
+													Not Neutered
+												</>
+											)}
+										</p>
+									</div>
+								))}
+							</div>
+							<ButtonGeneral onClick={toggleExpand}>Send Enqiry</ButtonGeneral>
+							<ButtonSecondary onClick={toggleExpand}>Close</ButtonSecondary>
+						</div>
+					</article>
+				</Modal>
+			)}
+		</>
 	);
 };
 
 const Gallery = () => {
-    const webp = 'image/webp';
-	const png = 'image/png';
+	const rabbit_groups = useSelector((state) => state.rabbits);
     const width = "350";
 
     return (
 			<div className={classes.gallery}>
-				{ pictures.map((picture, idx) => {
-					return (
+				{ rabbit_groups.map((group) => (
 					<Picture
-					key={idx}
-					sources={[
-						{ type: webp, srcSet: picture.srcSetwebp },
-						{ type: png, srcSet: picture.srcSetpng },
-					]}
-					img={{
-						src: picture.srcSetwebp,
-						width: width,
-						height: picture.height,
-						alt: `cute bunnies nr${idx}`
-					}}
-					dataName={picture.dataName}
+					key={group.id}
+					src={group.images[0].image}
+					width={width}
+					rabbits={group.rabbits}
+					dataName={group.group_name}
 					/>)
-				}
 				)}
 			</div>
 		);

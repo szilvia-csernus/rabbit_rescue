@@ -5,25 +5,25 @@
 	column-gap: 0.3rem;
 }
 
-.pictureBox {
+.card {
 	display: inline-block;
-	width: 100%;
 	position: relative;
 	transition: all 0.3s ease-out;
 	cursor: pointer;
 }
 
-.pictureBox:hover {
+.card:hover {
 	transform: scale(1.05) ;
 	z-index: 1;
 
 }
 
-.gallery img {
-	display: inline;
+.rabbitImg {
+	width: 100%;
+	object-fit: cover;
 }
 
-.gallery picture::before {
+.gallery .card::before {
 	content: attr(dataname);
 	position: absolute;
 	border: 1px solid var(--static-bg-color);
@@ -35,13 +35,54 @@
 	font-size: 1rem;
 }
 
+.detailedCard {
+	min-width: 320px;
+	padding: 1rem;
+	border-radius: .5rem;
+	border: 1px solid var(--grey-bg-color);
+	background-color: var(--body-bg-color);
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+	color: var(--grey-font-color);
+	font-size: .95rem;
+}
+
+.detailedCard img {
+	max-width: 350px;
+	max-height: 350px;
+	object-fit: cover;
+	border-radius: 0.5rem;
+}
+
+.detailedCard h3 {
+	font-weight: bold;
+	font-size: 1.2rem;
+}
+
+.detailedCard button {
+	display: block;
+	margin: 1rem 0 1rem 0;
+}
+
+.rabbitDetails {
+	margin-bottom: 2rem;
+}
+
 @media screen and (min-width: 640px) {
 	.gallery {
 		column-count: 3;
 	}
 
-	.gallery picture::before {
+	.gallery .card::before {
 		font-size: var(--body-font-size);
+	}
+}
+
+@media screen and (min-width: 900px) {
+	.detailedCard {
+		flex-direction: row;
+		min-width: 600px;
 	}
 }
 
@@ -56,3 +97,5 @@
 		margin: 0;
 	}
 }
+
+

@@ -10,10 +10,12 @@ import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { getAllRabbits } from '../store/rabbit-action-creator';
 
+
 const Gallery = lazy(() => import('../Components/Gallery'));
 
 const Adopt = () => {
 	window.scroll(0, 0);
+
 	const dispatch = useDispatch();
 
 	console.log('Adopt component rendered');
@@ -47,46 +49,43 @@ const Adopt = () => {
 						easier too.
 						<br />
 						<br />
-						We also would like to be certain that owning a rabbit is the{' '}
-						<span>right choice</span> for you and your family. We would like to
-						know about your expectations, other animals at home, etc. In
-						addition, we will also ask if you have <span>enough space</span> for
-						them at home: a safe enclosure with a minimum size of 3mx2m, but the
-						larger the better! Wild rabbits cover a space as large as about 8
-						tennis courts daily.
-						<br />
-						<br />
-						<span>
-							We are open to prospective bunny parents on Saturdays from 10am to
-							5pm.{' '}
-						</span>
-						Once here, you have the chance to meet and play with our rabbit
-						residents and also learn about how to care for them. <br />
-						<br />
-						Our volunteers will tell you everything you need to know about
-						adoption.
 					</p>
-					<br />
-					<ButtonGeneral>
-						<Link to="/contact-us">Visit Us</Link>
-					</ButtonGeneral>
 				</div>
 			</Article>
 
 			<Article className={classes.gallery}>
-				<h2 className={classes.galleryTitle}>Some of our latest arrivals</h2>
+				<h2 className={classes.galleryTitle}>Our latest arrivals</h2>
 
 				<Suspense fallback="Loading...">
 					<Gallery />
 				</Suspense>
+			</Article>
+			<br />
+			<br />
+			<Article className={classes.adopt}>
+				<div>
+					<br />
+					<br />
+					<span>
+						We are open to prospective bunny parents on Saturdays from 10am to
+						5pm.{' '}
+					</span>
+					Once here, you have the chance to meet and play with our rabbit
+					residents and also learn about how to care for them. <br />
+					<br />
+					Our volunteers will tell you everything you need to know about
+					adoption.
+				</div>
 
 				<ButtonGeneral>
 					<Link to="/contact-us">Visit Us</Link>
 				</ButtonGeneral>
+				<br />
+				<br />
 
-				<div>
-					<VisitUsIcon className={classes.icon} />
-				</div>
+				<VisitUsIcon className={classes.icon} />
+				<br />
+				<br />
 			</Article>
 		</main>
 	);

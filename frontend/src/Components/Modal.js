@@ -8,7 +8,7 @@ const Backdrop = (props) => {
 	const dispatch = useDispatch();
 	
 	const clickHandler = () => {
-		props.elementState && dispatch(props.resetAction());
+		props.elementState && props.resetAction && dispatch(props.resetAction());
 	}
 
 	return <div className={classes.backdrop} onClick={clickHandler}/>;
@@ -18,7 +18,7 @@ const Overlay = (props) => {
 	return <div className={classes.overlay}>{props.children}</div>;
 };
 
-const Canvas = (props) => {
+const ContentArea = (props) => {
 	const position = props.pos === 'side' ? classes.side : classes.center;
 	return <div className={position}>{props.children}</div>;
 }
@@ -35,7 +35,7 @@ const Modal = (props) => {
 				/>, portalElement)}
 			{ReactDOM.createPortal(
 				<Overlay >
-					<Canvas pos={props.pos}>{props.children}</Canvas>
+					<ContentArea pos={props.pos}>{props.children}</ContentArea>
 				</Overlay>,
 				portalElement
 			)}
