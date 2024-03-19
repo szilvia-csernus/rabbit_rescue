@@ -1,5 +1,4 @@
 .article {
-	
 	display: flex;
 	flex-direction: column;
 	justify-content: space-around;
@@ -11,7 +10,7 @@
 	margin: 0 1.5rem;
 	padding: 2rem 0;
 	border-top: 1px solid var(--grey-font-color);
-	font-size: 1.1rem;
+	font-size: 1rem;
 }
 
 .articleLeft svg,
@@ -41,7 +40,7 @@
 @media screen and (min-width: 640px) {
 	.articleLeft,
 	.articleRight {
-		font-size: 1.25rem;
+		font-size: 1.1rem;
 	}
 }
 

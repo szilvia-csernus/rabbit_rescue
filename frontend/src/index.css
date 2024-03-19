@@ -84,7 +84,7 @@ li {
     --strong-font-weight: 400;
     --bold-font-weight: 700;
 
-    --body-font-size: 1.1rem;
+    --body-font-size: 1rem;
     --header-font-size: 1.3rem;
 }
 
@@ -201,3 +201,15 @@ input:-internal-autofill-selected {
 
    
 }
+
+.material-symbols-outlined {
+    font-variation-settings:
+        'FILL' 0,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 24;
+    font-size: 22px;
+    position: relative;
+    top: 5px;
+}
+
