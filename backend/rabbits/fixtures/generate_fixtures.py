@@ -29,7 +29,7 @@ imgNr16webp = 'satyabratasm-unsplash.webp'
 
 def random_date(start_year=2010, end_year=datetime.now().year):
     start_date = datetime(start_year, 1, 1)
-    end_date = datetime(end_year, 12, 31)
+    end_date = datetime(end_year, 1, 30)
 
     return start_date + (end_date - start_date) * random.random()
 
@@ -151,7 +151,7 @@ for picture in pictures:
                 "date_of_birth": random_date().strftime('%Y-%m-%d'),
                 "description": "A lovely rabbit",
                 "neutered": random_boolean(),
-                "vaccinated": random_boolean(),
+                "vaccinated": True,
                 "group": group_id
             }
         }
