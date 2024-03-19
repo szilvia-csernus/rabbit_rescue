@@ -7,7 +7,7 @@ const burgerSlice = createSlice({
 		toggler(state) {
 			return !state;
         },
-		initialize() {
+		reset() {
 			return false;
 		},
 	},

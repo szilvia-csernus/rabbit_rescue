@@ -17,7 +17,7 @@ const NavBar = () => {
 	const dispatch = useDispatch();
 
 	const clickHandler = () => {
-		dispatch(burgerActions.initialize());
+		dispatch(burgerActions.reset());
 	};
 
 	// This hook makes sure that the side menu changes to expanded menu after

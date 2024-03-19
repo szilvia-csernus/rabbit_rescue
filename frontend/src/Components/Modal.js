@@ -18,7 +18,7 @@ const Backdrop = () => {
 	const dispatch = useDispatch();
 	
 	const clickHandler = () => {
-		burger && dispatch(burgerActions.initialize(burger))
+		burger && dispatch(burgerActions.reset(burger))
 		thanksDonation && dispatch(thanksDonationActions.reset());
 		volunteerForm && dispatch(volunteerFormActions.reset());
 		thanksVolunteer && dispatch(thanksVolunteerActions.reset());
