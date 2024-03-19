@@ -2,18 +2,18 @@ from rest_framework import serializers
 from .models import Rabbit, RabbitGroup, RabbitImage
 
 class RabbitSerializer(serializers.ModelSerializer):
+    sex = serializers.SerializerMethodField()
     class Meta:
         model = Rabbit
         fields = ['name', 'breed', 'sex', 'date_of_birth', 'description', 'neutered', 'vaccinated']
 
+    def get_sex(self, obj):
+        return obj.get_sex_display()
+
 class RabbitImageSerializer(serializers.ModelSerializer):
-    image_url = serializers.SerializerMethodField()
     class Meta:
         model = RabbitImage
-        fields = ['image_url']
-    
-    def get_image_url(self, obj):
-        return obj.image.url
+        fields = ['image']
 
 class RabbitGroupSerializer(serializers.ModelSerializer):
     rabbits = RabbitSerializer(many=True, read_only=True)
@@ -23,10 +23,12 @@ class RabbitGroupSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = RabbitGroup
-        fields = ['group_name',
-                  'images',
-                  'rabbits_count',
-                  'rabbits']
+        fields = [
+            'id',
+            'group_name',
+            'images',
+            'rabbits_count',
+            'rabbits']
 
     def get_group_name(self, obj):
         return str(obj)
