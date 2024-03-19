@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 const thanksVolunteerSlice = createSlice({
-	name: 'ThanksVolunteer',
+	name: 'thanksVolunteer',
 	initialState: false,
 	reducers: {
 		open() {

@@ -2,13 +2,15 @@ import classes from './Form.module.css';
 
 import { ButtonSecondary } from './Buttons';
 import Modal from './Modal';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { thanksVolunteerActions } from '../store/thanks-volunteer-slice';
 
 
-const ThanksVolunteer = () => {
+const ThanksVolunteer = (props) => {
 	
 	const dispatch = useDispatch();
+
+	const thanksVolunteerState = useSelector((state) => state.thanksVolunteer);
 
 	const cancelClickHandler = (event) => {
 		event.preventDefault();
@@ -16,7 +18,9 @@ const ThanksVolunteer = () => {
 	};
 
 	return (
-		<Modal pos={'centre'}>
+		<Modal pos={'centre'}
+				elementState={thanksVolunteerState}
+				resetAction={thanksVolunteerActions.reset}>
 			<section className={classes.content}>
 				<h2 className={classes.header}>Thanks for expressing your interest!</h2>
 				<div className={classes.body}>

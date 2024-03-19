@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 import useInput from '../Hooks/use-input';
 import { ButtonGeneral, ButtonSecondary } from './Buttons';
 import Modal from './Modal';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { volunteerFormActions } from '../store/volunteer-form-slice';
 import { send } from '../store/form-action-creator';
 
@@ -18,6 +18,8 @@ const VolunteerForm = () => {
 	const [phoneNr, setPhoneNr] = useState('');
 	const [message, setMessage] = useState('');
 	const dispatch = useDispatch();
+
+	const volunteerFormState = useSelector((state) => state.volunteerForm);
 
 	const {
 		value: nameValue,
@@ -78,7 +80,9 @@ const VolunteerForm = () => {
 	}`;
 
 	return (
-		<Modal pos={'centre'}>
+		<Modal pos={'centre'}
+				elementState={volunteerFormState}
+				resetAction={volunteerFormActions.reset}>
 			<section className={classes.content}>
 				<h2 className={classes.header}>VOLUNTEER</h2>
 				<div className={classes.body}>

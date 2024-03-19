@@ -86,7 +86,9 @@ const NavBar = () => {
 		<nav>
 			{expandedMenu && <ul className={classes.expandedMenuBar}>{nav}</ul>}
 			{burger && (
-				<Modal pos={'side'}>
+				<Modal pos={'side'}
+						elementState={burger}
+						resetAction={burgerActions.reset}>
 					<ul className={classProp}>{nav}</ul>
 				</Modal>
 			)}

@@ -2,13 +2,15 @@ import classes from './Form.module.css';
 
 import { ButtonSecondary } from './Buttons';
 import Modal from './Modal';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { thanksDonationActions } from '../store/thanks-donation-slice';
 import { useNavigate } from 'react-router-dom';
 
 const ThanksDonation = () => {
 	const dispatch = useDispatch();
 	const navigate = useNavigate();
+
+	const thanksDonationState = useSelector((state) => state.thanksDonation);
 
 	const closeClickHandler = (event) => {
 		event.preventDefault();
@@ -17,15 +19,17 @@ const ThanksDonation = () => {
 	};
 
 	return (
-		<Modal pos={'centre'}>
+		<Modal
+			pos={'centre'}
+			elementState={thanksDonationState}
+			resetAction={thanksDonationActions.reset}
+		>
 			<section className={classes.content}>
 				<h2 className={classes.header}>SUCCESSFUL PAYMENT</h2>
 				<div className={classes.body}>
 					<p>Thank you for your generosity!</p>
 					<div className={classes.footer}>
-						<ButtonSecondary onClick={closeClickHandler}>
-							Close
-						</ButtonSecondary>
+						<ButtonSecondary onClick={closeClickHandler}>Close</ButtonSecondary>
 					</div>
 				</div>
 			</section>
