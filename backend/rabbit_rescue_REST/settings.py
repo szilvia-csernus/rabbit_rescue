@@ -35,12 +35,12 @@ ALLOWED_HOSTS = [os.getenv("BACKEND_HOST"), "localhost", "127.0.0.1"]
 # This is a list of origins that are authorized to make cross-origin requests.
 # Cross-Origin Resource Sharing (CORS) is a mechanism that allows many
 # resources (e.g., fonts, JavaScript, etc.) on a web page to be requested from
-# another domain outside the domain from which the resource originated. To allow our backend to communicate with our Frontend,
-# CORS_ALLOWED_ORIGINS = [
-#     os.getenv("FRONTEND_URL")
-# ]
-
-
+# another domain outside the domain from which the resource originated. To allow
+# our Frontend to communicate with our Backend, we need to enable CORS for this
+# origin.
+CORS_ALLOWED_ORIGINS = [
+    os.getenv("FRONTEND_URL"),
+]
 
 # Application definition
 
