@@ -5,7 +5,7 @@ class RabbitSerializer(serializers.ModelSerializer):
     sex = serializers.SerializerMethodField()
     class Meta:
         model = Rabbit
-        fields = ['name', 'breed', 'sex', 'date_of_birth', 'description', 'neutered', 'vaccinated']
+        fields = ['name', 'breed', 'sex', 'age', 'description', 'neutered', 'vaccinated']
 
     def get_sex(self, obj):
         return obj.get_sex_display()

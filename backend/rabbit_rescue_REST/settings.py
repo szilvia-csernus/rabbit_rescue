@@ -38,13 +38,13 @@ ALLOWED_HOSTS = [os.getenv("BACKEND_HOST"), "localhost", "127.0.0.1"]
 # another domain outside the domain from which the resource originated. To allow
 # our Frontend to communicate with our Backend, we need to enable CORS for this
 # origin.
-CORS_ALLOWED_ORIGINS = [
-    os.getenv("FRONTEND_URL")
-]
+# CORS_ALLOWED_ORIGINS = [
+#     os.getenv("FRONTEND_URL")
+# ]
 
 # This setting is needed if the frontend sends POST requests to the backend.
-# In this project, the '/admin/' path is proxy_routed to the backend, which
-# makes it a cross-site-request.
+# Our frontend and backend will be under different domains (unless we change it
+# later) this setting is necessary:
 CSRF_TRUSTED_ORIGINS = [os.getenv("FRONTEND_URL")]
 
 # Application definition

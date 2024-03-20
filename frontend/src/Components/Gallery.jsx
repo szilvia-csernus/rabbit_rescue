@@ -6,26 +6,6 @@ import Modal from './Modal';
 import { ButtonGeneral, ButtonSecondary } from './Buttons';
 import { enquiryFormActions } from '../store/enquiry-form-slice';
 
-function getAge(dateString) {
-	const today = new Date();
-	const birthDate = new Date(dateString);
-	let age = today.getFullYear() - birthDate.getFullYear();
-	const m = today.getMonth() - birthDate.getMonth();
-
-	if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
-		age--;
-	}
-
-	if (age > 2) {
-		return `${age} years`;
-	} else if (age === 0) {
-		return `${m} months`;
-	} else {
-		if (m === 0) return `${age} years`;
-		else return `${age} years and ${m} months`;
-	}
-}
-
 const Picture = (props) => {
 	const [isExpanded, setIsExpanded] = useState(false);
 
@@ -69,7 +49,7 @@ const Picture = (props) => {
 									<div key={rabbit.name} className={classes.rabbitDetails}>
 										<h3>{rabbit.name}</h3>
 										<p>{rabbit.breed}</p>
-										<p>{getAge(rabbit.date_of_birth)} old</p>
+										<p>{rabbit.age}</p>
 										<p>{rabbit.sex}</p>
 										<p>
 											{rabbit.vaccinated && (

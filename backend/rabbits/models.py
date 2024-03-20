@@ -15,7 +15,15 @@ class Rabbit(models.Model):
     
     def age(self):
         import datetime
-        return datetime.date.today().year - self.date_of_birth.year
+        year = datetime.date.today().year - self.date_of_birth.year
+        if year > 1:
+            return f"{year} years old"
+        if year == 1:
+            months = datetime.date.today().month - self.date_of_birth.month + 12
+            if months == 12:
+                return "1 year old"
+            else:
+                return f"{months} months old"
     
     def __str__(self):
         return self.name
