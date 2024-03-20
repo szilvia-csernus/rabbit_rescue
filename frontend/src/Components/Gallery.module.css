@@ -79,10 +79,10 @@
 	}
 }
 
-@media screen and (min-width: 900px) {
+@media screen and (min-width: 550px) {
 	.detailedCard {
 		flex-direction: row;
-		min-width: 600px;
+		min-width: 550px;
 	}
 }
 
