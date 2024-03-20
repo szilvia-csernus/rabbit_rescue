@@ -39,8 +39,13 @@ ALLOWED_HOSTS = [os.getenv("BACKEND_HOST"), "localhost", "127.0.0.1"]
 # our Frontend to communicate with our Backend, we need to enable CORS for this
 # origin.
 CORS_ALLOWED_ORIGINS = [
-    os.getenv("FRONTEND_URL"),
+    os.getenv("FRONTEND_URL")
 ]
+
+# This setting is needed if the frontend sends POST requests to the backend.
+# In this project, the '/admin/' path is proxy_routed to the backend, which
+# makes it a cross-site-request.
+CSRF_TRUSTED_ORIGINS = [os.getenv("FRONTEND_URL")]
 
 # Application definition
 
@@ -166,3 +171,7 @@ CLOUDINARY_STORAGE = {
 }
 MEDIA_URL = '/rabbits/'
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+
+if 'DEVELOPMENT' in os.environ:
+    CSRF_COOKIE_SECURE = False
+    SESSION_COOKIE_SECURE = False
