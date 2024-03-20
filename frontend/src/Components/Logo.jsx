@@ -1,5 +1,5 @@
 import classes from './Logo.module.css';
-import { ReactComponent as RabbitLogo } from '../assets/icons/rabbit-logo.svg'
+import RabbitLogo from '../assets/icons/rabbit-logo.svg?react'
 import { Link } from 'react-router-dom';
 
 export const Logo = () => {

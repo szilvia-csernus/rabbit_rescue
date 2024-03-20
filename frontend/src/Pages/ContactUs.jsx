@@ -1,8 +1,8 @@
-import { ReactComponent as LocationIcon } from '../assets/icons/location.svg'; 
-import { ReactComponent as LetterIcon } from '../assets/icons/letter.svg'; 
-import { ReactComponent as PhoneIcon } from '../assets/icons/phone.svg'; 
-import { ReactComponent as VolunteerIcon } from '../assets/icons/volunteer.svg';
-import { ReactComponent as RabbitLeftIcon } from '../assets/icons/rabbit-left.svg';
+import LocationIcon from '../assets/icons/location.svg?react'; 
+import LetterIcon from '../assets/icons/letter.svg?react'; 
+import PhoneIcon from '../assets/icons/phone.svg?react'; 
+import VolunteerIcon from '../assets/icons/volunteer.svg?react';
+import RabbitLeftIcon from '../assets/icons/rabbit-left.svg?react';
 import { Article } from '../Components/Article';
 import { ButtonGeneral } from '../Components/Buttons';
 

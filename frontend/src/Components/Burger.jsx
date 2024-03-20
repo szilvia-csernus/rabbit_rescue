@@ -1,5 +1,5 @@
 import classes from './Burger.module.css';
-import { ReactComponent as BurgerIcon } from '../assets/icons/burger.svg';
+import BurgerIcon from '../assets/icons/burger.svg?react';
 import { Button } from './Buttons';
 import { useDispatch, useSelector } from 'react-redux';
 import { burgerActions } from '../store/burger-slice';

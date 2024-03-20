@@ -1,8 +1,8 @@
-import { ReactComponent as RabbitRightIcon } from '../assets/icons/rabbit-right.svg';
-import { ReactComponent as RabbitLeftIcon } from '../assets/icons/rabbit-left.svg';
-import { ReactComponent as VisitUsIcon } from '../assets/icons/visit-us.svg';
-import { ReactComponent as GiftIcon } from '../assets/icons/gift.svg';
-import { ReactComponent as VolunteerIcon } from '../assets/icons/volunteer.svg';
+import RabbitRightIcon from '../assets/icons/rabbit-right.svg?react';
+import RabbitLeftIcon from '../assets/icons/rabbit-left.svg?react';
+import VisitUsIcon from '../assets/icons/visit-us.svg?react';
+import GiftIcon from '../assets/icons/gift.svg?react';
+import VolunteerIcon from '../assets/icons/volunteer.svg?react';
 import { ButtonGeneral } from '../Components/Buttons';
 
 import { Link } from 'react-router-dom';

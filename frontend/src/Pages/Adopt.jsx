@@ -3,7 +3,7 @@ import classes from './Adopt.module.css';
 import { Article } from '../Components/Article';
 import { ButtonGeneral } from '../Components/Buttons';
 import { AdoptImage } from '../Components/MainImages';
-import { ReactComponent as VisitUsIcon } from '../assets/icons/visit-us.svg';
+import VisitUsIcon from '../assets/icons/visit-us.svg?react';
 import { lazy, Suspense } from 'react';
 import { Link } from 'react-router-dom';
 import { useEffect } from 'react';

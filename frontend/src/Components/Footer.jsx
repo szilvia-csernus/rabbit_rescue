@@ -1,8 +1,8 @@
-import { ReactComponent as FacebookIcon } from '../assets/icons/facebook.svg'; 
-import { ReactComponent as InstagramIcon } from '../assets/icons/instagram.svg'; 
-import { ReactComponent as LocationIcon } from '../assets/icons/location.svg'; 
-import { ReactComponent as LetterIcon } from '../assets/icons/letter.svg'; 
-import { ReactComponent as PhoneIcon } from '../assets/icons/phone.svg'; 
+import FacebookIcon from '../assets/icons/facebook.svg?react'; 
+import InstagramIcon from '../assets/icons/instagram.svg?react'; 
+import LocationIcon from '../assets/icons/location.svg?react'; 
+import LetterIcon from '../assets/icons/letter.svg?react'; 
+import PhoneIcon from '../assets/icons/phone.svg?react'; 
 
 import classes from './Footer.module.css';
 
