@@ -1,8 +1,9 @@
-import react from '@vitejs/plugin-react';
+import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react-swc';
 import svgr from 'vite-plugin-svgr';
-import eslintPlugin from 'vite-plugin-eslint';
 
-export default {
+// https://vitejs.dev/config/
+export default defineConfig({
 	server: {
 		proxy: {
 			'/api': {
@@ -16,19 +17,12 @@ export default {
 			'/admin/': {
 				target: 'http://127.0.0.1:8000',
 				changeOrigin: true,
+				cookieDomainRewrite: 'localhost',
 			},
 		},
 	},
 	build: {
 		outDir: 'dist',
 	},
-	plugins: [
-		react(),
-		svgr(),
-		eslintPlugin({
-			cache: false,
-			include: ['./src/**/*.js', './src/**/*.jsx'],
-			exclude: [],
-		}),
-	],
-};
+	plugins: [react(), svgr()],
+});
