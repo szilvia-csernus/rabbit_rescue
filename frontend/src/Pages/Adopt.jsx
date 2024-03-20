@@ -9,6 +9,7 @@ import { Link } from 'react-router-dom';
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { getAllRabbits } from '../store/rabbit-action-creator';
+import Loader from '../Components/Loader';
 
 
 const Gallery = lazy(() => import('../Components/Gallery'));
@@ -17,8 +18,6 @@ const Adopt = () => {
 	window.scroll(0, 0);
 
 	const dispatch = useDispatch();
-
-	console.log('Adopt component rendered');
 
 	useEffect(() => {
 		getAllRabbits(dispatch);
@@ -56,7 +55,7 @@ const Adopt = () => {
 			<Article className={classes.gallery}>
 				<h2 className={classes.galleryTitle}>Our latest arrivals</h2>
 
-				<Suspense fallback="Loading...">
+				<Suspense fallback={<Loader />}>
 					<Gallery />
 				</Suspense>
 			</Article>

@@ -7,6 +7,7 @@ import Header from '../Components/Header';
 import { thanksDonationActions } from '../store/thanks-donation-slice';
 import ThanksDonation from '../Components/ThanksDonation';
 import EnquiryForm from '../Components/EnquiryForm';
+import Loader from '../Components/Loader';
 
 const VolunteerForm = lazy(() => import('../Components/VolunteerForm'));
 const ThanksVolunteer = lazy(() => import('../Components/ThanksVolunteer'));
@@ -41,27 +42,27 @@ const Root = () => {
 				<Footer />
 			</Container>
 			{thanksDonationState && (
-				<Suspense fallback="Loading...">
+				<Suspense fallback={<Loader />}>
 					<ThanksDonation />
 				</Suspense>
 			)}
 			{enquireFormState && (
-				<Suspense fallback="Loading...">
+				<Suspense fallback={<Loader />}>
 					<EnquiryForm />
 				</Suspense>
 			)}
 			{volunteerFormState && (
-				<Suspense fallback="Loading...">
+				<Suspense fallback={<Loader />}>
 					<VolunteerForm />
 				</Suspense>
 			)}
 			{thanksVolunteerState && (
-				<Suspense fallback="Loading...">
+				<Suspense fallback={<Loader />}>
 					<ThanksVolunteer />
 				</Suspense>
 			)}
 			{errorMessageState && (
-				<Suspense fallback="Loading...">
+				<Suspense fallback={<Loader />}>
 					<ErrorMessage />
 				</Suspense>
 			)}
