@@ -21,7 +21,8 @@ function getAge(dateString) {
 	} else if (age === 0) {
 		return `${m} months`;
 	} else {
-		return `${age} years and ${m} months`;
+		if (m === 0) return `${age} years`;
+		else return `${age} years and ${m} months`;
 	}
 }
 
