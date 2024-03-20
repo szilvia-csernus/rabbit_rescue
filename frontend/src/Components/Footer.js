@@ -1,6 +1,5 @@
 import { ReactComponent as FacebookIcon } from '../assets/icons/facebook.svg'; 
 import { ReactComponent as InstagramIcon } from '../assets/icons/instagram.svg'; 
-import { ReactComponent as TwitterIcon } from '../assets/icons/twitter.svg'; 
 import { ReactComponent as LocationIcon } from '../assets/icons/location.svg'; 
 import { ReactComponent as LetterIcon } from '../assets/icons/letter.svg'; 
 import { ReactComponent as PhoneIcon } from '../assets/icons/phone.svg'; 
@@ -65,25 +64,22 @@ const Footer = () => {
 								>
 									<InstagramIcon className={classes.footerSocialIcon} />
 								</a>
-								<a
-									href="https://twitter.com"
-									target="_blank"
-									rel="noreferrer"
-									aria-label="twitter link opening in new tab"
-								>
-									<TwitterIcon className={classes.footerSocialIcon} />
-								</a>
 							</div>
 						</div>
 					</div>
 				</div>
 
 				<div className={classes.footerSmallPrint}>
+					<a href={'admin/'} className={classes.login}>LOGIN</a>
 					<p>This website was created for educational purposes.</p>
-					<p>Hopper Farm Rabbit Rescue is a fictional organisation. No payment will be processed.</p>
+					<p>
+						Hopper Farm Rabbit Rescue is a fictional organisation. No payment
+						will be processed.
+					</p>
 
 					<p>
-						<span>&copy;</span>{yearNow} Szilvia Csernusne Berczes
+						<span>&copy;</span>
+						{yearNow} Szilvia Csernusne Berczes
 					</p>
 					<p>All Rights Reserved.</p>
 				</div>

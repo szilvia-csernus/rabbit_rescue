@@ -47,11 +47,12 @@
     flex-direction: column;
     justify-content: space-between;
     align-self: center;
-    margin-top: 2rem;
 }
 
 .followUs {
-    display: none;
+    text-align: center;
+    line-height: 2rem;
+    /* display: none; */
 }
 
 .footerSocialBox {
@@ -123,6 +124,12 @@
     margin: 0 8px;
 }
 
+.login {
+    font-weight: bold;
+    font-size: .9rem;
+    margin-bottom: 1rem;
+}
+
 @media screen and (min-width: 992px) {
     .footer {
         font-size: 1rem;
@@ -136,7 +143,7 @@
 
     .footerAlignBox {
         display: grid;
-        grid-template-columns: 1fr 15rem 1fr;
+        grid-template-columns: 1fr 11rem 1fr;
         align-items: flex-start;
     }
 
@@ -161,7 +168,7 @@
     }
 
     .footerItemSocial {
-        align-self: center;
+        align-self: self-start;
         padding: 0 2rem;
         margin: 0;
     }
