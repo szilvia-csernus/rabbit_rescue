@@ -4,10 +4,9 @@
 
 **Hopper Farm Rabbit Rescue** is a fictional non-profit organisation. The website is designed to support the charity's primary mission which is to help find new homes for rescued pet rabbits.
 
-
-
-
-I created this project with `React JS / Redux / CSS Modules` and `Figma` for design. Payment is implemented with `STRIPE Link`. The deployed project is a fully frontend app. Currently, I'm in the
+The Frontend is implemented with `React JS / Redux / CSS Modules / HTML5` and `Figma` for design. Payment is implemented with `STRIPE Link`. 
+The Backend is built with `Django REST` and the database with `PostgreSQL`.
+The deployed project is a fully frontend app. Currently, I'm in the
 process of creating a backend for this project with the Django REST framework.
 
 I originally created this project for Code Institute's Web Application Development Course as the 1st Milestone Project (User Centric Frontend Development Project) in `HTML5-CSS3-BOOTSTRAP5`, which can be found [here](https://github.com/szilvia-csernus/rabbit-sanctuary).
