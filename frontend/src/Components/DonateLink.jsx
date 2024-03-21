@@ -1,9 +1,12 @@
+const stripeLink = import.meta.env.VITE_STRIPE_LINK;
+
 const DonateLink = (props) => {
+	console.log(stripeLink);
 	return (
 		<a
 			className={props.className}
 			onClick={props.onClick}
-			href={'https://donate.stripe.com/test_cN22aY9bVaty4Uw6oo'}
+			href={stripeLink}
 			aria-label="stripe link for donation"
 		>
 			{props.children}
