@@ -32,7 +32,7 @@ const Adopt = () => {
 					<p>
 						Whenever a rabbit arrives in our centre we have them
 						<span> checked over</span> by a vet. We first treat any health
-						issues, then have them <span>neutered</span> if needed.
+						issues, give vaccinations then have them <span>neutered</span> if needed.
 						<br />
 						<br />
 						As rabbits are <span>social</span> animals and the best company for
