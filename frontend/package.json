@@ -11,6 +11,7 @@
 		"react-redux": "^8.0.5",
 		"react-router-dom": "^6.6.2",
 		"redux": "^4.2.0",
+		"vite-plugin-pwa": "^0.19.5",
 		"vite-plugin-svgr": "^4.2.0"
 	},
 	"scripts": {
