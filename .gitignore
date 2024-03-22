@@ -23,6 +23,9 @@ MY-NOTES.md
 dist
 dist-ssr
 
+# development
+*/dev-dist
+
 # misc
 .vscode/*
 !.vscode/extensions.json
