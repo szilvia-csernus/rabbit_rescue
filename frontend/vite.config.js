@@ -4,6 +4,8 @@ import svgr from 'vite-plugin-svgr';
 import { VitePWA } from 'vite-plugin-pwa';
 
 // https://vitejs.dev/config/
+// This server configuration is only for development. In production, an
+// Nginx server is configured to do the same.
 export default defineConfig({
 	server: {
 		proxy: {
