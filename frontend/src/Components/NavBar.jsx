@@ -74,11 +74,11 @@ const NavBar = () => {
 					Contact Us
 				</NavLink>
 			</li>
-			<DonateLink
-				className={classes.navItem}
-			>
-				<ButtonDonate>Donate</ButtonDonate>
-			</DonateLink>
+			<li>
+				<DonateLink className={classes.navItem}>
+					<ButtonDonate>Donate</ButtonDonate>
+				</DonateLink>
+			</li>
 		</>
 	);
 
