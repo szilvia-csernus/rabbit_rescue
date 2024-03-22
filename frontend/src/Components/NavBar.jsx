@@ -74,8 +74,8 @@ const NavBar = () => {
 					Contact Us
 				</NavLink>
 			</li>
-			<li>
-				<DonateLink className={classes.navItem}>
+			<li className={classes.navItem}>
+				<DonateLink>
 					<ButtonDonate>Donate</ButtonDonate>
 				</DonateLink>
 			</li>
