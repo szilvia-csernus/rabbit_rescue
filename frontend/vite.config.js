@@ -36,7 +36,7 @@ export default defineConfig({
 				enabled: true,
 			},
 			workbox: {
-				globPatterns: ['**/*.{js,jsx,css,html,png,svg,jpg,jpeg,webp,json}'],
+				globPatterns: ['**/*.{js,jsx,css,html,png,svg,jpg,jpeg,webp,json,webmanifest}'],
 				skipWaiting: true,
 				clientsClaim: true,
 				navigateFallbackDenylist: [/^\/admin/],
