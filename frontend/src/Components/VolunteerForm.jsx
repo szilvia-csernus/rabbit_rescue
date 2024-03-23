@@ -63,7 +63,7 @@ const VolunteerForm = () => {
 		send(dispatch, {name: nameValue,
 			email: emailValue,
 			phone: phoneNr,
-			message})
+			message}, 'Volunteer', 'volunteering')
 		;
 	};
 

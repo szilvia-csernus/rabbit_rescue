@@ -6,19 +6,20 @@ import { errorMessageActions } from './error-message-slice';
 
 // this action creator sends the form data with emailJS and initiates
 // either the 'THANK YOU' or the 'Error' modal.
-export const send = async (dispatch, formParams) => {
+export const send = async (dispatch, formParams, form, enquiry_purpose) => {
 	emailjs.init('sZPW9YDqBsCM52fA-');
 	const result = await emailjs
-		.send('my-emailjs-service', 'contact-template', {
+		.send('my-emailjs-service', 'universal-template', {
 			project_name: 'Rabbit rescue project',
-			from_name: formParams.name,
-			from_email: formParams.email,
+			form: form,
+			enquiry_purpose: enquiry_purpose,
+			name: formParams.name,
+			email: formParams.email,
 			phone: formParams.phone,
 			message: formParams.message,
 		})
 		.then(
 			(response) => {
-				console.log(response);
 				if (response.status === 200) {
 					dispatch(thanksVolunteerActions.open())
 				} else {
@@ -26,11 +27,9 @@ export const send = async (dispatch, formParams) => {
 				}
 			},
 			(error) => {
-				console.log('error!', error);
 				dispatch(errorMessageActions.open());
 			}
 		);
-	console.log(result);
 	return result;
 };
 

@@ -1,7 +1,6 @@
 const stripeLink = import.meta.env.VITE_STRIPE_LINK;
 
 const DonateLink = (props) => {
-	console.log(stripeLink);
 	return (
 		<a
 			className={props.className}

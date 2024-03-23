@@ -68,7 +68,9 @@ const EnquiryForm = () => {
 			email: emailValue,
 			phone: phoneNr,
 			message,
-		});
+		},
+		'Rabbit enquiry',
+		activeRabbitGroupName);
 	};
 
 	const cancelClickHandler = (event) => {
