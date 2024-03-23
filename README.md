@@ -23,17 +23,19 @@ The `EmailJS` API is used to send forms. Dark mode is implemented throughout all
 <br>
 
 ![Light mode](readme-images/amiresponsive-light-mode.jpeg)
+![Lighthouse-scores](readme-images/lighthouse-scores.jpeg)
 
 > I originally created the frontend of this project for Code Institute's Web Application Development Course as the 1st Milestone Project (User Centric Frontend Development Project) in `HTML5-CSS3-BOOTSTRAP5`, which can be found [here](https://github.com/szilvia-csernus/rabbit-sanctuary).
 ---
 
 # Features
 
-The website is an `installable` `Single Page Application (SPA)`. React-Router was used to render three pages: `About` page, `Adopt` page and a `Contact Us` page. In addition, I added  modals for displaying the `volunteering form` and the `rabbit enquiry form` as well as for `thank you` or `error` messages.
+The frontend of this project is a `Single Page Application (SPA)`. React-Router was used to render three pages: `About` page, `Adopt` page and a `Contact Us` page. In addition, I added  modals for displaying the `volunteering form` and the `rabbit enquiry form` as well as the `thank you` and `error` messages.
+
+I also implemented `Progressive Web App (PWA)` features such as caching and installability.
 
 # Installation
 
-This app is a `Progressive Web App (PWA)`, which enables the user to install it on their devices.
 
 Installation on Desktop is available through the "install" icon in the brwoser's search bar.
 
@@ -168,9 +170,9 @@ The data model for rabbits comprises of 3 tables. As adoption of rabbits often h
 
 I wrote a python script, `generate_fixtures.py`, to generate random data for my database. With this, I generated three json fixtures which I then used to load the records into the database:
 
-- `python manage.py loaddata rabbit_groups.json`
-- `python manage.py loaddata rabbits.json`
-- `python manage.py loaddata rabbit_images.json`
+- `rabbit_groups.json`
+- `loaddata rabbits.json`
+- `rabbit_images.json`
 
 
 ## Admin Functions
@@ -300,9 +302,9 @@ I created high fidelity prototypes with Figma, for both mobile and desktop scree
 
   * Current pages and modals are also labelled with the appropriate `aria properties` to help navigation.
 
-  * `Lighthouse` score for `Accessibility` are **100%** across all pages. Detailed results can be found [here](TESTING.md#lighthouse-tests).
+* `Lighthouse` score for `Accessibility` are **100%** across all pages. Detailed results can be found [here](TESTING.md#lighthouse-tests).
 
-  * Contrasts were checked with [a11y Contrast Checker](https://color.a11y.com/Contrast/). All pages passed the test, detailed results can be found [here](TESTING.md#accessibility-tests).
+* Contrasts were checked with [a11y Contrast Checker](https://color.a11y.com/Contrast/). All pages passed the test, detailed results can be found [here](TESTING.md#accessibility-tests).
 
 
 
