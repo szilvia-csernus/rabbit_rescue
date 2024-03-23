@@ -105,7 +105,7 @@ const Picture = (props) => {
 };
 
 const Gallery = () => {
-	const rabbit_groups = useSelector((state) => state.rabbits);
+	const rabbit_groups = useSelector((state) => state.rabbits.rabbits);
     const width = "350";
 
     return (

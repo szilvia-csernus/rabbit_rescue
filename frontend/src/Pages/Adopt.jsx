@@ -4,20 +4,20 @@ import { Article } from '../Components/Article';
 import { ButtonGeneral } from '../Components/Buttons';
 import { AdoptImage } from '../Components/MainImages';
 import VisitUsIcon from '../assets/icons/visit-us.svg?react';
-import { lazy, Suspense } from 'react';
 import { Link } from 'react-router-dom';
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { getAllRabbits } from '../store/rabbit-action-creator';
 import Loader from '../Components/Loader';
+import { useSelector } from 'react-redux';
+import Gallery from '../Components/Gallery';
 
-
-const Gallery = lazy(() => import('../Components/Gallery'));
 
 const Adopt = () => {
 	window.scroll(0, 0);
 
 	const dispatch = useDispatch();
+	const isLoading = useSelector((state) => state.rabbits.loading);
 
 	useEffect(() => {
 		getAllRabbits(dispatch);
@@ -55,9 +55,8 @@ const Adopt = () => {
 			<Article className={classes.gallery}>
 				<h2 className={classes.galleryTitle}>Our latest arrivals</h2>
 
-				<Suspense fallback={<Loader />}>
-					<Gallery />
-				</Suspense>
+				{isLoading && <Loader />}
+				{!isLoading && <Gallery />}
 			</Article>
 			<br />
 			<br />
