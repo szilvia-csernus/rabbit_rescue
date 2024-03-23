@@ -8,6 +8,7 @@ class RabbitModelTest(TestCase):
         self.rabbit = Rabbit.objects.create(
             name='Test Rabbit',
             breed='Test Breed',
+            sex='F',
             date_of_birth=date(2020, 1, 1),
             description='A test rabbit',
             neutered=True,
@@ -20,7 +21,10 @@ class RabbitModelTest(TestCase):
         self.assertEqual(self.rabbit.__str__(), 'Test Rabbit')
 
     def test_rabbit_age(self):
-        self.assertEqual(self.rabbit.age(), date.today().year - 2020)
+        self.assertEqual(self.rabbit.age(), "4 years old")
+
+    def test_rabbit_str(self):
+        self.assertEqual(str(self.rabbit), 'Test Rabbit')
 
 
 class RabbitGroupModelTest(TestCase):
@@ -29,6 +33,7 @@ class RabbitGroupModelTest(TestCase):
         self.rabbit = Rabbit.objects.create(
             name='Test Rabbit',
             breed='Test Breed',
+            sex='F',
             date_of_birth=date(2020, 1, 1),
             description='A test rabbit',
             neutered=True,
@@ -38,10 +43,15 @@ class RabbitGroupModelTest(TestCase):
 
     def test_rabbit_group_creation(self):
         self.assertTrue(isinstance(self.rabbit_group, RabbitGroup))
-        self.assertEqual(self.rabbit_group.__str__(), 'Test Rabbit')
+
+    def test_get_rabbits(self):
+        self.assertEqual(list(self.rabbit_group.get_rabbits()), [self.rabbit])
 
     def test_get_rabbits_count(self):
         self.assertEqual(self.rabbit_group.get_rabbits_count(), 1)
+
+    def test_rabbit_group_str(self):
+        self.assertEqual(str(self.rabbit_group), 'Test Rabbit')
 
 
 class RabbitImageModelTest(TestCase):
@@ -50,6 +60,7 @@ class RabbitImageModelTest(TestCase):
         self.rabbit = Rabbit.objects.create(
             name='Test Rabbit',
             breed='Test Breed',
+            
             date_of_birth=date(2020, 1, 1),
             description='A test rabbit',
             neutered=True,
@@ -64,3 +75,6 @@ class RabbitImageModelTest(TestCase):
     def test_rabbit_image_creation(self):
         self.assertTrue(isinstance(self.rabbit_image, RabbitImage))
         self.assertEqual(self.rabbit_image.__str__(), 'Test Rabbit Image')
+
+    def test_rabbit_image_str(self):
+        self.assertEqual(str(self.rabbit_image), 'Test Rabbit Image')
