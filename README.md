@@ -17,7 +17,7 @@ The `EmailJS` API is used to send forms. Dark mode is implemented throughout all
 
 ---
 
-### View the live project here: https://rabbit-rescue-be99746cd4ef.herokuapp.com
+***View the live project here: https://rabbit-rescue-be99746cd4ef.herokuapp.com***
 
 ---
 <br>
@@ -171,11 +171,11 @@ The data model for rabbits comprises of 3 tables. As adoption of rabbits often h
 I wrote a python script, `generate_fixtures.py`, to generate random data for my database. With this, I generated three json fixtures which I then used to load the records into the database:
 
 - `rabbit_groups.json`
-- `loaddata rabbits.json`
+- `rabbits.json`
 - `rabbit_images.json`
 
 
-## Admin Functions
+# Admin Functions
 
 Admin functions are available through Django's built-in `admin-panel`. As this is part of my backend application, I configured the frontend-serving Nginx server to proxy-route the user here from the Frontend site. The link for this can be found in the `Footer` section of the site:
 
@@ -185,13 +185,74 @@ Admin functions are available through Django's built-in `admin-panel`. As this i
 ![admin-edit-rabbits](readme-images/admin-edit-rabbits.jpeg)
 
 
-## Progressive Web App
+# Progressive Web App
 
 I implemented PWA to allow the user to install the app, as well as to cache the static files to decrease subsequent loading times.
 
 ![PWA](readme-images/pwa.jpeg)
 
+---
 
+
+# Local Development
+
+
+To run and develop this project locally, the following steps are needed.
+
+## Backend
+
+0. Prerequisite: Make sure that `python` is installed.
+1. Clone the repo.
+2. Create a virtual environment in the root folder: `python3 -m venv venv`
+3. Activate this environment with either a prompt from the IDE or with `source venv/bin/activate`
+4. `cd backend` and install the python packages: `pip install -r requirements.txt`
+5. Start the dev server: `python manage.py runserver`
+
+The backend project will be available on the default django port: http://localhost:8000
+
+## Frontend
+
+0. Prerequisite: Make sure that `node` is installed.
+1. From the root folder, `cd frontend` and install all packages with `npm install`.
+2. Start the development server with `npm start`
+
+The frontend project will be running on the default Vite port: http://localhost:5173
+
+
+# Deployment
+
+Both the backend and the Frontend are deployed on Heroku, in eco dynos. (As this is the most economical tier, the initial loading time is fairly long when the user visits the site for the first time.)
+
+## Backend
+
+The django project is running on a `Gunicorn` server. The django projects' `CORS` and `CSRF` settings make sure that the Frontend can initiate communication.
+In the `Procfile`, I specified the commands that are needed after the build process: run all migrations and start up the Gunicorn server.
+
+Environment variables:
++ SECRET_KEY
++ DATABASE_URL
++ CLOUDINARY_URL
++ FRONTEND_URL (raquired for the CORS and CSRF settings in settings.py)
++ BACKEND_HOST (required for the ALLOWED_HOSTS setting in settings.py)
+
+## Frontend
+
+To build the frontend project for production, we can utilize the built-in `npm run build` script, that builds the React app for production. We can run this locally and the run the project with `npm run preview` to test the production version locally.
+
+In Heroku, I used the `nodejs` buildpack to run this process automatically with the help of the "heroku-postbuild" script which I included into the `package.json` file.
+
+As a second step, I used an `nginx` buildpack to serve my frontend with the Nginx server. I included a config file for this (frontend/config/nginx.conf.erb). I configured this server to proxy-route my api requests (rabbit data requests) to the backend server. I also proxy-routed the requests for 'admin' (and the 'static' files that belong to the admin panel) so that the charity owner can reach the admin site from the Frontend.
+
+As Environment variables, I used
++ BACKEND_URL (used for proxy-routing)
++ STRIPE_URL (for payments)
+
+
+# Testing
+
+Please view [TESTING.md](TESTING.md) for more information on testing.
+
+---
 
 # User Experience (UX)
 
@@ -354,66 +415,6 @@ The [Django REST](https://www.django-rest-framework.org/) Python framework was u
 * [RealFaviconGenerator](https://realfavicongenerator.net/svg-favicon/) - to generate dark mode responsive favicons.
 
 * [Am I Responsive?](https://ui.dev/amiresponsive) - to create site visuals for responsive design.
-
----
-
-# Local Development
-
-
-To run and develop this project locally, the following steps are needed.
-
-## Backend
-
-0. Prerequisite: Make sure that `python` is installed.
-1. Clone the repo.
-2. Create a virtual environment in the root folder: `python3 -m venv venv`
-3. Activate this environment with either a prompt from the IDE or with `source venv/bin/activate`
-4. `cd backend` and install the python packages: `pip install -r requirements.txt`
-5. Start the dev server: `python manage.py runserver`
-
-The backend project will be available on the default django port: http://localhost:8000
-
-## Frontend
-
-0. Prerequisite: Make sure that `node` is installed.
-1. From the root folder, `cd frontend` and install all packages with `npm install`.
-2. Start the development server with `npm start`
-
-The frontend project will be running on the default Vite port: http://localhost:5173
-
-
-# Deployment
-
-Both the backend and the Frontend are deployed on Heroku, in eco dynos. (As this is the most economical tier, the initial loading time is fairly long when the user visits the site for the first time.)
-
-## Backend
-
-The django project is running on a `Gunicorn` server. The django projects `CORS` and `CSRF` settings make sure that the Frontend can initiate communication.
-In the `Procfile`, I specified the commands that are needed after the build process: run all migrations and start up the Gunicorn server.
-
-Environment variables:
-+ SECRET_KEY
-+ DATABASE_URL
-+ CLOUDINARY_URL
-+ FRONTEND_URL (raquired for the CORS and CSRF settings in settings.py)
-+ BACKEND_HOST (required for the ALLOWED_HOSTS setting in settings.py)
-
-## Frontend
-
-To build the frontend project for production, we can utilize the built-in `npm run build` script, that builds the React app for production. We can run this locally and the run the project with `npm run preview` to test the production version locally.
-
-In Heroku, I used the `nodejs` buildpack to run this process automatically with the help of the "heroku-postbuild" script which I included into the `package.json` file.
-
-As a second step, I used an `nginx` buildpack to serve my frontend with the Nginx server. I included a config file for this (frontend/config/nginx.conf.erb). I configured this server to proxy-route my api requests (rabbit data requests) to the backend server. I also proxy-routed the requests for 'admin' (and the 'static' files that belong to the admin panel) so that the charity owner can reach the admin site from the Frontend.
-
-As Environment variables, I used
-+ BACKEND_URL (used for proxy-routing)
-+ STRIPE_URL (for payments)
-
-
-# Testing
-
-Please view [TESTING.md](TESTING.md) for more information on testing.
 
 ---
 
