@@ -502,8 +502,6 @@ All downloaded icons have been edited.
   https://stackoverflow.com/questions/68191793/specify-explicit-width-and-height-for-picture-tag<br>
   https://www.cssmine.com/blog/2020-02-12-css-object-fit-and-object-position-properties-crop-images-embedded-in-html<br>
 
-* adding backup image in .png format for older Safari users
-https://stackoverflow.com/questions/58487035/how-to-add-webp-support-in-safari-browser
 
 * improving accessibility: https://web.dev/how-to-review/
 
@@ -527,7 +525,3 @@ This project was created with the sole purpose of writing a personal portfolio p
 
 
 Not for public use.
-
-
-Szilvia Csernusne Berczes, Jan 2023.
-All rights reserved.
