@@ -164,4 +164,11 @@ export default defineConfig({
 			},
 		}),
 	],
+	test: {
+		files: 'src/**/*.test.jsx',
+		globals: true,
+		environment: 'jsdom',
+		setupFiles: './src/setupTests.js',
+		css: true,
+	},
 });
