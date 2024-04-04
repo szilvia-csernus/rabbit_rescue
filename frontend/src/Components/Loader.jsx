@@ -5,7 +5,7 @@ import classes from './Loader.module.css';
 const Loader = () => {
 	return (
         <div className={classes.content}>
-            <div className={classes.loader}>
+            <div className={classes.loader} data-testid="loader">
                 <div></div>
                 <div></div>
                 <div></div>
