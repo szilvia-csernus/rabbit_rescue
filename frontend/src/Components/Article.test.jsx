@@ -2,7 +2,7 @@ import { expect, test } from 'vitest'
 import { render, screen } from '@testing-library/react'
 import { Article, ArticleLeft, ArticleRight } from './Article'
 
-test('renders follow text', () => {
+test('renders Articles', () => {
   render(
     <>
       <Article>Follow us on social media</Article>
@@ -20,7 +20,7 @@ test('renders follow text', () => {
 
   expect(articleLeft.className).toMatch(/article/i)
   expect(articleRight.className).toMatch(/article/i)
-  
+
   expect(article).toHaveStyle({ 'display': 'flex' })
 })
 
