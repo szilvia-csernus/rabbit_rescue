@@ -61,6 +61,7 @@ const NavBar = () => {
 					to="/adopt"
 					className={({ isActive }) => (isActive ? classes.active : null)}
 					onClick={clickHandler}
+					data-testid="adopt-link"
 				>
 					Adopt
 				</NavLink>
@@ -70,6 +71,7 @@ const NavBar = () => {
 					to="/contact-us"
 					className={({ isActive }) => (isActive ? classes.active : null)}
 					onClick={clickHandler}
+					data-testid="cotact-us-link"
 				>
 					Contact Us
 				</NavLink>
@@ -83,7 +85,7 @@ const NavBar = () => {
 	);
 
 	return (
-		<nav>
+		<nav aria-label="main navigation">
 			{expandedMenu && <ul className={classes.expandedMenuBar}>{nav}</ul>}
 			{burger && (
 				<Modal pos={'side'}
