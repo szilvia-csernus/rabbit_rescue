@@ -1,10 +1,13 @@
 import { useDispatch, useSelector } from 'react-redux';
 
 import classes from './Gallery.module.css';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Modal from './Modal';
 import { ButtonGeneral, ButtonSecondary } from './Buttons';
 import { enquiryFormActions } from '../store/enquiry-form-slice';
+import { getAllRabbits } from '../store/rabbit-action-creator';
+import Loader from './Loader';
+
 
 const Picture = (props) => {
 	const [isExpanded, setIsExpanded] = useState(false);
@@ -105,21 +108,36 @@ const Picture = (props) => {
 };
 
 const Gallery = () => {
+
+	const dispatch = useDispatch();
+
+	const isLoading = useSelector((state) => state.rabbits.loading);
+
+	useEffect(() => {
+		getAllRabbits(dispatch);
+	}, [dispatch]);
+
 	const rabbit_groups = useSelector((state) => state.rabbits.rabbits);
-    const width = "350";
+  const width = "350";
+
+	const gallery = (
+		<div className={classes.gallery}>
+			{ rabbit_groups.map((group) => (
+				<Picture
+				key={group.id}
+				src={group.images[0].image}
+				width={width}
+				rabbits={group.rabbits}
+				dataName={group.group_name}
+				/>)
+			)}
+		</div>);
 
     return (
-			<div className={classes.gallery}>
-				{ rabbit_groups.map((group) => (
-					<Picture
-					key={group.id}
-					src={group.images[0].image}
-					width={width}
-					rabbits={group.rabbits}
-					dataName={group.group_name}
-					/>)
-				)}
-			</div>
+			<>
+			{isLoading && <Loader />}
+			{!isLoading && gallery}
+			</>
 		);
                    
 };
