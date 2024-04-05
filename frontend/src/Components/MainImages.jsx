@@ -15,7 +15,7 @@ import adoptingImageSmWebp from '../assets/images/main-images/adopting-picture-s
 import adoptingImageSmHigherResWebp from '../assets/images/main-images/adopting-picture-sm-higher-res.webp';
 
 import classes from './MainImages.module.css';
-import { ButtonFeature1 } from './Buttons';
+import { ButtonFeature } from './Buttons';
 import { Link } from 'react-router-dom';
 
 export const HeroImage = () => {
@@ -67,11 +67,11 @@ export const HeroImage = () => {
 			<div className={classes.heroCalloutBox}>
 				<div className={classes.heroTextbox}>
 					<h3>Could you offer one of our rabbits a loving home?</h3>
-					<ButtonFeature1>
+					<ButtonFeature>
 						<Link to="/adopt" className={classes.adoptBtn}>
 							Adopt
 						</Link>
-					</ButtonFeature1>
+					</ButtonFeature>
 				</div>
 			</div>
 		</section>

@@ -27,7 +27,7 @@ export const ButtonSecondary = (props) => {
 	);
 };
 
-export const ButtonFeature1 = (props) => {
+export const ButtonFeature = (props) => {
 	const classNames = `${classes.button} ${classes.feature1} ${props.className}`;
 	return (
 		<button className={classNames} onClick={props.onClick}>
