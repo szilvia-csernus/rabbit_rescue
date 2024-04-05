@@ -72,15 +72,13 @@ test('Enquiry form submission with insufficient data renders error messages', ()
   const send = screen.getByRole("button", { name: /send/i })
 
   // Click the send button
-    fireEvent.click(send);
-  
-  // Check that the title is visible, meaning the modal is still open
-  const heading = screen.getByRole("heading", { name: /enquiry form/i })
-  expect(heading).toBeVisible()
+  fireEvent.click(send);
 
   // Check that the name error message is visible
   const nameError = screen.getByText(/please provide your name/i)
+  expect(nameError).toBeVisible()
 
   // Check that the email error message is visible
   const emailError = screen.getByText(/please provide your email/i)
+  expect(emailError).toBeVisible()
 })
