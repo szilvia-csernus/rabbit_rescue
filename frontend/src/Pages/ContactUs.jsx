@@ -21,7 +21,7 @@ const ContactUs = () => {
 	};
 	
 	return (
-		<main>
+		<main data-testid="contact-us-page">
 			<section>
 				<div className={classes.titleBox}>
 					<h1 className={classes.title}>Contact Us</h1>

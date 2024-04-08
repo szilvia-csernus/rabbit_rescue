@@ -11,7 +11,7 @@ import Gallery from '../Components/Gallery';
 const Adopt = () => {
 
 	return (
-		<main>
+		<main data-testid="adopt-page">
 			<AdoptImage />
 			<Article className={classes.adopt}>
 				<h1>Adopting Rabbits</h1>

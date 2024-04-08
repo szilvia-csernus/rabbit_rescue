@@ -24,7 +24,7 @@ const About = () => {
 	}
 
 	return (
-		<main>
+		<main data-testid="about-page">
 			<HeroImage />
 
 			<Article className={classes.mission}>
