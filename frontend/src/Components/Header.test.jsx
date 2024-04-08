@@ -30,7 +30,7 @@ test('renders Header', () => {
 })
 
 test('Adopt link click flow', async () => {
-  globalThis.scroll = () => {};
+  window.scroll = () => {};
   render(
     <Provider store={store}>
       <MemoryRouter initialEntries={['/']}>
@@ -64,7 +64,7 @@ test('Adopt link click flow', async () => {
 })
 
 test('Contact Us link click flow', async () => {
-  globalThis.scroll = () => {};
+  window.scroll = () => {};
   render(
     <Provider store={store}>
       <MemoryRouter initialEntries={['/']}>
