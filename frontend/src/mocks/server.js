@@ -4,6 +4,6 @@
 // The server is stopped after the tests are finished using the server.close function.
 
 import { setupServer } from 'msw/node'
-import { handlers } from './handlers'
+import { handlers } from './handlers.js'
  
 export const server = setupServer(...handlers)

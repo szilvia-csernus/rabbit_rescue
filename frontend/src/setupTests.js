@@ -9,7 +9,7 @@ import '@testing-library/jest-dom';
 // A node server is used to mock the API requests in the tests.
 
 import { beforeAll, afterEach, afterAll } from 'vitest'
-import { server } from './src/mocks/node'
+import { server } from './mocks/server';
  
 // Enable API mocking before tests.
 beforeAll(() => server.listen())
