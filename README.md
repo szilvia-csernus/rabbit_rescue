@@ -17,7 +17,7 @@ The `EmailJS` API is used to send forms. Dark mode is implemented throughout all
 
 ---
 
-***View the live project here: https://rabbit-rescue-be99746cd4ef.herokuapp.com***
+*** View the live project here: https://rabbit-rescue-be99746cd4ef.herokuapp.com ***
 
 ---
 <br>
