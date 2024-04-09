@@ -36,7 +36,9 @@ The frontend of this project is a `Single Page Application (SPA)`. React-Router 
 
 I also implemented `Progressive Web App (PWA)` features such as caching and installability.
 
-# Installation
+
+
+## Installation
 
 
 Installation on Desktop is available through the "install" icon in the brwoser's search bar.
@@ -84,29 +86,33 @@ Side bars open from the burger menu icon:
 ![sidebar-dark-mode](readme-images/sidebar-dark-mode.jpeg)
 
 
+
 ## Dark-mode responsive SVG icons
 
+
 All **icons** are in `SVG` format that allowed me to set their colours programatically to respond to dark mode.
+
 
 |Rabbit|Gift|People|Hands|
 |:-:|:-:|:-:|:-:|
 |![icon-rabbit](readme-images/icon-rabbit-light.jpeg)|![icon-gift](readme-images/icon-gift-light.jpeg)|![icon-people](readme-images/icon-people-light.jpeg)|![icon-hands](readme-images/icon-hands-light.jpeg)|
 |![icon-rabbit](readme-images/icon-rabbit-dark.jpeg)|![icon-gift](readme-images/icon-gift-dark.jpeg)|![icon-people](readme-images/icon-people-dark.jpeg)|![icon-hands](readme-images/icon-hands-dark.jpeg)|
 
+
 Similarly, the Favicons respond to dark mode too:
+
 
 ![favicon-light-mode](readme-images/favicon-light-mode.svg)
 ![favicon-dark-mode](readme-images/favicon-dark-mode.svg)
 
 
 
----
-
 ## Adopt Page
-<br>
+
 
 The `Adopt page` provides essential information about rabbit re-homing and also includes a gallery, listing all rabbits from the database that are eligible for adoption. 
-<br>
+
+
 
 ![adopt-light-mode](readme-images/adopt-light-mode.jpeg)
 ![adopt-dark-mode](readme-images/adopt-dark-mode.jpeg)
@@ -127,10 +133,11 @@ The 'Name' and the 'Email' fields are required fields:
 A 'Thank You Message' notifies the user of a successful form submission:
 ![thanks-interest](readme-images/thanks-interest.jpeg)
 
----
+
 
 ## Contact Us Page
-<br>
+
+
 
 On the `Contact Us page`, I included all the contact information the organisation can be reached from. Alongside the address, a live Google Maps frame helps with orientation.
 
@@ -144,7 +151,7 @@ The submission of a `Volunteer form` is another way of contacting the charity:
 |![volunteer-form-light-mode](readme-images/volunteer-form-light-mode.jpeg)|![volunteer-form-dark-mode](readme-images/volunteer-form-dark-mode.jpeg)|
 
 
----
+
 
 ## Donation Payments
 
@@ -160,7 +167,10 @@ I used the `Stripe Link` API for secure donation payments:
 
 # Data
 
+
+
 ## Schema
+
 
 The relational database is built with `PostgreSQL` and Django's object-model system. I'm utilizing Django's built-in `auth` app and the `admin` panel, where users with `staff` permissions can add/edit/delete rabbit records.
 
@@ -168,7 +178,10 @@ The data model for rabbits comprises of 3 tables. As adoption of rabbits often h
 
 ![data-model](readme-images/data-model.jpeg)
 
+
+
 ## Fixtures
+
 
 I wrote a python script, `generate_fixtures.py`, to generate random data for my database. With this, I generated three json fixtures which I then used to load the records into the database:
 
@@ -180,7 +193,9 @@ I wrote a python script, `generate_fixtures.py`, to generate random data for my 
 
 # Admin Functions
 
+
 Admin functions are available through Django's built-in `admin-panel`. As this is part of my backend application, I configured the frontend-serving Nginx server to proxy-route the user here from the Frontend site. The link for this can be found in the `Footer` section of the site:
+
 
 ![admin-login](readme-images/admin-login-link.jpeg)
 ![admin-login-andrew](readme-images/admin-login-andrew.jpeg)
@@ -188,6 +203,7 @@ Admin functions are available through Django's built-in `admin-panel`. As this i
 ![admin-edit-rabbits](readme-images/admin-edit-rabbits.jpeg)
 
 ---
+
 
 # Progressive Web App
 
@@ -203,7 +219,10 @@ I implemented PWA to allow the user to install the app, as well as to cache the 
 
 To run and develop this project locally, the following steps are needed.
 
+
+
 ## Backend
+
 
 0. Prerequisite: Make sure that `python` is installed.
 1. Clone the repo.
@@ -214,7 +233,10 @@ To run and develop this project locally, the following steps are needed.
 
 The backend project will be available on the default django port: http://localhost:8000
 
+
+
 ## Frontend
+
 
 0. Prerequisite: Make sure that `node` is installed.
 1. From the root folder, `cd frontend` and install all packages with `npm install`.
@@ -222,22 +244,31 @@ The backend project will be available on the default django port: http://localho
 
 The frontend project will be running on the default Vite port: http://localhost:5173
 
+
 ---
+
 
 # Testing
 
 Please view [TESTING.md](TESTING.md) for more information on testing.
 
+
 ---
+
 
 # Deployment
 
+
 Both the backend and the Frontend are deployed on Heroku, in eco dynos. (As this is the most economical tier, the initial loading time is fairly long when the user visits the site for the first time.)
+
+
 
 ## Backend
 
+
 The django project is running on a `Gunicorn` server. The django projects' `CORS` and `CSRF` settings make sure that the Frontend can initiate communication.
 In the `Procfile`, I specified the commands that are needed after the build process: run all migrations and start up the Gunicorn server.
+
 
 Environment variables:
 + SECRET_KEY
@@ -246,7 +277,10 @@ Environment variables:
 + FRONTEND_URL (raquired for the CORS and CSRF settings in settings.py)
 + BACKEND_HOST (required for the ALLOWED_HOSTS setting in settings.py)
 
+
+
 ## Frontend
+
 
 To build the frontend project for production, we can utilize the built-in `npm run build` script, that builds the React app for production. We can run this locally and the run the project with `npm run preview` to test the production version locally.
 
@@ -261,7 +295,9 @@ As Environment variables, I used
 
 ---
 
+
 # CI/CD with Github Actions
+
 
 I automated the deployment process by utilizing Github Actions Workflows. On every `push` action, my `main.yml` file first runs all the automated tests and only if they pass deploys the application, backend and frontend into their own respective Heroku dynos.
 
@@ -272,9 +308,13 @@ The result of the latest deployment is represented with this badge:
 
 ---
 
+
 # User Experience (UX)
 
+
+
 ## Website Owner's Goals
+
 
 * To help people find the organisation for the primary purpose of rehoming a rescued rabbit.
 * To help find potential donors and volunteers willing to contribute to the charity's work.
@@ -284,7 +324,10 @@ The result of the latest deployment is represented with this badge:
 * Allow the user to gain more information and send enquiry about individual rabbits.
 * Allow the visitor to Donate money to the organisation securely.
 
+
+
 ## Website Visitors' Goals
+
 
 * To find the relevant piece of information quickly, be it about rabbit adoption, volunteering or donation.
 * To find specific information about individual rabbits and be able to express interest in adopting them.
@@ -292,13 +335,16 @@ The result of the latest deployment is represented with this badge:
 * To be able to find the location quickly.
 * To be able to access the website in any screen sizes.
 * To read the site comfortably when dark mode is preferrable.
+
 ---
-<br>
+
 
 # Design
 
+
 All wireframes and design were created in [Figma](https://www.figma.com/).
-<br><br>
+
+
 
 ## Colour Scheme
 
@@ -309,70 +355,89 @@ I sampled the primary and the accent colours from the hero image of the landing 
 ![Light mode palette:](readme-images/colour-palette-light.svg)
 
 ![Dark mode palette:](readme-images/colour-palette-dark.svg)
-<br><br>
+
+
 
 ## Typography
 
+
 A font pairing website [Typ.io](https://typ.io/lists) helped me make typograpy choice.
 I selected [Nunito](https://fonts.google.com/specimen/Nunito) and [Nunito Sans](https://fonts.google.com/specimen/Nunito+Sans) from the [Google Fonts](https://fonts.google.com/) library for their simplicity and legibility yet fairly informal feel. To complement these simple styled main fonts, for the feature logo I chose a more decorative typeface, [Bubblegum Sans](https://fonts.google.com/specimen/Bubblegum+Sans).
-<br><br>
+
+
 
 ## Imagery
+
 
 All the **images** appearing on the site are unlicenced, sourced from [Pexels](https://pexels.com/) and [Unsplash](https://unsplash.com/). All pictures have been converted to `.webp` format to reduce file size and as such, reduce loading time. To further increase performance, more image sizes are available for the browser to load the most appropriate one for any screen resolutions. For older browsers that don't recognise `.webp` format, `.png` images were added as backups. This method makes sure that for every device, the best size and resolution will be chosen to achieve the best possible performance.
 
 Some of the icons I drew myself in Figma, the others I downloaded from [svgrepo](https://svgrepo.com/). These latter icons are either unlicenced or open-source. All icons were drawn or edited to be uniform in design as well as responsive to dark mode or - as in the case of the rabbit icon - to screen size changes. All icons' colour is set programatically width css.
 
 All references to the images and icons that have been sourced from other sites can be found in the [credits](#credits) section.
-<br><br>
+
+
 
 ## Wireframes - Figma
+
 
 Wireframes were created in [Figma](https://www.figma.com/).
 
 [Live link to wireframe for mobile](https://www.figma.com/proto/wQoFSgRQCECwxqL7hL9q3C/Rabbit_rescue_design?page-id=329%3A62&node-id=329%3A680&viewport=914%2C3013%2C1.76&scaling=min-zoom&starting-point-node-id=329%3A619)
-<br>
+
+
 
 ![mobile-low-fidelity-design](readme-images/mobile-low-fidelity-design.jpeg)
-<br>
+
+
 
 [Live link to wireframe for desktop](https://www.figma.com/proto/wQoFSgRQCECwxqL7hL9q3C/Rabbit_rescue_design?page-id=329%3A64&node-id=329%3A66&viewport=230%2C162%2C0.3&scaling=min-zoom&starting-point-node-id=329%3A66)
-<br>
+
+
 
 ![desktop-low-fidelity-design](readme-images/desktop-low-fidelity-design.jpeg)
-<br><br>
+
+
+
 
 ## High Fidelity Prototype - Figma
+
 
 I created high fidelity prototypes with Figma, for both mobile and desktop screens. 
 
 [Live link to HiFi Prototype for mobile](https://www.figma.com/proto/wQoFSgRQCECwxqL7hL9q3C/Rabbit_rescue_design?page-id=329%3A63&node-id=352%3A881&viewport=534%2C46%2C0.28&scaling=min-zoom&starting-point-node-id=352%3A881)
-<br>
+
+
 
 ![mobile-high-fidelity-design](readme-images/mobile-high-fidelity-design.jpeg)
-<br>
+
+
 
 [Live link to HiFi Prototype for desktop](https://www.figma.com/proto/wQoFSgRQCECwxqL7hL9q3C/Rabbit_rescue_design?page-id=329%3A65&node-id=329%3A214&viewport=223%2C207%2C0.3&scaling=min-zoom&starting-point-node-id=329%3A214)
-<br>
+
+
 
 ![desktop-high-fidelity-design](readme-images/desktop-high-fidelity-design.jpeg)
 
 ---
-<br>
+
+
 
 
 ## Future Implementations
-<br>
+
+
 
 * Replacing the `EmailJS` API with a setup of an SMTP service provider such as Google MAIL.
 * Building a comprehensive Admin interface in the Frontend.
-* Infinite scroll implementation for listing rabbits, in case the numbers increase significantly.
-
+* Infinite scroll implementation for listing rabbits, for the scenario that numbers increase significantly.
 
 ---
 
+
+
 ## Accessibility
-<br>
+
+
 
 * To aid screen readers: 
   * `Semantic HTML` were used throughout all pages.
@@ -386,24 +451,35 @@ I created high fidelity prototypes with Figma, for both mobile and desktop scree
 * Contrasts were checked with [a11y Contrast Checker](https://color.a11y.com/Contrast/). All pages passed the test, detailed results can be found [here](TESTING.md#accessibility-tests).
 
 
-
 ---
 
 # Technologies Used
 
 
+
 ## Frontend
+
+
 The site was built with the [JavaScript](https://www.javascript.com) library [ReactJS](https://reactjs.org) v18.2.0, [React Router](https://reactrouter.com/en/main) v6.6.2 and [React-Redux](https://react-redux.js.org) v8.0.5.
+
+
 
 ## Backend
 
+
 The [Django REST](https://www.django-rest-framework.org/) Python framework was used for the backend, as well as [PostgreSQL](https://www.postgresql.org/) for the database.
+
+
 
 ## APIs
 
+
 [Stripe Link](https://stripe.com/gb/payments/link) for payments and [EmailJS](https://www.emailjs.com/) for sending forms.
 
+
+
 ## Hosting
+
 
 * [Heroku](https://heroku.com) - both backend and frontend are hosted on Heroku (eco dynos)
 
@@ -411,12 +487,14 @@ The [Django REST](https://www.django-rest-framework.org/) Python framework was u
 
 * [Clever Cloud](https://www.clever-cloud.com/) - PostgreSQL database is hosted on the Clever Cloud platfrom (free tier)
 
+
+
 ## Other Tools & Programs Used
-<br>
+
 
 * [Figma](https://www.figma.com/)  - to create the design.
 
-* [Git](https://git-scm.com/) & [Github](https://github.com/) - for version control, safe storage and deployment.
+* [Git](https://git-scm.com/), [Github](https://github.com/) & [Github Actions](https://docs.github.com/en/actions) - for version control, safe storage and deployment.
 
 * [Google Fonts](https://fonts.google.com/) - to import fonts into the stylesheet.
 
@@ -440,12 +518,14 @@ The [Django REST](https://www.django-rest-framework.org/) Python framework was u
 # Credits
 
 
+
 ## Main images
 
 
 * [Hero image](https://www.pexels.com/photo/close-up-view-of-white-rabbit-10595503/): Photo by Ali Atakan Açıkbaş on [Pexels](https://pexels.com/)
 
 * Adopting page image: Photo by [Lorna Ladril](https://unsplash.com/@lorna_ladril?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/rabbits?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) 
+
 
 
 ## Gallery images
@@ -482,6 +562,7 @@ The [Django REST](https://www.django-rest-framework.org/) Python framework was u
 * "Snowball" photo by [Pablo Martinez](https://unsplash.com/@pablomp?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/rabbits?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
   
 * ["Brno and Tom" photo](https://www.pexels.com/photo/gray-and-brown-bunnies-8891763/) by Мария on [Pexels](https://www.pexels.com) 
+
 
 
 ## Icons
@@ -523,17 +604,6 @@ All downloaded icons have been edited.
 
 * improving accessibility: https://web.dev/how-to-review/
 
-
-## Content
-
-
-* I wrote all content myself, however, I drew inspiration from the following sites:
-
-  [The Littlest Lives Rescue](https://thelittlestlivesrescue.org.uk)
-
-  [South Coast Rabbit Rescue](https://www.southcoastrabbitrescue.co.uk)
-
-  [Essex Guinie Pig, Rat and Rabbit Rescue](https://www.egprr.org)
 
 
 ##  Disclaimer
