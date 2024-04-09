@@ -11,7 +11,6 @@
 I wrote 16 unit tests for testing the django `models`, `serializers` and `views`. For the testing environment, I created a separate settings file: `settings_test.py`.
 
 > To run the test in the development environment, run:
-
 > `python manage.py test --settings=rabbit_rescue_REST.settings_test`
 
 Results:
@@ -20,7 +19,7 @@ Results:
 
 ## Unit tests for the React Project
 
-I used `Vitest (Jest)` to run unit and functional test for the React Components. HTTP requests were mocked with the help of the [Mock Service Worker](https://mswjs.io/) library.
+I used `Vitest (Jest)` to run unit and functional tests for the React Components. HTTP requests were mocked with the help of the [Mock Service Worker](https://mswjs.io/) library.
 
 > To run these tests in development, run: 
 > `npm test`
@@ -54,24 +53,18 @@ Results:
 
 Performance, Accessibility, Best Practices and SEO tests were carried out with [Google Dev Tools](https://developer.chrome.com/docs/devtools/)' **Lighthouse** tool in `Incognito` mode. 
 
-> This section is going to be updated to the latest results.
 
 Results:
 
-| Device | Page | Mode | Result | 
+| Page | Mode | Result for desktop | Result for mobile |
 | :---: | :---: | :---: | :---: |
-| Mobile | About | light mode | ![Result-about-light-mobile](testing-images/lighthouse-about-light-mode-mobile.jpeg)|
-| Mobile | About | dark mode | ![Result-about-dark-mobile](testing-images/lighthouse-about-dark-mode-mobile.jpeg)|
-| Desktop | About | light mode | ![Result-about-light-desktop](testing-images/lighthouse-about-light-mode-desktop.jpeg)|
-| Desktop | About | dark mode | ![Result-about-dark-desktop](testing-images/lighthouse-about-dark-mode-desktop.jpeg)|
-| Mobile | Adopt | light mode | ![Result-adopt-light-mobile](testing-images/lighthouse-adopt-light-mode-mobile.jpeg)|
-| Mobile | Adopt | dark mode | ![Result-adopt-dark-mobile](testing-images/lighthouse-adopt-dark-mode-mobile.jpeg)|
-| Desktop | Adopt | light mode | ![Result-adopt-light-desktop](testing-images/lighthouse-adopt-light-mode-desktop.jpeg)|
-| Desktop | Adopt | dark mode | ![Result-adopt-dark-desktop](testing-images/lighthouse-about-dark-mode-desktop.jpeg)|
-| Mobile | Contact Us | light mode | ![Result-contact-light-mobile](testing-images/lighthouse-contact-light-mode-mobile.jpeg)|
-| Mobile | Contact Us | dark mode | ![Result-contact-dark-mobile](testing-images/lighthouse-contact-dark-mode-mobile.jpeg)|
-| Desktop | Contact Us | light mode | ![Result-contact-light-desktop](testing-images/lighthouse-contact-light-mode-desktop.jpeg)|
-| Desktop | Contact Us | dark mode | ![Result-contact-dark-desktop](testing-images/lighthouse-about-dark-mode-desktop.jpeg)|
+| About | light mode | ![Result-about-light-desktop](testing-images/lighthouse-about-light-mode-desktop.jpeg) | ![Result-about-light-mobile](testing-images/lighthouse-about-light-mode-mobile.jpeg)|
+| About | dark mode |![Result-about-dark-desktop](testing-images/lighthouse-about-dark-mode-desktop.jpeg)| ![Result-about-dark-mobile](testing-images/lighthouse-about-dark-mode-mobile.jpeg)|
+| Adopt | light mode | ![Result-adopt-light-desktop](testing-images/lighthouse-adopt-light-mode-desktop.jpeg) | ![Result-adopt-light-mobile](testing-images/lighthouse-adopt-light-mode-mobile.jpeg)|
+| Adopt | dark mode |![Result-adopt-dark-desktop](testing-images/lighthouse-adopt-dark-mode-desktop.jpeg)| ![Result-adopt-dark-mobile](testing-images/lighthouse-adopt-dark-mode-mobile.jpeg)|
+| Contact Us | light mode | ![Result-contact-light-desktop](testing-images/lighthouse-contact-light-mode-desktop.jpeg) | ![Result-contact-light-mobile](testing-images/lighthouse-contact-light-mode-mobile.jpeg)|
+| Contact Us | dark mode |![Result-contact-dark-desktop](testing-images/lighthouse-contact-dark-mode-desktop.jpeg)| ![Result-contact-dark-mobile](testing-images/lighthouse-contact-dark-mode-mobile.jpeg)|
+
 
 
 - - -
