@@ -1,6 +1,8 @@
 # Full Stack Web Application for Hopper Farm Rabbit Rescue
 
+![Github Actions Badge](https://github.com/szilvia-csernus/rabbit_rescue/actions/workflows/main.yml/badge.svg)
 [![DeepScan grade](https://deepscan.io/api/teams/23376/projects/26637/branches/850426/badge/grade.svg)](https://deepscan.io/dashboard#view=project&tid=23376&pid=26637&bid=850426)
+
 
 > **Hopper Farm Rabbit Rescue** is a fictional non-profit organisation.
 The website is designed to support the charity's primary mission which is to help find new homes for rescued pet rabbits. Admins can add/edit/delete rabbit records. Users can get information about the work of the charity, the adoption process as well as individual rabbits which are listed for adoption.
@@ -17,7 +19,7 @@ The `EmailJS` API is used to send forms. Dark mode is implemented throughout all
 
 ---
 
-*** View the live project here: https://rabbit-rescue-be99746cd4ef.herokuapp.com ***
+***View the live project here: https://rabbit-rescue-be99746cd4ef.herokuapp.com***
 
 ---
 <br>
