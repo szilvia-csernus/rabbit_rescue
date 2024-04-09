@@ -164,7 +164,7 @@ I used the `Stripe Link` API for secure donation payments:
 
 The relational database is built with `PostgreSQL` and Django's object-model system. I'm utilizing Django's built-in `auth` app and the `admin` panel, where users with `staff` permissions can add/edit/delete rabbit records.
 
-The data model for rabbits comprises of 3 tables. As adoption of rabbits often happens in groups, I panned to list these rabbits together on the website. For this, I needed a `rabbit_group` model, which can include one or more individual rabbits. Similarly, the `image` model belongs to the rabbit_group, not to the individual rabbit, as the rabbits are often pictured together, not individually.
+The data model for rabbits comprises of 3 tables. As adoption of rabbits often happens in groups, I planned to list these rabbits together on the website. For this, I needed a `rabbit_group` model, which can include one or more individual rabbits. Similarly, the `image` model belongs to the rabbit_group, not to the individual rabbit, as the rabbits are often pictured together, not individually.
 
 ![data-model](readme-images/data-model.jpeg)
 
@@ -176,6 +176,7 @@ I wrote a python script, `generate_fixtures.py`, to generate random data for my 
 - `rabbits.json`
 - `rabbit_images.json`
 
+---
 
 # Admin Functions
 
@@ -186,6 +187,7 @@ Admin functions are available through Django's built-in `admin-panel`. As this i
 ![admin-rabbit-groups](readme-images/admin-rabbit-groups.jpeg)
 ![admin-edit-rabbits](readme-images/admin-edit-rabbits.jpeg)
 
+---
 
 # Progressive Web App
 
@@ -220,6 +222,13 @@ The backend project will be available on the default django port: http://localho
 
 The frontend project will be running on the default Vite port: http://localhost:5173
 
+---
+
+# Testing
+
+Please view [TESTING.md](TESTING.md) for more information on testing.
+
+---
 
 # Deployment
 
@@ -250,9 +259,16 @@ As Environment variables, I used
 + STRIPE_URL (for payments)
 
 
-# Testing
+---
 
-Please view [TESTING.md](TESTING.md) for more information on testing.
+# CI/CD with Github Actions
+
+I automated the deployment process by utilizing Github Actions Workflows. On every `push` action, my `main.yml` file first runs all the automated tests and only if they pass deploys the application, backend and frontend into their own respective Heroku dynos.
+
+The result of the latest deployment is represented with this badge:
+
+![Github Actions Badge](https://github.com/szilvia-csernus/rabbit_rescue/actions/workflows/main.yml/badge.svg)
+
 
 ---
 
