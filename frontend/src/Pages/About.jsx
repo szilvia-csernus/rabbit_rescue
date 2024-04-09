@@ -38,7 +38,7 @@ const About = () => {
 				</div>
 			</Article>
 			<ArticleLeft>
-				<div>
+				<div className={classes.rabbitIconWrapper}>
 					<RabbitLeftIcon
 						className={classes.rabbitLeftIcon}
 						aria-label="rabbit icon"

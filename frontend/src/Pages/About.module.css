@@ -12,12 +12,17 @@
 }
 
 .missionText {
-
+    font-size: 1.1rem;
     padding: 1.5rem;
     font-family: var(--main-font-family);
     font-weight: var(--strong-font-weight);
     text-align: center;
 }
+
+.rabbitIconWrapper {
+    width: 64px;
+    height: 100px;
+  }
 
 .rabbitLeftIcon,
 .rabbitRightIcon {
@@ -49,10 +54,10 @@
 }
 
 
-@media screen and (min-width: 415px) {
+@media screen and (max-width: 415px) {
 
     .missionText {
-        font-size: 1.1rem;
+        font-size: 1rem;
     }
 }
 

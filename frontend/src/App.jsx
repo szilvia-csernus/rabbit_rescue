@@ -1,5 +1,4 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import './App.css';
 import About from './Pages/About';
 import Adopt from './Pages/Adopt';
 import ContactUs from './Pages/ContactUs';
