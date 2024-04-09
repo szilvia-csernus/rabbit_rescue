@@ -22,9 +22,11 @@ jobs:
         pip install -r requirements.txt
 
     - name: Run backend tests
+      env:
+        SECRET_KEY: ${{ secrets.DJANGO_TEST_SECRET}}
       run: |
         cd backend
-        python manage.py test
+        python manage.py test  --settings=rabbit_rescue_REST.settings_test
 
     - name: Set up Node.js
       uses: actions/setup-node@v4
