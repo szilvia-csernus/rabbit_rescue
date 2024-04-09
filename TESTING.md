@@ -10,9 +10,9 @@
 
 I wrote 16 unit tests for testing the django `models`, `serializers` and `views`. For the testing environment, I created a separate settings file: `settings_test.py`.
 
->To run the test in the development environment, run:
+> To run the test in the development environment, run:
 
-`python manage.py test --settings=rabbit_rescue_REST.settings_test`
+> `python manage.py test --settings=rabbit_rescue_REST.settings_test`
 
 Results:
 
@@ -20,11 +20,18 @@ Results:
 
 ## Unit tests for the React Project
 
-> Coming soon. 
+I used `Vitest (Jest)` to run unit and functional test for the React Components. HTTP requests were mocked with the help of the [Mock Service Worker](https://mswjs.io/) library.
+
+> To run these tests in development, run: 
+> `npm test`
+
+Results:
+
+![vitest-results](testing-images/vitest-results.png)
 
 # End-to-end Integration Tests
 
-> Coming soon.
+> Not implemented yet.
 
 
 # Accessibility tests
