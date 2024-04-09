@@ -23,7 +23,7 @@ jobs:
 
     - name: Run backend tests
       env:
-        SECRET_KEY: ${{ secrets.DJANGO_TEST_SECRET}}
+        SECRET_KEY: ${{ secrets.DJANGO_TEST_SECRET }}
       run: |
         cd backend
         python manage.py test  --settings=rabbit_rescue_REST.settings_test
@@ -39,6 +39,8 @@ jobs:
         npm install
 
     - name: Run frontend tests
+      env:
+        VITE_STRIPE_LINK: ${{ secrets.VITE_STRIPE_LINK }}
       run: |
         cd frontend
         npm run test
