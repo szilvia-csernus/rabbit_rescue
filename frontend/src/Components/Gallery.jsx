@@ -121,7 +121,7 @@ const Gallery = () => {
   const width = "350";
 
 	const gallery = (
-		<div className={classes.gallery}>
+		<div className={classes.gallery} data-testid="gallery">
 			{ rabbit_groups.map((group) => (
 				<Picture
 				key={group.id}
