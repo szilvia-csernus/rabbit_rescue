@@ -102,7 +102,7 @@ const EnquiryForm = () => {
 							/>
 						</>
 					)}
-					<form className={classes.form} onSubmit={submitHandler}>
+					<form className={classes.form} onSubmit={submitHandler} data-testid="enquiry-form">
 						<label htmlFor="name" className={classes.formLabel}>
 							Your Name *
 						</label>
