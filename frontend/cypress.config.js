@@ -14,4 +14,6 @@ export default defineConfig({
       bundler: "vite",
     },
   },
+  // needed for Stripe page test - otherwise, Stripe can't be rendered in an iFrame
+  chromeWebSecurity: false,
 });

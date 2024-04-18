@@ -9,9 +9,9 @@ export const Logo = () => {
 			aria-label="Hopper rabbit rescue logo"
 		>
 			<div className={classes.logoGrid}>
-                <RabbitLogo className={classes.logoRabbit} data-cy="logo"/>
+                <RabbitLogo className={classes.logoRabbit} data-testid="logo"/>
 				<div className={classes.logoHopper}>hopper farm</div>
-				<div className={classes.logoRabbitRescue} data-cy="logo-text" >rabbit rescue</div>
+				<div className={classes.logoRabbitRescue} data-testid="logo-text" >rabbit rescue</div>
 			</div>
 		</Link>
 	);
