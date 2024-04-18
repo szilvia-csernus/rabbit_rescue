@@ -17,7 +17,8 @@ describe('Contact Us Page', () => {
   });
 
   it('should open the volunteer form when the Volunteer button is clicked', () => {
-    cy.get('button').contains('Volunteer').click();
+    cy.get('button').contains('Volunteer').as('volunteerForm')
+    cy.get('@volunteerForm').click();
     cy.get('[data-testid="volunteer-form"]').should('be.visible'); 
   });
 });
