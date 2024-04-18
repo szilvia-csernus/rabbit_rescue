@@ -88,7 +88,7 @@ const VolunteerForm = () => {
 				<div className={classes.body}>
 					<p>Please fill in the form so we can contact you.</p>
 
-					<form className={classes.form} onSubmit={submitHandler}>
+					<form className={classes.form} onSubmit={submitHandler} data-testid="volunteer-form">
 						<label htmlFor="name" className={classes.formLabel}>
 							Name*
 						</label>
