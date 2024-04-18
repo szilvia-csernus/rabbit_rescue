@@ -48,7 +48,7 @@ describe('adopt-page', () => {
     cy.get('[data-testid="enquiry-form"]').should('be.visible');
   });
 
-  it.only('should close rabbit details when the Cancel button is clicked', () => {
+  it('should close rabbit details when the Cancel button is clicked', () => {
     // Enquiry form is not rendered initially
     cy.get('[data-testid="enquiry-form"]').should('not.exist');
 
