@@ -28,8 +28,12 @@ describe('about-page', () => {
   })
 
   it('should navigate to Stripe page when clicking Donate button in main navbar', () => {
-  
+    // set up the intercept
+    cy.intercept('GET', 'https://donate.stripe.com/*', { statusCode: 200, body: { message: 'Intercepted Stripe Request' } }).as('stripe');
+
     cy.get('[aria-label="main navigation"]').contains('Donate').click()
+    cy.wait('@stripe')
+    
     cy.url().should('include', 'stripe') 
 
   })
@@ -63,8 +67,12 @@ describe('about-page', () => {
   })
 
   it('should navigate to Stripe page when clicking Donate button', () => {
-  
+    // set up the intercept
+    cy.intercept('GET', 'https://donate.stripe.com/*', { statusCode: 200, body: { message: 'Intercepted Stripe Request' } }).as('stripe');
+
     cy.get('[data-testid="about-page"]').contains('Donate').click()
+    cy.wait('@stripe')
+
     cy.url().should('include', 'stripe') 
 
   })
