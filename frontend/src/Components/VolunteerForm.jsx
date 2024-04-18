@@ -100,6 +100,7 @@ const VolunteerForm = () => {
 							onChange={nameChangeHandler}
 							onBlur={nameBlurHandler}
 							value={nameValue}
+							data-testid="name"
 						/>
 						<div
 							className={
@@ -120,6 +121,7 @@ const VolunteerForm = () => {
 							onChange={emailChangeHandler}
 							onBlur={emailBlurHandler}
 							value={emailValue}
+							data-testid="email"
 						/>
 						<div
 							className={
@@ -139,6 +141,7 @@ const VolunteerForm = () => {
 							className={classes.formInput}
 							value={phoneNr}
 							onChange={(event) => setPhoneNr(event.target.value)}
+							data-testid="phone"
 						/>
 						<br />
 						<label htmlFor="message" className={classes.formLabel}>
@@ -152,6 +155,7 @@ const VolunteerForm = () => {
 							placeholder="Your message"
 							value={message}
 							onChange={(event) => setMessage(event.target.value)}
+							data-testid="message"
 						></textarea>
 
 						<div className={classes.footer}>
