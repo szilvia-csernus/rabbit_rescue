@@ -55,17 +55,17 @@ describe('about-page', () => {
 
   })
 
-  it('should navigate to Stripe page when clicking Donate button', () => {
-  
-    cy.get('[data-testid="about-page"]').contains('Donate').click()
-    cy.url().should('include', 'stripe') 
-
-  })
-
   it('should render Volunteer form when clicking "Volunteer" button', () => {
   
     cy.get('[data-testid="about-page"]').contains('Volunteer').click()
     cy.get('[data-testid="volunteer-form"]').should('be.visible')
+
+  })
+
+  it('should navigate to Stripe page when clicking Donate button', () => {
+  
+    cy.get('[data-testid="about-page"]').contains('Donate').click()
+    cy.url().should('include', 'stripe') 
 
   })
 
