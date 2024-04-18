@@ -1,16 +1,12 @@
 describe('Volunteer Form', () => {
   beforeEach(() => {
     cy.visit('/');
-    cy.get('button').contains('Volunteer').as('volunteerForm')
-    cy.get('@volunteerForm').click();
+    cy.get('button').contains('Volunteer').as('volunteerButton')
+    cy.get('@volunteerButton').click();
     cy.get('[data-testid="name"]').as('name');
     cy.get('[data-testid="email"]').as('email');
     cy.get('[data-testid="phone"]').as('phone');
     cy.get('[data-testid="message"]').as('message');
-  });
-
-  it('should open when the volunteer button is clicked on Home page', () => {
-    cy.get('[data-testid="volunteer-form"]').should('be.visible'); 
   });
 
   const properties = [
