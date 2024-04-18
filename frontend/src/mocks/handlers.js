@@ -1,3 +1,4 @@
+// This file is used by Vitest to mock the API response.
 // Mock Service Worker (MSW) is used to intercept requests and mock the response.
 // https://mswjs.io/docs/basics/mocking-responses
 
