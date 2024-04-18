@@ -65,11 +65,11 @@ describe('about-page', () => {
   it('should render Volunteer form when clicking "Volunteer" button', () => {
   
     cy.get('[data-testid="about-page"]').contains('Volunteer').click()
-    cy.get('form').should('exist')
+    cy.get('[data-testid="volunteer-form"]').should('be.visible')
 
   })
 
-  it.only('cy.viewport() - set the viewport size and dimension to inspect by sight', () => {
+  it('cy.viewport() - set the viewport size and dimension to inspect by sight', () => {
     cy.viewport('macbook-15')
     cy.wait(200)
     cy.viewport('macbook-13')
