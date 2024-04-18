@@ -110,4 +110,40 @@ describe('Volunteer Form', () => {
     
     cy.get('[data-testid="volunteer-form"]').should('not.exist');
   });
+
+  it('should display success message after success response from EmailJS', () => {
+    // set up the intercept
+    cy.intercept('POST', 'https://api.emailjs.com/api/v1.0/email/send', { statusCode: 200, body: { message: 'Success' } }).as('sendEmail');
+
+    // fill in all fields
+    cy.get('[data-testid="name"]').type('John Doe');
+    cy.get('[data-testid="email"]').type('test@test.com');
+
+    // submit the form
+    cy.get('button').contains('Send').click();
+
+    // wait for the POST request
+    cy.wait('@sendEmail');
+
+    cy.get('[data-testid="volunteer-form"]').should('not.exist');
+    cy.get('[data-testid="thanks-volunteer"]').should('be.visible');
+  });
+
+  it('should display error message after error response from EmailJS', () => {
+    // set up the intercept
+    cy.intercept('POST', 'https://api.emailjs.com/api/v1.0/email/send', { statusCode: 500, body: { message: 'Error' } }).as('sendEmail');
+
+    // fill in all fields
+    cy.get('[data-testid="name"]').type('John Doe');
+    cy.get('[data-testid="email"]').type('test@test.com');
+
+    // submit the form
+    cy.get('button').contains('Send').click();
+
+    // wait for the POST request
+    cy.wait('@sendEmail');
+
+    cy.get('[data-testid="volunteer-form"]').should('not.exist');
+    cy.get('[data-testid="error-message"]').should('exist');
+  });
 });

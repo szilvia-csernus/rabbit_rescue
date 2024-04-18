@@ -21,7 +21,7 @@ const ErrorMessage = () => {
 			elementState={errorMessageState}
 			resetAction={errorMessageActions.reset}
 		>
-			<section className={classes.content}>
+			<section className={classes.content} data-testid="error-message">
 				<h2 className={classes.header}>An Unknown Error Occured.</h2>
 				<div className={classes.body}>
 					<p>Apologies for the inconvenience!</p>

@@ -21,8 +21,8 @@ const ThanksVolunteer = (props) => {
 		<Modal pos={'centre'}
 				elementState={thanksVolunteerState}
 				resetAction={thanksVolunteerActions.reset}>
-			<section className={classes.content}>
-				<h2 className={classes.header}>Thanks for your interest!</h2>
+			<section className={classes.content} data-testid="thanks-volunteer">
+				<h2 className={classes.header}>Thanks for your interest in volunteering!</h2>
 				<div className={classes.body}>
 					<p>
 						We will be in touch soon.
