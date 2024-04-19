@@ -63,7 +63,7 @@ jobs:
         browser: chrome
         headless: true
         start: npm start
-        wait-on: 'http://localhost:5173'
+        wait-on: 'http://127.0.0.1:5173/'
         working-directory: frontend
 
   deploy:
