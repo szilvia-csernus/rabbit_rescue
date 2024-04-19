@@ -56,6 +56,7 @@ jobs:
         cd backend
         python manage.py runserver &
         cd ../frontend
+        npm run start &
         npx start-server-and-test http://localhost:5173
         npx cypress run
 
