@@ -4,8 +4,8 @@
 describe('adopt-page', () => {
   beforeEach(() => {
     cy.visit('/adopt');
-    // the timeout increase was needed for 'cypress run'. It was not needed for 'cypress open'
-    cy.get('[data-testid="gallery"]', { timeout: 10000 })  
+    // the timeout increase was needed for CI/CD pipeline
+    cy.get('[data-testid="gallery"]', { timeout: 30000 })  
       .children()
       .as('gallery');
   })

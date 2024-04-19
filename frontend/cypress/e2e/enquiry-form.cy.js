@@ -1,8 +1,8 @@
 describe('Enquiry Form', () => {
   beforeEach(() => {
     cy.visit('/adopt');
-
-    cy.get('[data-testid="gallery"]').children().as('gallery');
+    // the timeout increase was needed for CI/CD pipeline
+    cy.get('[data-testid="gallery"]', { timeout: 30000 }).children().as('gallery');
     cy.get('@gallery').first().click();
     cy.get('button').contains('Enquire').click();
 
