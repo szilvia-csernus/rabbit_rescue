@@ -52,6 +52,7 @@ jobs:
       env:
         SECRET_KEY: ${{ secrets.DJANGO_TEST_SECRET }}
         DATABASE_URL: ${{ secrets.DATABASE_URL }}
+        CLOUDINARY_URL: ${{ secrets.CLOUDINARY_URL }}
         FRONTEND_URL: ${{ secrets.FRONTEND_URL }}
         VITE_STRIPE_LINK: ${{ secrets.VITE_STRIPE_LINK }}
       run: |
