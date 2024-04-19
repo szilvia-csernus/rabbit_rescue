@@ -49,6 +49,8 @@ jobs:
       run: npm install start-server-and-test
       
     - name: Start backend server and run Cypress tests
+      env: 
+        DATABASE_URL: ${{ secrets.DATABASE_URL }}
       run: |
         cd backend
         python manage.py runserver &
