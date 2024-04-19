@@ -4,7 +4,10 @@
 describe('adopt-page', () => {
   beforeEach(() => {
     cy.visit('/adopt');
-    cy.get('[data-testid="gallery"]').children().as('gallery');
+    // the timeout increase was needed for 'cypress run'. It was not needed for 'cypress open'
+    cy.get('[data-testid="gallery"]', { timeout: 10000 })  
+      .children()
+      .as('gallery');
   })
 
 
