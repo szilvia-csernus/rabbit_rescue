@@ -38,14 +38,14 @@ jobs:
         cd frontend
         npm install
 
-    - name: Run frontend tests
+    - name: Run frontend unit/functional tests with Vitest
       env:
         VITE_STRIPE_LINK: ${{ secrets.VITE_STRIPE_LINK }}
       run: |
         cd frontend
         npm run test
       
-    - name: Start backend server and run Cypress tests
+    - name: Start backend server for Cypress tests
       env:
         SECRET_KEY: ${{ secrets.DJANGO_TEST_SECRET }}
         DATABASE_URL: ${{ secrets.DATABASE_URL }}
@@ -56,9 +56,15 @@ jobs:
         cd backend
         python manage.py collectstatic --noinput
         python manage.py runserver &
-        cd ../frontend
-        npm start &
-        npx cypress run
+  
+    - name: Run Cypress tests
+      uses: cypress-io/github-action@v2
+      with:
+        browser: chrome
+        headless: true
+        start: npm start
+        wait-on: 'http://localhost:5173'
+        working-directory: frontend
 
   deploy:
     needs: test
