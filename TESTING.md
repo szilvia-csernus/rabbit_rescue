@@ -30,7 +30,32 @@ Results:
 
 # End-to-end Integration Tests
 
-> Not implemented yet.
+> E2E Integration tests are implemented with Cypress.
+
+To run the tests locally:
+
+* run the backend server with `python manage.py runserver` in the backend folder,
+
+* start the vite dev server in the frontend with `npm start` in the frontend folder,
+
+* finally, run the Cypress test with: `npx cypress open`.
+
+
+
+This will open up a new browser for Cypress, where we can start the test files and witness the process.
+
+Alternatively, we can run it with a headless server, with: `npx cypress run`.
+
+The results of these tests are shown below:
+
+![Cypress About Page](testing-images/cypress-about.jpeg)
+![Cypress Adopt Page](testing-images/cypress-adopt.jpeg)
+![Cypress Contact Us Page](testing-images/cypress-contact-us.jpeg)
+![Cypress Enquiry Form](testing-images/cypress-enquiry.jpeg)
+![Cypress Volunteer Form](testing-images/cypress-volunteer.jpeg)
+![Cypress Results](testing-images/cypress-results.jpeg)
+
+
 
 
 # Accessibility tests
