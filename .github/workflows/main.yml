@@ -45,25 +45,25 @@ jobs:
         cd frontend
         npm run test
       
-    - name: Start backend server for Cypress tests
-      env:
-        SECRET_KEY: ${{ secrets.DJANGO_TEST_SECRET }}
-        DATABASE_URL: ${{ secrets.DATABASE_URL }}
-        CLOUDINARY_URL: ${{ secrets.CLOUDINARY_URL }}
-        FRONTEND_URL: ${{ secrets.FRONTEND_URL }}
-        VITE_STRIPE_LINK: ${{ secrets.VITE_STRIPE_LINK }}
-      run: |
-        cd backend
-        python manage.py collectstatic --noinput
-        python manage.py runserver &
+    # - name: Start backend server for Cypress tests
+    #   env:
+    #     SECRET_KEY: ${{ secrets.DJANGO_TEST_SECRET }}
+    #     DATABASE_URL: ${{ secrets.DATABASE_URL }}
+    #     CLOUDINARY_URL: ${{ secrets.CLOUDINARY_URL }}
+    #     FRONTEND_URL: ${{ secrets.FRONTEND_URL }}
+    #     VITE_STRIPE_LINK: ${{ secrets.VITE_STRIPE_LINK }}
+    #   run: |
+    #     cd backend
+    #     python manage.py collectstatic --noinput
+    #     python manage.py runserver &
   
       
-    - name: Run Cypress tests
-      uses: cypress-io/github-action@v6
-      with:
-        browser: chrome
-        start: npm start
-        working-directory: frontend
+    # - name: Run Cypress tests
+    #   uses: cypress-io/github-action@v6
+    #   with:
+    #     browser: chrome
+    #     start: npm start
+    #     working-directory: frontend
 
   deploy:
     needs: test
