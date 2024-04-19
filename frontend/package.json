@@ -24,7 +24,6 @@
 		"heroku-postbuild": "npm run build",
 		"test": "vitest",
 		"cypress:open": "cypress open"
-
 	},
 	"devDependencies": {
 		"@testing-library/jest-dom": "^5.16.5",
@@ -35,6 +34,7 @@
 		"@vitejs/plugin-react": "^4.2.1",
 		"@vitejs/plugin-react-swc": "^3.5.0",
 		"cypress": "^13.8.0",
+		"cypress-vite": "^1.5.0",
 		"eslint": "^8.57.0",
 		"eslint-plugin-jest-dom": "^5.2.0",
 		"eslint-plugin-react": "^7.34.1",
