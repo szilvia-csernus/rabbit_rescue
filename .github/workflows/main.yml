@@ -57,10 +57,15 @@ jobs:
         python manage.py collectstatic --noinput
         python manage.py runserver &
   
+    - name: Install start-server-and-test
+      run: npm install -D start-server-and-test
+      working-directory: frontend
+      
     - name: Run Cypress tests
       uses: cypress-io/github-action@v6
       with:
-        start: npm start
+        browser: chrome
+        start: npm start & npx start-server-and-test http://localhost:8000 cy:run
         working-directory: frontend
 
   deploy:
