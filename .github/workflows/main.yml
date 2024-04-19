@@ -44,9 +44,6 @@ jobs:
       run: |
         cd frontend
         npm run test
-    
-    - name: Install start-server-and-test
-      run: npm install start-server-and-test
       
     - name: Start backend server and run Cypress tests
       env:
@@ -59,7 +56,6 @@ jobs:
         cd backend
         python manage.py runserver &
         cd ../frontend
-        npm run start &
         npx start-server-and-test http://localhost:5173
         npx cypress run
 
