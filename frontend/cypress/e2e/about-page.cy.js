@@ -76,26 +76,5 @@ describe('about-page', () => {
     cy.url().should('include', 'stripe') 
 
   })
-
-  it('cy.viewport() - set the viewport size and dimension to inspect by sight', () => {
-    cy.viewport('macbook-15')
-    cy.wait(200)
-    cy.viewport('macbook-13')
-    cy.wait(200)
-    cy.viewport('macbook-11')
-    cy.wait(200)
-    cy.viewport('ipad-2')
-    cy.wait(200)
-    cy.viewport('ipad-mini')
-    cy.wait(200)
-    cy.viewport('iphone-6+')
-    cy.wait(200)
-    cy.viewport('iphone-x')
-    cy.wait(200)
-    cy.viewport('iphone-xr')
-    cy.wait(200)
-    cy.viewport('iphone-se2')
-    cy.wait(200)
-  })
   
 })
