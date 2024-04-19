@@ -3,6 +3,12 @@ name: CI/CD Pipeline
 on:
   push:
     branches: [ main ]
+    paths-ignore:
+      - README.md
+      - .gitignore
+      - TESTING.md
+      - readme-images/**
+      - testing-images/**
 
 jobs:
   test:
