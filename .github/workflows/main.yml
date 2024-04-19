@@ -49,8 +49,10 @@ jobs:
       run: npm install start-server-and-test
       
     - name: Start backend server and run Cypress tests
-      env: 
+      env:
+        SECRET_KEY: ${{ secrets.DJANGO_TEST_SECRET }}
         DATABASE_URL: ${{ secrets.DATABASE_URL }}
+        FRONTEND_URL: ${{ secrets.FRONTEND_URL }}
         VITE_STRIPE_LINK: ${{ secrets.VITE_STRIPE_LINK }}
       run: |
         cd backend
