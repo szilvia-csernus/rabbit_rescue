@@ -58,11 +58,9 @@ jobs:
         python manage.py runserver &
   
     - name: Run Cypress tests
-      uses: cypress-io/github-action@v2
+      uses: cypress-io/github-action@v6
       with:
-        browser: chrome
-        headless: true
-        start: npm start & npx start-server-and-test http://localhost:5173
+        start: npm start
         working-directory: frontend
 
   deploy:
