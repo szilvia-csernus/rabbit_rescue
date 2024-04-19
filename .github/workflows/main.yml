@@ -44,6 +44,9 @@ jobs:
       run: |
         cd frontend
         npm run test
+    
+    - name: Clear Cypress cache
+      run: npx cypress cache clear
       
     - name: Start backend server and run Cypress tests
       env:
