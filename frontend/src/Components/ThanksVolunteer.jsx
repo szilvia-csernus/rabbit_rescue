@@ -22,7 +22,7 @@ const ThanksVolunteer = (props) => {
 				elementState={thanksVolunteerState}
 				resetAction={thanksVolunteerActions.reset}>
 			<section className={classes.content} data-testid="thanks-volunteer">
-				<h2 className={classes.header}>Thanks for your interest in volunteering!</h2>
+				<h2 className={classes.header}>Thank you for your enquiry!</h2>
 				<div className={classes.body}>
 					<p>
 						We will be in touch soon.
