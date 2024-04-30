@@ -29,7 +29,7 @@ test('renders ThanksVolunteer modal', () => {
     </Provider>
   )
   
-  const heading = screen.getByRole("heading", { name: /thanks for your interest/i })
+  const heading = screen.getByRole("heading", { name: /thank you/i })
   
   expect(heading).toBeVisible()
   
