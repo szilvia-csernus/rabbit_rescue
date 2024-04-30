@@ -18,4 +18,5 @@ export default defineConfig({
   },
   // needed for Stripe page test - otherwise, Stripe can't be rendered in an iFrame
   chromeWebSecurity: false,
+  numTestsKeptInMemory: 1, // Limit the number of tests kept in memory to prevent parallel database access issues
 });
