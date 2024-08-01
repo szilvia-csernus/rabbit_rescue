@@ -276,7 +276,7 @@ Environment variables:
 + SECRET_KEY
 + DATABASE_URL
 + CLOUDINARY_URL
-+ FRONTEND_URL (raquired for the CORS and CSRF settings in settings.py)
++ FRONTEND_URL (required for the CORS and CSRF settings in settings.py)
 + BACKEND_HOST (required for the ALLOWED_HOSTS setting in settings.py)
 
 
