@@ -6,16 +6,16 @@
 }
 
 .card {
-	display: inline-block;
-	position: relative;
-	transition: all 0.3s ease-out;
-	cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: transform 0.3s ease-out;
+    cursor: pointer;
+    will-change: transform; /* Hint to browsers for optimization */
 }
 
 .card:hover {
-	transform: scale(1.05) ;
-	z-index: 1;
-
+    transform: scale(1.05) translateZ(0); /* Adding translateZ(0) for potential hardware acceleration */
+    z-index: 1;
 }
 
 .rabbitImg {
