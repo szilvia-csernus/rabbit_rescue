@@ -1,15 +1,17 @@
 from django.test import TestCase
 from rabbits.models import Rabbit, RabbitGroup, RabbitImage
-from datetime import date
+from datetime import date, timedelta
+from django.utils.timezone import now
 
 class RabbitModelTest(TestCase):
     def setUp(self):
         self.rabbit_group = RabbitGroup.objects.create()
+        four_years_ago = now().date().replace(year=now().year - 4)
         self.rabbit = Rabbit.objects.create(
             name='Test Rabbit',
             breed='Test Breed',
             sex='F',
-            date_of_birth=date(2020, 1, 1),
+            date_of_birth=four_years_ago,
             description='A test rabbit',
             neutered=True,
             vaccinated=True,
@@ -30,11 +32,12 @@ class RabbitModelTest(TestCase):
 class RabbitGroupModelTest(TestCase):
     def setUp(self):
         self.rabbit_group = RabbitGroup.objects.create()
+        four_years_ago = now().date().replace(year=now().year - 4)
         self.rabbit = Rabbit.objects.create(
             name='Test Rabbit',
             breed='Test Breed',
             sex='F',
-            date_of_birth=date(2020, 1, 1),
+            date_of_birth=four_years_ago,
             description='A test rabbit',
             neutered=True,
             vaccinated=True,
@@ -57,11 +60,12 @@ class RabbitGroupModelTest(TestCase):
 class RabbitImageModelTest(TestCase):
     def setUp(self):
         self.rabbit_group = RabbitGroup.objects.create()
+        four_years_ago = now().date().replace(year=now().year - 4)
         self.rabbit = Rabbit.objects.create(
             name='Test Rabbit',
             breed='Test Breed',
-            
-            date_of_birth=date(2020, 1, 1),
+            sex='F',
+            date_of_birth=four_years_ago,
             description='A test rabbit',
             neutered=True,
             vaccinated=True,
